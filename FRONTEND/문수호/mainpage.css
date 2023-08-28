@@ -1,0 +1,122 @@
+header {  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    color: white;
+    background: #F06786;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    }
+
+main {
+    min-height: 100%;
+    }
+
+
+figure {  
+    position: relative;
+    margin: 0;
+    }
+    
+figcaption{
+    color: white;
+    padding: 1em;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    }
+
+    
+.img {
+    display: block;
+    }
+
+.crystal{
+    display:block; 
+    margin:auto;
+    max-width: 53%; 
+    height: auto;
+
+
+    
+}
+
+.background{
+    display:block; 
+    margin:auto; 
+    width: auto; 
+    height: auto;
+    max-width: 150%; 
+    object-fit: none; /* 이미지 크기 조정하지 않음 */
+    object-position: center; /* 이미지를 가운데로 정렬 */
+
+}
+
+.PRISM{
+    display:block; 
+    margin:auto;
+    max-width: 80%; 
+    height: auto;
+
+}
+
+.sujung2023{
+    display:block; 
+    margin:auto;
+
+}
+
+.infotype{
+    display:block; 
+    margin:auto;
+    max-width: 80%; 
+    height: auto
+
+}
+.datetype {
+    display: block;
+    margin: auto;
+    max-width: 30%; /* 이미지의 최대 너비를 화면 너비에 맞게 조절 */
+    height: auto; /* 이미지의 가로 세로 비율을 유지하도록 설정 */
+}
+
+#rectangle1 {
+    width: 170px;
+    height: 121px;
+    background: pink;
+    float: left;
+}
+
+#rectangle2 {
+    width: 170px;
+    height: 121px;
+    background: pink;
+    float: right;
+}
+
+.insta{
+    display:block;
+    margin:auto;
+}
+
+.qna{
+    display:block;
+    margin:auto; 
+}
+
+#rectangle3 {
+    background:#1E1E1E;
+    width: 100%;
+    height: 140px;
+
+}
