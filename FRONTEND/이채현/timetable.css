@@ -1,0 +1,154 @@
+body {
+    background-color: #FCF9FB;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #F06786;
+}
+
+#wrap {
+    margin: 0 20px;
+}
+
+/* 타이틀 */
+#title {
+    font-size: 1.25em;
+    color: #F06786;
+    font-weight: 900;
+    padding: 10px 0;
+}
+
+#title div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title_photo {
+    vertical-align: middle;
+}
+
+.container {
+    width: 90%;
+    background-color: #fff;
+    border-radius:5px;
+    /* box-shadow: 0px 0px 5px #D8D8D8; */
+    box-shadow: 0px 0px 5px #E6E6E6;
+    margin: 3% 0;
+    padding: 5%;
+}
+
+/* 날짜 버튼 */
+.buttons {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+
+    display: table;
+    border-spacing: 10px 0;
+}
+
+.date_button {
+    width: 45%;
+    height: 100%;
+    text-align: center;
+    border: 2px solid #F06786;
+    border-radius: 6px;
+    color: #F06786;
+
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* 타임테이블 배경 */
+.time_table {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+table {
+    margin: 10% 0;
+    table-layout: fixed;
+    color: #777777;
+    font-size: 0.8em;
+    position: relative;
+}
+
+table tr {
+    height: 5vh;
+    text-align: center;
+}
+
+.time {
+    vertical-align: middle;
+}
+
+.empty {
+    border-top: 1px solid #E2E2E2;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+/* 타임테이블 요소 */
+.schedule {
+    /* width: 20%; */
+    width: calc(20% - 10px);
+    font-weight: bold;
+    font-size: 0.8em;
+    display:table;
+    position: absolute;
+    background-color: #fff;
+}
+
+.schedule span{
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+    line-height: 150%;
+}
+
+#day1 {
+    height: 100%;
+    top: calc(0% - 2px);
+    left: 20%;
+    border: 2px solid #F06786;
+    box-shadow: 0px 0px 5px #F06786;
+    border-radius: 5px;
+}
+
+#day2 {
+    height: 75%;
+    top: calc(0% - 2px);
+    left: 40%;
+    border: 2px solid #71A6D4;
+    box-shadow: 0px 0px 5px #71A6D4;
+    border-radius: 5px;
+}
+
+#day3 {
+    height: 75%;
+    top: 0%;
+    top: calc(0% - 2px);
+    left: 60%;
+    border: 2px solid #FFB82F;
+    box-shadow: 0px 0px 5px #FFB82F;
+    border-radius: 5px;
+}
+
+#day4-1 {
+    height: 8.33333333%;
+    top: calc(58.33333333% - 2px);
+    left: 80%;
+    border: 2px solid #9F89E1;
+    box-shadow: 0px 0px 5px #9F89E1;
+    border-radius: 5px 5px 0 0;
+}
+
+#day4-2 {
+    height: 8.33333333%;
+    top: calc(66.6666666% - 2px);
+    left: 80%;
+    border: 2px solid #D972E1;
+    box-shadow: 0px 0px 5px #D972E1;
+}
