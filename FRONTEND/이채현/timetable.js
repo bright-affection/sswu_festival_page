@@ -1,29 +1,27 @@
 // https://liufeier.tistory.com/22
+// https://velog.io/@real-bird/Javascript-클릭한-div만-색상-바꾸기
 
-var div2 = document.getElementsByClassName("div2");
+console.log("시작")
+const allButtons = document.querySelectorAll(".date_btn");
 
 function handleClick(event) {
-    console.log(event.target);
-    // console.log(this);
-    // 콘솔창을 보면 둘다 동일한 값이 나온다
-
-    console.log(event.target.classList);
-
-    if (event.target.classList[1] === "clicked") {
-        event.target.classList.remove("clicked");
-    } else {
-        for (var i = 0; i < div2.length; i++) {
-        div2[i].classList.remove("clicked");
-        }
-
-        event.target.classList.add("clicked");
-    }
+    console.log("작동")
 }
 
-function init() {
-    for (var i = 0; i < div2.length; i++) {
-        div2[i].addEventListener("click", handleClick);
-    }
-}
+allButtons.forEach((e) => {
+    e.addEventListener("click", handleClick);
+});
 
-init();
+// const allButtons = document.querySelectorAll(".date_btn");
+
+// function handleClick(event) {
+//     allButtons.forEach((btn) => {
+//         btn.classList.remove("clicked");
+//     });
+
+//     event.target.classList.add("clicked");
+// }
+
+// allButtons.forEach((e) => {
+//     e.addEventListener("click", handleClick);
+// });

@@ -1,5 +1,8 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
 body {
     background-color: #FCF9FB;
+    font-family: Pretendard;
 }
 
 header {
@@ -16,7 +19,7 @@ header {
 #title {
     font-size: 1.25em;
     color: #F06786;
-    font-weight: 900;
+    font-weight: bold;
     padding: 10px 0;
 }
 
@@ -49,16 +52,27 @@ header {
     border-spacing: 10px 0;
 }
 
-.date_button {
+.date_btn {
     width: 45%;
     height: 100%;
     text-align: center;
-    border: 2px solid #F06786;
     border-radius: 6px;
-    color: #F06786;
-
+    border: 2px solid #F06786;
     display: table-cell;
     vertical-align: middle;
+}
+
+/* .date_btn:hover {
+    background-color: #9F89E1;
+} */
+
+.non-clicked {
+    color: #F06786;
+}
+
+.clicked {
+    background-color: #F06786;
+    color: #fff;
 }
 
 /* 타임테이블 배경 */
@@ -72,7 +86,7 @@ table {
     margin: 10% 0;
     table-layout: fixed;
     color: #777777;
-    font-size: 0.8em;
+    font-size: 0.5em;
     position: relative;
 }
 
@@ -95,10 +109,10 @@ table tr {
     /* width: 20%; */
     width: calc(20% - 10px);
     font-weight: bold;
-    font-size: 0.8em;
     display:table;
     position: absolute;
     background-color: #fff;
+    font-size: 0.5em;
 }
 
 .schedule span{
@@ -109,46 +123,62 @@ table tr {
 }
 
 #day1 {
-    height: 100%;
-    top: calc(0% - 2px);
+    height: calc(100% - 6px);
+    top: calc(0% + 2px);
     left: 20%;
-    border: 2px solid #F06786;
+    border: 1px solid #F06786;
     box-shadow: 0px 0px 5px #F06786;
     border-radius: 5px;
 }
 
 #day2 {
-    height: 75%;
-    top: calc(0% - 2px);
+    height: calc(75% - 6px);
+    top: calc(0% + 2px);
     left: 40%;
-    border: 2px solid #71A6D4;
+    border: 1px solid #71A6D4;
     box-shadow: 0px 0px 5px #71A6D4;
     border-radius: 5px;
 }
 
 #day3 {
-    height: 75%;
-    top: 0%;
-    top: calc(0% - 2px);
+    height: calc(75% - 6px);
+    top: calc(0% + 2px);
     left: 60%;
-    border: 2px solid #FFB82F;
+    border: 1px solid #FFB82F;
     box-shadow: 0px 0px 5px #FFB82F;
     border-radius: 5px;
 }
 
 #day4-1 {
-    height: 8.33333333%;
-    top: calc(58.33333333% - 2px);
+    height: calc(8.33333333% - 6px);
+    top: calc(58.33333333% + 2px);
     left: 80%;
-    border: 2px solid #9F89E1;
+    border: 1px solid #9F89E1;
     box-shadow: 0px 0px 5px #9F89E1;
     border-radius: 5px 5px 0 0;
 }
 
 #day4-2 {
-    height: 8.33333333%;
-    top: calc(66.6666666% - 2px);
+    height: calc(16.66666666% - 6px);
+    top: calc(66.6666666% + 2px);
     left: 80%;
-    border: 2px solid #D972E1;
+    border: 1px solid #D972E1;
     box-shadow: 0px 0px 5px #D972E1;
+}
+
+#day4-3 {
+    height: calc(8.33333333% - 6px);
+    top: calc(83.33333333% + 2px);
+    left: 80%;
+    border: 1px solid #F681C7;
+    box-shadow: 0px 0px 5px #F681C7;
+}
+
+#day4-4 {
+    height: calc(8.33333333% - 6px);
+    top: calc(91.66666666% + 2px);
+    left: 80%;
+    border: 1px solid #FC7B7B;
+    box-shadow: 0px 0px 5px #FC7B7B;
+    border-radius: 0 0 5px 5px;
 }
