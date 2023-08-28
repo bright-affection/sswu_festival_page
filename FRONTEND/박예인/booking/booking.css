@@ -1,0 +1,115 @@
+* {
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  background-color: #fcf9fb;
+  /* background-color: gray; */
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Pretendard-Regular";
+}
+input {
+  font-family: "Pretendard-Regular";
+}
+
+.top_bar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back_btn {
+  float: left;
+  width: 12px;
+  height: 16px;
+}
+.logo_img {
+  display: block;
+  margin: 0 auto;
+  height: 21px;
+  width: 89px;
+}
+.ham_btn {
+  float: right;
+  width: 17px;
+  height: 15px;
+}
+.booking {
+  height: 70px;
+}
+.top {
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+}
+.sparkle {
+  width: 12px;
+  height: 20px;
+}
+.booking_text {
+  color: #f06786;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.choose_ex {
+  font-size: 13px;
+}
+.goods_choose {
+  background-color: white;
+  border-radius: 7px;
+  display: flex;
+  margin-bottom: 10px;
+
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+}
+
+.goods_img {
+  height: auto;
+  width: 150px;
+}
+.text {
+  width: 100%;
+  margin: 20px;
+}
+.name {
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: space-between; /* 수정된 부분: 오른쪽으로 정렬 */
+
+  width: 100%;
+}
+.goods_name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.goods_price {
+  float: left;
+  font-size: 11px;
+  margin-top: 2%;
+}
+.detail {
+  float: right;
+  font-size: 11px;
+}
+.btn {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.booking_btn {
+  background-color: #ffced9;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  width: 100%;
+  height: 47px;
+  font-weight: bold;
+  font-size: 14px;
+}
