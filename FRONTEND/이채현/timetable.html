@@ -128,8 +128,11 @@
                 <div class="schedule" id="day4-1">
                     <span>미니 이벤트</span>
                 </div>
-                <div class="schedule" id="day4-2">
+                <div class="schedule show" id="day4-2-1">
                     <span>학생공연</span>
+                </div>
+                <div class="schedule show" id="day4-2-2">
+                    <span>연예인 공연</span>
                 </div>
                 <div class="schedule" id="day4-3">
                     <span>연예인 공연</span>
@@ -156,18 +159,18 @@
         event.target.classList.add("clicked");
 
         // 텍스트 변경
-        const dateId = event.target.id; // 클릭한 버튼의 ID를 가져옴
-        const day4_2 = document.getElementById("day4-2");
+        const dateId = event.target.id;
+        const show_1st = document.getElementById("day4-2-1");
+        const show_2nd = document.getElementById("day4-2-2");
         if (dateId === "fourth") {
-            if (day4_2) {
-                day4_2.textContent = "학생 공연";
-            }
+            show_1st.style.opacity = 1;
+            show_2nd.style.opacity = 0;
         }
         else if (dateId === "fifth") {
-            if (day4_2) {
-                day4_2.textContent = "연예인 공연";
-            }
+            show_1st.style.opacity = 0;
+            show_2nd.style.opacity = 1;
         }
+
     }
 
     allButtons.forEach((e) => {
