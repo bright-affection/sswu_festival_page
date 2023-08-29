@@ -1,0 +1,85 @@
+
+
+html{
+    background: #FCF9FB;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    }
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background: url(images/background_pb.svg) no-repeat center;
+    background-size: cover;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.backgrond{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+}
+.bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 5% 30px 5%;
+    }
+
+
+#login-exp{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #f06786;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.exp{
+    font-size: 13px;
+    padding-left: 5%; 
+}
+.text-field{
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1.5px solid #f06786;
+    border-radius: 7px;
+    padding: 7px;
+    outline: none;
+    width: 90%;
+    height: 47px;
+
+    box-sizing: border-box; /*요소의 전체 크기가 예측하기 더 쉽게함*/
+
+    /* 가로 가운데 정렬을 위한 추가 스타일 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.preview-btn,.submit-btn{
+    width: 172px;
+    height: 41px;
+    border-radius: 50px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+.ad-btn{
+    padding-left:5%;
+    padding-right:5%;
+}
+.preview-btn{
+    border: 1px solid #f194b4;
+    background: white;
+    color: #f194b4;
+}
+.submit-btn{
+    border: none;
+    background: #f06786;
+    color:white;
+}
