@@ -114,15 +114,13 @@ table tr {
 }
 
 .schedule {
-    /* width: 20%; */
     width: calc(20% - 10px);
     font-weight: bold;
     display:table;
     position: absolute;
     background-color: #fff;
-    font-size: 0.5em;
+    font-size: 0.5rem;
     
-    /* position: relative;/ */
     animation: fadeInUp 1s;
 }
 
@@ -132,11 +130,6 @@ table tr {
     text-align: center;
     line-height: 150%;
 }
-
-/* .test_obj {
-    position: relative;
-    animation: fadeInUp 1s;
-} */
 
 #day1 {
     height: calc(100% - 6px);
