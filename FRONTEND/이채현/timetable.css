@@ -25,11 +25,14 @@ header {
 
 #title div {
     display: inline-block;
+    
+    height: 100%;
     vertical-align: middle;
 }
 
-.title_photo {
-    vertical-align: middle;
+.title_photo img{
+    /* width: 12px; */
+    width: 0.6em;
 }
 
 .container {
