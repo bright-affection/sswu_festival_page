@@ -37,19 +37,62 @@ header {
 
 /* 본문 */
 .container {
-    width: 90%;
-    font-size: 0.8em;
+    width: 100%;
+    font-size: 1em;
 }
 
+/* 글쓰기 버튼 */
 .write_btn {
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.write_btn_tx {
     width: 100%;
-    margin: 5% 0;
-    padding: 5% 0;
+    margin: 16px 0;
+    padding: 16px 0;
     border-radius: 5px;
+    text-align: center;
     background-color: #F06786;
 }
 
-.write_btn a {
-    color: #fff;
-    text-decoration-line: none;
+/* 작성된 글 */
+.writing{
+    background-color: #fff;
+    border: 1px solid #F06786;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    box-shadow: 5px 5px 5px #E6E6E6;
+}
+
+.writing_tx {
+    margin-bottom: 2em;
+}
+
+.writing_info {
+    font-size: 0.8em;
+}
+
+.nickname {
+    color: #F06786;
+}
+
+.date {
+    color: #A0A0A0;
+    float: right;
+}
+
+/* 더보기 버튼 */
+.more {
+    margin: 2em 0;
+    text-align: center;
+    color: #F06786;
+    font-size: 0.8em;
+}
+
+.more span {
+    border: 1px solid #F06786;
+    border-radius: 5px;
+    padding: 0.5em 1em;
 }
