@@ -1,80 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="info.css">
-    <title>info</title>
-</head>
-<body>
-    <div class="container">
-        <div class="icon"> 
-            <a><img src="img/back.png" alt="뒤로가기" class="list_icon"></a>
-            <a><img src="img/logo.png" alt="로고" class="list_icon"></a>
-            <a><img src="img/hambutton.png" alt="목록" class="list_icon"></a>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="info.css">
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin="crossorigin"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"/>
+        <title>info</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 상단바 -->
+            <div class="icon">
+                <a href=""><img src="img/back.png" alt="뒤로가기" class="back"></a>
+                <a href=""><img src="img/logo.png" alt="로고" class="logo"></a>
+                <a href=""><img src="img/hambutton.png" alt="목록" class="list_icon"></a>
+            </div>
 
-        <div class="fst">
-            <img src="img/diamond.png" alt="다이아몬드" class="notice_icon">
-            <h1>공지사항</h1>
-            <a href=""><h2>글쓰기</h2></a>
-        </div>
+            <!-- 공지사항,글쓰기 -->
+            <div class="fst">
+                <img src="img/diamond.png" alt="다이아몬드" class="notice_icon">
+                <h1>공지사항</h1>
+                <a href="">
+                    <h2>글쓰기</h2>
+                </a>
+            </div>
 
-        <div class="category_container">
-            <div class="row">
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>수정대동제 일정 안내</h2>
-                    </a>
+            <!-- 공지사항들 -->
+            <div class="category_container">
+                <div class="row">
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 일정 안내</h2>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 플리마켓 소개</h2>
+                        </a>
+                    </div>
                 </div>
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>수정대동제 플리마켓 소개</h2>
-                    </a>
+                <div class="row">
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 포스터 공개</h2>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 배리어프리존</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 제휴사 소개</h2>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>2023 수정대동제 PRISM</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 더보기 이후 -->
+                <div class="rowplus">
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 더보기</h2>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 더보기</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rowplus">
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 더보기</h2>
+                        </a>
+                    </div>
+                    <div class="category">
+                        <a href="">
+                            <img src="img/box.png">
+                            <h2>수정대동제 더보기</h2>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>수정대동제 포스터 공개</h2>
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>수정대동제 배리어프리존</h2>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>수정대동제 제휴사 소개</h2>
+ 
 
-
-
-                        
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="">
-                        <img src="img/box.png">
-                        <h2>2023 수정대동제 PRISM</h2>
-                    </a>
-                </div>
+            <!-- 더보기버튼 -->
+            <dciv class="plusbutton" id="moreButton">
+                    <h3>+더보기</h3>
             </div>
         </div>
+        <script>
+            const moreButton = document.getElementById('moreButton');
+            const rowPlusElements = document.querySelectorAll('.rowplus');
+            let isVisible = false; // 추가: 더보기 요소의 가시성 상태 변수
+        
+            moreButton.addEventListener('click', function() {
+                rowPlusElements.forEach(element => {
+                    element.style.display = 'flex';
+                    element.style.visibility = 'visible';
+                });
+        
+                moreButton.style.display = 'none'; // "더보기" 버튼 숨기기
+                isVisible = true; // 더보기 요소가 보이도록 상태 업데이트
+            });
+        
+            // 페이지가 로드될 때 한 번만 실행
+            window.addEventListener('load', function() {
+                if (isVisible) {
+                    rowPlusElements.forEach(element => {
+                        element.style.display = 'flex';
+                        element.style.visibility = 'visible';
+                    });
+                    moreButton.style.display = 'none'; // "더보기" 버튼 숨기기
+                }
+            });
+        </script>
+        
 
-        <!-- <div class="plusbutton">
-            <a href="">
-                <img src="img/plus.png">
-            </a>
-        </div> -->
-    </div>
-    
-</body>
+    </body>
 </html>
