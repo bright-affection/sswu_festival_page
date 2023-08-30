@@ -92,6 +92,8 @@ option:focus {
   margin-bottom: 10px;
 
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+
+  position: relative; /* 추가된 부분: chosen 요소의 position 속성을 relative로 변경 */
 }
 .goods_img {
   height: auto;
@@ -131,6 +133,15 @@ option:focus {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.check {
+  width: 36px;
+  height: 36px;
+  position: absolute; /* 추가된 부분: check 이미지의 position 속성을 absolute로 변경 */
+  top: -18px; /* 추가된 부분: 상단으로 18px만큼 이동 */
+  right: 8px; /* 추가된 부분: 오른쪽으로 18px만큼 이동 */
+
+  z-index: 1; /* 추가된 부분: z-index 값을 조절하여 겹치는 순서 조정 */
+}
 .booking_btn {
   background-color: #f06786;
   color: #ffffff;
@@ -140,9 +151,4 @@ option:focus {
   height: 47px;
   font-weight: bold;
   font-size: 14px;
-}
-
-.check {
-  width: 36px;
-  height: 36px;
 }
