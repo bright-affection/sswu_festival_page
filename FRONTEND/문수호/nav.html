@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+    <div class="bar"> 
+        <!-- <a><img src="images/back.png" alt="뒤로가기" class="list_icon"></a> -->
+        <img src="images/logo.png" alt="로고" class="list_icon">
+    </div>
+        <nav class="navbar">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">타임테이블</a></li>
+                    <li><a href="#">축제 지도 확인하기</a></li>
+                    <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
+                    <li><a href="#">굿즈 구매 예약</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">방명록</a></li>
+                    <li><a href="#">타임테이블</a></li>
+                    
+                </ul>
+            </div>
+            <img src="images/Group 1_pink.png" alt="목록" class="menu-hamburger">
+        </nav>
+        <p>블러처리되는지 보자</p>
+        <div class="blur-bg"></div>
+        
+        <header></header>
+        
+</body>
+<script>
+    const menuHamburger=document.querySelector(".menu-hamburger")
+    const navLinks=document.querySelector(".nav-links")
+    const blurBg=document.querySelector(".blur-bg")
+    menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        blurBg.classList.toggle('mobile-menu-blur');
+    })
+</script>
+</html>
