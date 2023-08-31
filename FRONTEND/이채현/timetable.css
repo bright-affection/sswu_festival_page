@@ -1,0 +1,204 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
+body {
+    background-color: #FCF9FB;
+    font-family: Pretendard;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #F06786;
+}
+
+#wrap {
+    margin: 0 20px;
+}
+
+/* 타이틀 */
+#title {
+    font-size: 1.25em;
+    color: #F06786;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#title div {
+    display: inline-block;
+    
+    height: 100%;
+    vertical-align: middle;
+}
+
+.title_photo img{
+    /* width: 12px; */
+    width: 0.6em;
+}
+
+.container {
+    width: 90%;
+    background-color: #fff;
+    border-radius:5px;
+    /* box-shadow: 0px 0px 5px #D8D8D8; */
+    box-shadow: 0px 0px 5px #E6E6E6;
+    margin: 3% 0;
+    padding: 5%;
+}
+
+/* 날짜 버튼 */
+.buttons {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+
+    display: table;
+    border-spacing: 10px 0;
+    font-size: 0.8em;
+}
+
+.date_btn {
+    width: 45%;
+    height: 100%;
+    text-align: center;
+    border-radius: 6px;
+    border: 2px solid #F06786;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.non-clicked {
+    color: #F06786;
+}
+
+.clicked {
+    background-color: #F06786;
+    color: #fff;
+}
+
+/* 타임테이블 배경 */
+.time_table {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+table {
+    margin: 10% 0;
+    table-layout: fixed;
+    color: #777777;
+    font-size: 0.5em;
+    position: relative;
+}
+
+table tr {
+    height: 5vh;
+    text-align: center;
+}
+
+.time {
+    vertical-align: middle;
+}
+
+.empty {
+    border-top: 1px solid #E2E2E2;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+/* 타임테이블 요소 */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.schedule {
+    width: calc(20% - 10px);
+    font-weight: bold;
+    display:table;
+    position: absolute;
+    background-color: #fff;
+    font-size: 0.5rem;
+    
+    animation: fadeInUp 1s;
+}
+
+.schedule span{
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+    line-height: 150%;
+}
+
+#day1 {
+    height: calc(100% - 6px);
+    top: calc(0% + 2px);
+    left: 20%;
+    border: 1px solid #F06786;
+    box-shadow: 0px 0px 5px #F06786;
+    border-radius: 5px;
+}
+
+#day2 {
+    height: calc(75% - 6px);
+    top: calc(0% + 2px);
+    left: 40%;
+    border: 1px solid #71A6D4;
+    box-shadow: 0px 0px 5px #71A6D4;
+    border-radius: 5px;
+}
+
+#day3 {
+    height: calc(75% - 6px);
+    top: calc(0% + 2px);
+    left: 60%;
+    border: 1px solid #FFB82F;
+    box-shadow: 0px 0px 5px #FFB82F;
+    border-radius: 5px;
+}
+
+#day4-1 {
+    height: calc(8.33333333% - 6px);
+    top: calc(58.33333333% + 2px);
+    left: 80%;
+    border: 1px solid #9F89E1;
+    box-shadow: 0px 0px 5px #9F89E1;
+    border-radius: 5px 5px 0 0;
+}
+
+.show {
+    height: calc(16.66666666% - 6px);
+    top: calc(66.6666666% + 2px);
+    left: 80%;
+    border: 1px solid #D972E1;
+    box-shadow: 0px 0px 5px #D972E1;
+}
+
+#day4-2-1 {
+    opacity: 1;
+}
+
+#day4-2-2 {
+    opacity: 0;
+}
+
+#day4-3 {
+    height: calc(8.33333333% - 6px);
+    top: calc(83.33333333% + 2px);
+    left: 80%;
+    border: 1px solid #F681C7;
+    box-shadow: 0px 0px 5px #F681C7;
+}
+
+#day4-4 {
+    height: calc(8.33333333% - 6px);
+    top: calc(91.66666666% + 2px);
+    left: 80%;
+    border: 1px solid #FC7B7B;
+    box-shadow: 0px 0px 5px #FC7B7B;
+    border-radius: 0 0 5px 5px;
+}
