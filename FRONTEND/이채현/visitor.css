@@ -41,6 +41,10 @@ header {
     font-size: 1em;
 }
 
+.title_ex {
+    font-weight: 500;
+}
+
 /* 글쓰기 버튼 */
 .write_btn {
     color: #fff;
