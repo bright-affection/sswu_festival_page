@@ -19,18 +19,33 @@ header {
     align-items: center;
     }
 
-body, html {
+html {
     margin: 0;
     padding: 0;
     height: 100%;
-    position: relative;
+}
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background: url(images/mainpageBack.svg) no-repeat center;
+    background-size: cover;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: "Pretendard-Regular";
 }
 
 main {
     min-height: 100%;
     }
 
-
+    .PRISM1{
+        margin-left: 20px;
+    }
+    .hamberger{
+        margin-right: 20px;
+    }
 figure {  
     position: relative;
     margin: 0;
@@ -51,11 +66,9 @@ figcaption{
 
 .crystal{
     display:block; 
-    margin:auto;
+    margin:135px auto 0px auto;
     max-width: 53%; 
     height: auto;
-
-
     
 }
 
@@ -72,15 +85,15 @@ figcaption{
 
 .PRISM{
     display:block; 
-    margin:auto;
-    max-width: 80%; 
+    margin:38px auto 23px auto;
+    max-width: 70%; 
     height: auto;
 
 }
 
 .sujung2023{
     display:block; 
-    margin:auto;
+    margin:52px auto;
 
 }
 
@@ -93,7 +106,7 @@ figcaption{
 }
 .datetype {
     display: block;
-    margin: auto;
+    margin: 40px auto 70px auto;
     max-width: 30%; /* 이미지의 최대 너비를 화면 너비에 맞게 조절 */
     height: auto; /* 이미지의 가로 세로 비율을 유지하도록 설정 */
 }
@@ -105,6 +118,8 @@ figcaption{
     border-radius: 7px;
     background: white;
     float: left;
+    margin-bottom:78px;
+    margin-left:5%;
 }
 #rectangle2 {
     width: 170px;
@@ -113,6 +128,8 @@ figcaption{
     border-radius: 7px;
     background: white;
     float: right;
+    margin-bottom:78px;
+    margin-right:5%;
 }
 #rectangle1-up, #rectangle2-up{
     width: 170px;
@@ -176,10 +193,9 @@ figcaption{
     font-family: "Pretendard-Regular";
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;; /* 아래쪽 정렬 */
+    justify-content: flex-start; /* 아래쪽 정렬 */
     box-sizing: border-box; 
 }
-
 
 .detail{
     color:#B7B7B7;
