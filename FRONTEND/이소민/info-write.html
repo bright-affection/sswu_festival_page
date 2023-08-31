@@ -25,7 +25,7 @@
                 <h2>제목</h2>
             </div>
             <div class="title-box">
-                <input placeholder="제목을 입력해주세요."/> 
+                <input placeholder="제목을 입력해주세요."/>
             </div>
 
             <!-- 게시글 작성 -->
@@ -33,7 +33,7 @@
                 <h2>게시글 작성</h2>
             </div>
             <div class="writing-box">
-                <input placeholder="텍스트를 작성해주세요."/> 
+                <input placeholder="텍스트를 작성해주세요."/>
             </div>
 
             <!-- 첨부 파일 -->
@@ -41,18 +41,42 @@
                 <h2>첨부 파일</h2>
             </div>
             <div class="addimg">
-                <h2>사진 추가</h2>
+                <h2 onclick="toggleImgFile()">사진 추가</h2>
             </div>
 
             <!-- 게시글 업로드 -->
             <div class="upload">
-                
+                <a href="">
+                    <h2>게시글 업로드</h2>
+                </a>
             </div>
 
-
-
-
+            <!-- 파일이름.png -->
+            <div class="imgfile">
+                <a href=""><img src="img/file.png" alt="파일" class="file"></a>
+                <h2>파일이름.png</h2>
+            </div>
 
         </div>
-        </body>
-        </html>
+
+        <script>
+            var imgFile = document.querySelector('.imgfile');
+            var uploadButton = document.querySelector('.upload');
+            var addImgButton = document.querySelector('.addimg');
+            var imgFileVisible = false;
+
+            function toggleImgFile() {
+                imgFileVisible = !imgFileVisible;
+                imgFile.style.display = imgFileVisible
+                    ? 'block'
+                    : 'none';
+
+                if (imgFileVisible) {
+                    uploadButton.style.top = '690px';
+                } else {
+                    uploadButton.style.top = '635px';
+                }
+            }
+        </script>
+    </body>
+</html>
