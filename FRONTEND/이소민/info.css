@@ -13,6 +13,10 @@ body {
     align-items: center;
 }
 
+#wrap {
+    margin: 0 20px;
+}
+
 /*상단바 > 이전,로고,목록 아이콘*/
 .icon {
     display: flex;
@@ -60,6 +64,7 @@ body {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    left: 0px;
     color: #F06786;
 }
 
@@ -75,6 +80,86 @@ body {
 .fst a {
     text-decoration: none;
 }
+/* 360px 이하의 화면 크기에서 .fst .notice_icon과 .fst h2의 간격 줄이기 */
+@media screen and (max-width: 360px) {
+ 
+    .fst {
+        justify-content: space-between; /* 요소들을 좌우에 배치 */
+        align-items: center; /* 세로 중앙 정렬 유지 */
+    }
+
+    .fst .notice_icon {
+        max-height: 24px;
+        margin-right: 5px;
+    }
+
+    .fst h1 {
+        left : 0px;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #F06786;
+        margin-right: auto;
+    }
+
+    .fst h2 {
+        display: flex;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-size: 10px;
+        color: #f06786;
+        margin-left: auto; /* 왼쪽 여백을 자동으로 확보 */
+        margin-right: 20px; /* 오른쪽 여백을 20px로 지정 */
+    }
+
+    .fst a {
+        text-decoration: none;
+    }
+}
+
+
+/* 360px 이상의 화면 크기에서도 h2가 오른쪽에서 20px 떨어져 있도록 설정 */
+@media screen and (min-width: 361px) {
+    .fst {
+        justify-content: space-between; /* 요소들을 좌우에 배치 */
+        align-items: center; /* 세로 중앙 정렬 유지 */
+    }
+
+    .fst .notice_icon {
+        max-height: 24px;
+        margin-right: 5px;
+    }
+
+    .fst h1 {
+        left : 0px;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #F06786;
+        margin-right: auto;
+    }
+
+    .fst h2 {
+        display: flex;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-size: 10px;
+        color: #f06786;
+        margin-left: auto; /* 왼쪽 여백을 자동으로 확보 */
+        margin-right: 20px; /* 오른쪽 여백을 20px로 지정 */
+    }
+
+    .fst a {
+        text-decoration: none;
+    }
+}
+
+
+
 
 /* 공지사항들 */
 .category_container {
