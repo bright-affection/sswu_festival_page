@@ -1,0 +1,80 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
+body {
+    background-color: #FCF9FB;
+    font-family: Pretendard;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #F06786;
+}
+
+#wrap {
+    margin: 0 20px;
+}
+
+/* 타이틀 */
+#title {
+    font-size: 1.25em;
+    color: #F06786;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#title > * {
+    display: inline-block;
+    
+    height: 100%;
+    vertical-align: middle;
+}
+
+.title_photo img{
+    /* width: 12px; */
+    width: 0.6em;
+}
+
+#filter_btn {
+    float: right;
+}
+
+#filter_btn img{
+    width: 1em;
+}
+
+/* 본문 */
+.container {
+    width: 100%;
+    font-size: 1em;
+}
+
+.title_ex {
+    font-weight: 500;
+    margin-bottom: 3%;
+}
+
+/* ------------- */
+form {
+    position: relative;
+    width: 100%;
+    width: calc(100% - 32px);
+    margin: 5% 0;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #F06786;
+    border-radius: 30px;
+    padding: 12px 16px;
+    font-size: 1em;
+    font-family: Pretendard;
+}
+
+.container img {
+    /* position : absolute; */
+    /* width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0; */
+}
