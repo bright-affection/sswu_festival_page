@@ -42,6 +42,7 @@ header {
 
 .title_ex {
     font-weight: 500;
+    line-height: 150%;
 }
 
 .container form {
