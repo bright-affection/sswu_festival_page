@@ -97,6 +97,7 @@ input {
     display: inline-block;
 }
 
+/* 부스 정보: 이미지 */
 .booth_img_wrap {
     width: 40%;
     height: 100%;
@@ -109,10 +110,26 @@ input {
     border-radius: 10px 0 0 10px;
 }
 
+/* 부스 정보: 설명 */
 .booth_info_wrap {
     background-color:bisque;
     width: calc(60% - 30px);
     height: calc(100% - 30px);
     float: right;
     padding: 15px;
+}
+
+.booth_info_wrap div {
+    width: 100%;
+}
+
+.booth_name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* span으로 하면 가운데 정렬이 안되고 div로 하면 옆에 안붙고... */
+.booth_site {
+    font-size: 11px;
+    color: #F06786;
 }
