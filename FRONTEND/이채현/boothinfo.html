@@ -26,11 +26,24 @@
         <div class="container">
             <div class="title_ex">수정대동제에서 진행되는 각종 부스의 정보들을 살펴보세요!</div>
             <form method="POST" onsubmit="">
-                <input type="text" name="search" placeholder="키워드로 부스 찾기">
-                <input type="submit">
-                <img src="./img/search.png">
-                <!-- <input type="text"value="<?=$search?>" onKeyPress="if (event.keyCode==13) { form.submit(); }" > -->
+                <input type="text" name="search" method="POST" placeholder="키워드로 부스 찾기">
+                <button class="search_btn">
+                    <img src="./img/search.png">
+                </button>
             </form>
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">A01</div>
+                    </div>
+                    <div class="booth_info2"></div>
+                    <div class="booth_info3"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
