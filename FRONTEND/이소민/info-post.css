@@ -1,0 +1,107 @@
+body {
+    height: 100%;
+    font-family: "Pretendard-Regular";
+    background-color: #FCF9FB;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*상단바 > 이전,로고,목록 아이콘*/
+.icon {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 4px;
+}
+
+.back {
+    margin-left: 0;
+    margin-top: -10px;
+}
+
+.logo {
+    margin-left: 15px;
+    margin-top: -10px;
+    text-align: center;
+    align-items: center;
+}
+
+.list_icon {
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+.box {
+    /* Rectangle 6 */
+position: absolute;
+width: 100%;
+height: 752px;
+top: 120px;
+background: #FFFFFF;
+box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+border-radius: 7px;
+}
+
+.title h1 {
+    /* 수정대동제 일정 안내 */
+position: absolute;
+width: 149px;
+height: 22px;
+left: 20px;
+top: 5px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+color: #313131;
+}
+
+.title h2 {
+    /* 2023.08.15 */
+position: absolute;
+width: 46px;
+height: 11px;
+left: 250px;
+top: 15px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+text-align: right;
+color: #A0A0A0;
+white-space: nowrap 
+}
+
+@media screen and (min-width: 361px)  {
+
+    .title h1 {
+        position: absolute;
+        width: 149px;
+        height: 22px;
+        left: 20px;
+        top: 5px;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #313131;
+    }
+
+    .title h2 {
+        width: auto; /* 미디어 쿼리에 의해 너비를 자동으로 조정합니다. */
+        right: 20px; /* 미디어 쿼리에 의해 위치를 자동으로 조정합니다. */
+        text-align: right; /* 텍스트 정렬을 왼쪽으로 변경합니다. */
+       
+    }
+
+}
