@@ -90,7 +90,7 @@ input {
     height: calc( (100vw - 40px) * 0.4 );
     background-color: #fff;
     border-radius: 10px;
-    /* border: 1px solid #F06786; */
+    box-shadow: 0px 0px 5px #E6E6E6;
 }
 
 .booth div {
@@ -112,7 +112,6 @@ input {
 
 /* 부스 정보: 설명 */
 .booth_info_wrap {
-    background-color:bisque;
     width: calc(60% - 30px);
     height: calc(100% - 30px);
     float: right;
