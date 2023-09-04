@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booking-info</title>
+    <link rel="stylesheet" href="booking-info.css" />
+  </head>
+  <body>
+    <!-- 상단바 -->
+    <div class="top_bar">
+      <img src="..\img\back_btn.png" alt="백버튼" class="back_btn" />
+      <img src="..\img\logo_img.png" alt="로고" class="logo_img" />
+      <img src="..\img\ham_bar.png" alt="햄버거 버튼" class="ham_btn" />
+    </div>
+    <!-- 굿즈 예약 설명 -->
+    <div class="booking">
+      <div class="top">
+        <img src="..\img\sparkle.png" alt="반짝이" class="sparkle" />
+        <span class="booking_text">굿즈 예약</span>
+      </div>
+    </div>
+    <div class="insert">
+      <div class="text">성함</div>
+      <input
+        type="text"
+        placeholder="성함을 입력해주세요."
+        class="text_input"
+      />
+    </div>
+    <div class="insert">
+      <div class="text">연락처</div>
+      <input
+        type="text"
+        placeholder="하이픈(-) 없이 작성해주세요."
+        class="text_input"
+      />
+    </div>
+    <div class="insert">
+      <div class="text">이메일</div>
+      <input type="text" placeholder="ex) mutsa@gmail.com" class="text_input" />
+    </div>
+    <!-- 원하는 구매 일자 -->
+    <div class="insert">
+      <div class="text">원하는 구매 일자</div>
+      <div class="select_date">
+        <img
+          src="../img/nonechecked.png"
+          alt="체크 안 됨"
+          id="check_icon1"
+          class="check_icon"
+          onclick="toggleImage('check_icon1', 'check_icon2')"
+        />
+        <span class="date">10월 4일</span>
+        <img
+          src="../img/nonechecked.png"
+          alt="체크 안 됨"
+          id="check_icon2"
+          class="check_icon"
+          onclick="toggleImage('check_icon2', 'check_icon1')"
+        />
+        <span class="date">10월 5일</span>
+      </div>
+    </div>
+    <!-- 구매 시간 -->
+    <div class="insert">
+      <div class="text">구매 시간</div>
+      <select class="num_select" id="time_select">
+        <option value="" disabled selected>시간 선택</option>
+        <option value="one">11:00 ~ 12:00</option>
+        <option value="two">12:00 ~ 13:00</option>
+        <option value="three">13:00 ~ 14:00</option>
+        <option value="four">14:00 ~ 15:00</option>
+        <option value="five">17:00 ~ 18:00</option>
+        <option value="six">18:00 ~ 19:00</option>
+      </select>
+    </div>
+    <hr />
+    <!-- 예약 목록 -->
+    <div class="list">
+      <div class="select_item">
+        <span class="item">PRISM 볼펜 - 1개</span>
+        <span class="price">1,500₩</span>
+      </div>
+      <div class="select_item">
+        <span class="item">PRISM 시리얼컵 - 1개</span>
+        <span class="price">12,000₩</span>
+      </div>
+    </div>
+    <!-- 예약 버튼 -->
+    <a href="https://">
+      <div class="btn">
+        <input type="button" class="booking_btn" value="예약하기" /></div
+    ></a>
+    <!-- js -->
+    <script>
+      let isChecked1 = false; // 10월 4일 이미지 상태
+      let isChecked2 = false; // 10월 5일 이미지 상태
+
+      function toggleImage(id1, id2) {
+        const icon1 = document.getElementById(id1);
+        const icon2 = document.getElementById(id2);
+
+        if (isChecked1 && id1 === "check_icon1") {
+          icon1.src = "../img/nonechecked.png";
+          isChecked1 = false;
+        } else if (isChecked2 && id1 === "check_icon2") {
+          icon1.src = "../img/nonechecked.png";
+          isChecked2 = false;
+        } else {
+          icon1.src = "../img/checked.png";
+          icon2.src = "../img/nonechecked.png";
+          isChecked1 = true;
+          isChecked2 = false;
+        }
+      }
+    </script>
+  </body>
+</html>

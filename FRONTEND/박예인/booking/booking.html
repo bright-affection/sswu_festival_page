@@ -24,7 +24,8 @@
       </div>
     </div>
     <!-- 굿즈 선택 1 -->
-    <div class="goods_choose">
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -45,7 +46,9 @@
     </div>
 
     <!-- 굿즈 선택 2 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -66,7 +69,9 @@
     </div>
 
     <!-- 굿즈 선택 3 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -87,7 +92,9 @@
     </div>
 
     <!-- 굿즈 선택 4 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -108,7 +115,9 @@
     </div>
 
     <!-- 굿즈 선택 5 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -129,7 +138,9 @@
     </div>
 
     <!-- 굿즈 선택 6 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -150,7 +161,9 @@
     </div>
 
     <!-- 굿즈 선택 7 -->
-    <div class="goods_choose">
+
+    <div class="goods_choose" onclick="toggleGoods(this)">
+      <img src="..\img\check_icon.png" alt="체크" class="check" />
       <img src="..\img\goods_img.png" alt="prism 볼펜" class="goods_img" />
       <div class="text">
         <div class="name">
@@ -174,5 +187,71 @@
     <div class="btn">
       <input type="button" class="booking_btn" value="선택한 굿즈들 예약하기" />
     </div>
+    <!-- js -->
+    <script>
+      // select 요소의 변경 이벤트를 감지하는 함수를 추가합니다.
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElements = document.querySelectorAll(".num_select");
+
+        selectElements.forEach(function (selectElement) {
+          selectElement.addEventListener("change", function () {
+            const checkImage =
+              this.closest(".goods_choose").querySelector(".check");
+
+            if (this.value !== "") {
+              checkImage.style.display = "block";
+              goodsChoose.style.border = "2px solid blue"; // 선택한 옵션이 있을 때 border 추가
+            } else {
+              checkImage.style.display = "none";
+              goodsChoose.style.border = "none"; // 선택한 옵션이 없을 때 border 제거
+            }
+          });
+        });
+      });
+
+      // 문서가 로드될 때 실행할 함수를 추가합니다.
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElements = document.querySelectorAll(".num_select");
+
+        selectElements.forEach(function (selectElement) {
+          selectElement.addEventListener("change", function () {
+            // 해당 select 요소에 대한 goods_choose 요소를 찾습니다.
+            const goodsChoose = this.closest(".goods_choose");
+
+            // 선택한 옵션이 비어 있지 않은 경우에만 테두리를 추가합니다.
+            if (this.value !== "") {
+              goodsChoose.style.border = "1px solid #f06786";
+            } else {
+              goodsChoose.style.border = "none"; // 선택한 옵션이 없을 때 테두리를 제거합니다.
+            }
+          });
+        });
+      });
+
+      // 문서가 로드될 때 실행할 함수를 추가합니다.
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElements = document.querySelectorAll(".num_select");
+        const bookingBtn = document.querySelector(".booking_btn");
+
+        selectElements.forEach(function (selectElement) {
+          selectElement.addEventListener("change", function () {
+            // 모든 select 요소를 확인하여 하나 이상의 옵션이 선택되었는지 확인합니다.
+            let atLeastOneOptionSelected = false;
+            selectElements.forEach(function (element) {
+              if (element.value !== "") {
+                atLeastOneOptionSelected = true;
+              }
+            });
+
+            // 하나 이상의 옵션이 선택되었는지에 따라 버튼의 CSS 색상을 변경합니다.
+            if (atLeastOneOptionSelected) {
+              bookingBtn.style.backgroundColor = "#F06786"; // 버튼의 색상을 변경합니다.
+            } else {
+              bookingBtn.style.backgroundColor = ""; // 선택한 옵션이 없을 때 기본 색상으로 변경합니다.
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

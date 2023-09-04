@@ -13,6 +13,10 @@ body {
     align-items: center;
 }
 
+#wrap {
+    margin: 0 20px;
+}
+
 /*상단바 > 이전,로고,목록 아이콘*/
 .icon {
     display: flex;
@@ -60,6 +64,7 @@ body {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    left: 0px;
     color: #F06786;
 }
 
@@ -75,13 +80,93 @@ body {
 .fst a {
     text-decoration: none;
 }
+/* 360px 이하의 화면 크기에서 .fst .notice_icon과 .fst h2의 간격 줄이기 */
+@media screen and (max-width: 360px) {
+ 
+    .fst {
+        justify-content: space-between; /* 요소들을 좌우에 배치 */
+        align-items: center; /* 세로 중앙 정렬 유지 */
+    }
+
+    .fst .notice_icon {
+        max-height: 24px;
+        margin-right: 5px;
+    }
+
+    .fst h1 {
+        left : 0px;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #F06786;
+        margin-right: auto;
+    }
+
+    .fst h2 {
+        display: flex;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-size: 10px;
+        color: #f06786;
+        margin-left: auto; /* 왼쪽 여백을 자동으로 확보 */
+        margin-right: 20px; /* 오른쪽 여백을 20px로 지정 */
+    }
+
+    .fst a {
+        text-decoration: none;
+    }
+}
+
+
+/* 360px 이상의 화면 크기에서도 h2가 오른쪽에서 20px 떨어져 있도록 설정 */
+@media screen and (min-width: 361px) {
+    .fst {
+        justify-content: space-between; /* 요소들을 좌우에 배치 */
+        align-items: center; /* 세로 중앙 정렬 유지 */
+    }
+
+    .fst .notice_icon {
+        max-height: 24px;
+        margin-right: 5px;
+    }
+
+    .fst h1 {
+        left : 0px;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #F06786;
+        margin-right: auto;
+    }
+
+    .fst h2 {
+        display: flex;
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-size: 10px;
+        color: #f06786;
+        margin-left: auto; /* 왼쪽 여백을 자동으로 확보 */
+        margin-right: 20px; /* 오른쪽 여백을 20px로 지정 */
+    }
+
+    .fst a {
+        text-decoration: none;
+    }
+}
+
 
 /* 공지사항들 */
 .category_container {
     position: absolute;
-    width: 333px;
+    width: calc(100% - 40px); /* 화면 너비에서 20px씩 제외하여 컨테이너의 너비를 계산 */
     height: 440px;
     margin-top: 120px;
+    margin-left: 20px; /* 왼쪽 여백 추가 */
+    margin-right: 20px; /* 오른쪽 여백 추가 */
 }
 
 .row {
@@ -98,8 +183,8 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    width :100%;
+    height: auto;
 }
 
 .category h2 {
@@ -111,14 +196,40 @@ body {
     font-size: 13px;
     line-height: 16px;
     color: black;
-    top: 165px;
+    /* top: 165px; */
+    margin-top: 100px;
     left: 9px;
     margin: 0;
+
+    
 }
 
 .category img {
-    max-width: 100%;
+    width: 160px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
 }
+
+@media (min-width: 361px) {
+    .category_container {
+        width: calc(100% - 40px);  /* 컨테이너의 너비를 자동으로 조정하여 내용을 확대 */
+        margin-top: 120px; /* 필요에 따라 상단 여백 조정 */
+    }
+    .category img {
+        width: 45vw; /* 가로 크기를 화면 너비의 100vw로 설정 */
+        height: auto; /* 가로 크기에 맞추어 세로 크기 자동 조절 */
+    }
+
+    .category h2 {
+
+            margin-left: 20px; /* 반응형으로 조정할 left 값 */
+     
+    }
+
+}
+
 
 .rowplus{
     display: none;

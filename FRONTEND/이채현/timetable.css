@@ -3,6 +3,7 @@
 body {
     background-color: #FCF9FB;
     font-family: Pretendard;
+    background-image: url("./img/background.png");
 }
 
 header {
@@ -13,6 +14,7 @@ header {
 
 #wrap {
     margin: 0 20px;
+    position: absolute;
 }
 
 /* 타이틀 */
