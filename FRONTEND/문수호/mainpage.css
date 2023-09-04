@@ -11,9 +11,9 @@ header {
     left: 0;
     right: 0;
     height: 75px;
+    z-index: 1;
     color: white;
     background: #F06786;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +51,7 @@ main {
     .hamberger{
         margin-right: 20px;
     }
-figure {  
+/* figure {  
     position: relative;
     margin: 0;
     }
@@ -62,7 +62,7 @@ figcaption{
     position: absolute;
     top: 30%;
     width: 100%;
-    }
+    } */
 
     
 /* .img {
@@ -140,6 +140,32 @@ figcaption{
     transform: translateX(-50%); 
 }
 
+.glitter_big{
+    max-width: 13%; 
+    height:auto;
+    position: absolute;
+    bottom: 37%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+}
+.glitter_medium{
+    max-width: 100%; 
+    height:auto;
+    position: absolute;
+    bottom: 24%;
+    right: 3%;
+    transform: translate(-50%, -50%);
+} 
+.glitter_small{
+    max-width: 100%; 
+    height:auto;
+    position: absolute;
+    top: 23%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+} 
+
+
 .infotype{
     display:block; 
     margin:50px auto;
@@ -154,35 +180,29 @@ figcaption{
     height: auto; /* 이미지의 가로 세로 비율을 유지하도록 설정 */
 }
 
-.check {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-  }
 
 #rectangle1 {
-    width: 170px;
+    width: 45%;
     height: 121px;
     border:none;
     border-radius: 7px;
     background: white;
     float: left;
     margin-bottom:78px;
-    margin-left:10%;
+    margin-left:4%;
 }
 #rectangle2 {
-    width: 170px;
+    width: 45%;
     height: 121px;
     border:none;
     border-radius: 7px;
     background: white;
     float: right;
     margin-bottom:78px;
-    margin-right:5%;
+    margin-right:4%;
 }
 #rectangle1-up, #rectangle2-up{
-    width: 170px;
+    width: 100%;
     height: 83px;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
@@ -192,7 +212,7 @@ figcaption{
     align-items: center;
 }
 #rectangle1-bottom, #rectangle2-bottom{
-    width: 170px;
+    width: 100%;
     height: 38px;
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
@@ -217,7 +237,7 @@ figcaption{
 .btn-area {
     margin-left: 25%;
     margin-right: 25%;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center; /* 가로 중앙 정렬 추가 */
     text-align: center; /* 버튼 내용 가운데 정렬 추가 */
 
@@ -239,8 +259,7 @@ figcaption{
 
 
 #rectangle3 {
-    padding: 0 20px; /* 좌우 padding 적용 */
-    /* position: fixed; */
+    padding: 0 10%; /* 좌우 padding 적용 */
     background: #262626;
     bottom: 0;
     width: 100%;
@@ -250,7 +269,8 @@ figcaption{
     flex-direction: column;
     justify-content: flex-start; /* 아래쪽 정렬 */
     box-sizing: border-box;
-    position: relative;  
+    position: relative; 
+    margin-top: 17% ; 
 }
 
 .detail{
@@ -309,4 +329,67 @@ figcaption{
 }
 .yeojeongLogo{
     height:20px;
+}
+
+
+/* 화면 너비가 500px 이상일 때 버튼 크기 더 늘리기 */
+@media (min-width: 500px) {
+    
+    #rectangle1 {
+        width: 45%;
+        float: left;
+        margin-bottom:25%;
+        margin-left:4%;
+    }
+    #rectangle2 {
+        width: 45%;
+        height: 160px;
+        border:none;
+        border-radius: 7px;
+        background: white;
+        float: right;
+        margin-bottom:25%;
+        margin-right:4%;
+    }
+    #rectangle1-up, #rectangle2-up{
+        width: 100%;
+        height: 83px;
+        padding-top: 10%; 
+        padding-bottom: 10%; 
+    }
+    #rectangle1-bottom, #rectangle2-bottom{
+        width: 100%;
+        height: 38px;
+        padding-top: 3%; 
+        padding-bottom: 3%; 
+        font-size: 20px;
+    }
+
+    .timeimg{
+        width: 60%;
+        height: auto;
+    }
+    .boothimg{
+        width: 60%;
+        height: auto;
+    }
+    
+    .btn-area button{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10%;
+        padding-top: 10%; 
+        padding-bottom: 10%; 
+        font-size: 20px;
+        display: flex; /* Flexbox 레이아웃 사용 */
+        justify-content: center; /* 수평 중앙 정렬 */
+        align-items: center; /* 수직 중앙 정렬 */
+    }
+
+    .detail{
+        font-size: 15px;
+    }
+    .detail2, .detail3{
+        font-size: 12px;
+    }
 }
