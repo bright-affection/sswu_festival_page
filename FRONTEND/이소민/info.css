@@ -159,14 +159,14 @@ body {
 }
 
 
-
-
 /* 공지사항들 */
 .category_container {
     position: absolute;
-    width: 333px;
+    width: calc(100% - 40px); /* 화면 너비에서 20px씩 제외하여 컨테이너의 너비를 계산 */
     height: 440px;
     margin-top: 120px;
+    margin-left: 20px; /* 왼쪽 여백 추가 */
+    margin-right: 20px; /* 오른쪽 여백 추가 */
 }
 
 .row {
@@ -183,8 +183,8 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    width :100%;
+    height: auto;
 }
 
 .category h2 {
@@ -196,14 +196,40 @@ body {
     font-size: 13px;
     line-height: 16px;
     color: black;
-    top: 165px;
+    /* top: 165px; */
+    margin-top: 100px;
     left: 9px;
     margin: 0;
+
+    
 }
 
 .category img {
-    max-width: 100%;
+    width: 160px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
 }
+
+@media (min-width: 361px) {
+    .category_container {
+        width: calc(100% - 40px);  /* 컨테이너의 너비를 자동으로 조정하여 내용을 확대 */
+        margin-top: 120px; /* 필요에 따라 상단 여백 조정 */
+    }
+    .category img {
+        width: 45vw; /* 가로 크기를 화면 너비의 100vw로 설정 */
+        height: auto; /* 가로 크기에 맞추어 세로 크기 자동 조절 */
+    }
+
+    .category h2 {
+
+            margin-left: 20px; /* 반응형으로 조정할 left 값 */
+     
+    }
+
+}
+
 
 .rowplus{
     display: none;
