@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>굿즈 예약</title>
+</head>
+<body>
+    <form method="post" action="{% url 'order:reserve' %}">
+        {% csrf_token %}
+        
+        <!-- 사용자 정보 입력 부분 -->
+        {{ form.user_name.label_tag }} {{ form.user_name }}<br>
+        {{ form.phone_number.label_tag }} {{ form.phone_number }}<br>
+        {{ form.user_mail.label_tag }} {{ form.user_mail }}<br>
+        {{ form.purchase_date.label_tag }} {{ form.purchase_date }}<br>
+        {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br>
+
+        <!-- 선택한 상품 및 총액 확인 부분 -->
+        <h3>선택한 상품</h3>
+        {% for good_name, good_info in request.session.selected_goods.items %}
+        <div>
+            <h4>{{ good_name }}</h4>
+            <p>가격: {{ good_info.price }} 원</p>
+            <p>수량: {{ good_info.quantity }}</p>
+        </div>
+        {% endfor %}
+        <h3>총액: {{ total_price }} 원</h3>
+
+        <button type="submit">예약 완료</button>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</body>
+</html>
