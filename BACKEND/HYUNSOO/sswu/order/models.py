@@ -17,7 +17,7 @@ class Reservation(models.Model):
     phone_number = models.IntegerField()
     user_mail = models.EmailField()
    # goods = models.ForeignKey(Goods, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+   # quantity = models.PositiveIntegerField()
     purchase_date = models.CharField(max_length=10, choices=DATE_CHOICES)
     purchase_time = models.CharField(max_length=5, choices=TIME_CHOICES)
     

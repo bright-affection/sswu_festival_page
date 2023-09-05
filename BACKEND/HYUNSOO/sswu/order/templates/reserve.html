@@ -26,6 +26,7 @@
         <h3>총액: {{ total_price }} 원</h3>
 
         <button type="submit">예약 완료</button>
+        {% if form.errors %}{{ form.errors }}{% endif %}
     </form>
     {% if messages %}
     <ul class="messages">
