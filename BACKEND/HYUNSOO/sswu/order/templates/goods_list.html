@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booking</title>
+  </head>
+  <body>
+    <div class="booking">
+        <div class="top">
+          <span class="booking_text">굿즈 예약</span>
+        </div>
+        <div class="choose">
+          <p class="choose_ex">구매하고 싶은 굿즈들을 선택해주세요!</p>
+        </div>
+      </div>
+      <form method="post" action="{% url 'order:goods_list' %}">
+        {% csrf_token %}
+        {% for good in goods %}
+            <div class="goods_choose">
+                <img src="{{ good.image.url }}" alt="{{ good.name }}" class="goods_img" />
+                <div class="text">
+                    <div class="name">
+                        <span class="goods_name">{{ good.name }}</span>
+                    </div>
+                    <span class="goods_price">{{ good.price }}₩</span>
+                    <select class="num_select" name="quantity_{{good.id}}">
+                        <option value="" disabled selected>개수</option>
+                        {% for i in "123456789"|make_list %}
+                            <option value="{{ i }}">{{ i }}개</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        {% endfor %}
+    
+        <!-- 예약버튼 -->
+        <div class="btn">
+            <input type="submit" class="booking_btn" value="선택한 굿즈들 예약하기" />
+        </div>
+    </form>    
+  </body>
+</html>
+
+
