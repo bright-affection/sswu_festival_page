@@ -54,12 +54,10 @@ body {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
-    /* identical to box height */
     color: #313131;
 }
 
 .title-box {
-    /* Rectangle 16 */
     display: flex;
     box-sizing: border-box;
     position: absolute;
@@ -84,7 +82,6 @@ body {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height, or 125% */
     color: #A5A5A5;
     border: none;
     outline: none;
@@ -93,7 +90,7 @@ body {
 @media screen and (min-width: 360px) {
     .title-box input {
         width: calc(100% - 30px); 
-        left: 15px; /* 원하는 위치로 조정하세요. */
+        left: 15px;
     }
 }
 
@@ -112,12 +109,10 @@ body {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
-    /* identical to box height */
     color: #313131;
 }
 
 .writing-box {
-    /* Rectangle 14 */
     box-sizing: border-box;
     position: absolute;
     width: 100%;
@@ -142,7 +137,6 @@ body {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height, or 125% */
     color: #A5A5A5;
     border: none;
     outline: none;
@@ -151,7 +145,7 @@ body {
 @media screen and (min-width: 360px) {
     .writing-box textarea  {
         width: calc(100% - 30px); 
-        left: 15px; /* 원하는 위치로 조정하세요. */
+        left: 15px;
     }
 }
 
@@ -170,14 +164,12 @@ body {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
-    /* identical to box height */
     color: #313131;
 }
 
 .addimg {
     display: flex;
     top: 585px;
-    /* Rectangle 23 */
     box-sizing: border-box;
     position: absolute;
     width: 106.27px;
@@ -211,7 +203,6 @@ body {
     position: absolute;
     left: 41px;
     top : 0px;
-    /* body */
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
@@ -242,7 +233,6 @@ body {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
     color: #FFFFFF;
 }
 
