@@ -30,35 +30,82 @@
                 </div>
 
                 <!-- 회색선 -->
-                <div class="line">
-                </div>
+                <div class="line"></div>
 
                 <!-- 내용 -->
                 <div class="content">
-                    <h3>내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
-                        내용내용내용 내용 내용 내용 내용 내용
+                    <h3>내용내용내용 내용 내용 내용 내용 내용 내용내용내용 내용 내용 내용 내용 내용 내용내용내용 내용 내용 내용 내용 내용 내용내용내용 내용
+                        내용 내용 내용 내용 내용내용내용 내용 내용 내용 내용 내용 내용내용내용 내용 내용 내용 내용 내용 내용내용내용 내용 내용 내용 내용 내용
                         내용내용내용 내용 내용 내용 내용 내용
 
                     </h3>
                 </div>
 
                 <!-- 사진 -->
-                <!-- <div class="images">
-                    <img src="img/img1.png" alt="이미지">
-                    <img src="img/img2.png" alt="이미지">
-                    <img src="img/img3.png" alt="이미지">
-                    <img src="img/img4.png" alt="이미지">
-                </div> -->
-
-
+                <div class="slider">
+                    <div class="slider-inner">
+                        <div class="slider-item">
+                            <img src="img/img1.png" alt="이미지">
+                        </div>
+                        <div class="slider-item">
+                            <img src="img/img2.png" alt="이미지">
+                        </div>
+                        <div class="slider-item">
+                            <img src="img/img3.png" alt="이미지">
+                        </div>
+                        <div class="slider-item">
+                            <img src="img/img4.png" alt="이미지">
+                        </div>
+                        <!-- <div class="slider-item"> <img src="img/img1.png" alt="이미지"> </div> <div
+                        class="slider-item"> <img src="img/img2.png" alt="이미지"> </div> -->
+                    </div>
+                </div>
 
             </div>
 
         </div>
-        </body>
-        </html>
+
+        <script>
+            let slider = document.querySelector(".slider");
+            let innerSlider = document.querySelector(".slider-inner");
+            let pressed = false;
+            let startx;
+            let x;
+
+            slider.addEventListener("mousedown", e => {
+                pressed = true;
+                startx = e.clientX - innerSlider.offsetLeft; // 변경: offsetX 대신 clientX 사용
+                slider.style.cursor = "grabbing";
+            });
+
+            slider.addEventListener("mouseenter", () => {
+                slider.style.cursor = "grab";
+            });
+
+            slider.addEventListener("mouseup", () => {
+                slider.style.cursor = "grab";
+            });
+
+            window.addEventListener("mouseup", () => {
+                pressed = false;
+            });
+
+            slider.addEventListener("mousemove", e => {
+                if (!pressed) 
+                    return;
+                e.preventDefault();
+                x = e.clientX; // 변경: offsetX 대신 clientX 사용
+
+                // 변경: 슬라이더의 크기에 맞게 이동 제한
+                innerSlider.style.left = `${Math.min(
+                    0,
+                    Math.max(-(innerSlider.offsetWidth - slider.offsetWidth), x - startx)
+                )}px`;
+            });
+
+            function checkboundary() {
+                // 변경: checkboundary 함수 제거
+            }
+        </script>
+    </body>
+</html>
