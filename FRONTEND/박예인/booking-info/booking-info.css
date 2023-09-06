@@ -6,6 +6,8 @@
   font-style: normal;
 }
 body {
+  margin: 0;
+  padding: 0;
   background-color: #fcf9fb;
   margin-left: 20px;
   margin-right: 20px;
