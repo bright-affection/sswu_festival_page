@@ -49,7 +49,7 @@ input::placeholder {color:#A5A5A5;}
 .text-field{
     justify-content: space-between;
     margin-bottom: 20px;
-    border: 1.5px solid #f06786;
+    border: 1px solid #f06786;
     border-radius: 7px;
     padding: 15px;
     outline: none;
