@@ -62,7 +62,7 @@ form {
     margin: 5% 0;
 }
 
-input {
+#keyword {
     width: calc(100% - 32px);
     border: 1px solid #F194B4;
     border-radius: 30px;
@@ -207,10 +207,22 @@ label {
     margin-top: 30px;
 }
 
-input {
+.filter_radio {
     width: 14px;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     border: 0.4em solid tomato;
+}
+
+#filter_submit {
+    width: 100%;
+    border: none;
+    background-color: #F06786;
+    border-radius: 30px;
+    padding: 12px 16px;
+    font-size: 1em;
+    font-family: Pretendard;
+    color: #fff;
+    margin-top: 30px;
 }
