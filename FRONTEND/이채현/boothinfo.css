@@ -156,27 +156,16 @@ input {
     color: #A0A0A0;
 }
 
-/* 팝업창 */
-/* #filter_wrap {   
-    position:fixed; 
-    top:0; 
-    left:0; 
-    right:0; 
-    bottom:0; 
-    background:rgba(0,0,0,.5); 
-    font-size:0; text-align:center;
-} */
-
-
+/* 필터 */
 #filter_wrap { 
     position:fixed;
-    top:0; 
-    left:0; 
-    right:0; 
-    bottom:0; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
     background:rgba(0,0,0,.5); 
-    font-size:0; 
-    text-align:center;
+    font-size: 16px; 
+    text-align: center;
 }
 
 #filter_wrap:after { 
@@ -210,4 +199,18 @@ input {
 
 #close img {
     width: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: flex;
+    margin-top: 30px;
+}
+
+input {
+    width: 14px;
+}
+
+input[type="radio"]{
+    border: 0.4em solid tomato;
 }

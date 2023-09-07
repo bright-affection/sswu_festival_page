@@ -58,16 +58,30 @@
         </div>
     </div>
 
-    <div id="filter_wrap" style="display:none;">
-    <!-- <div id="filter_wrap"> -->
+    <!-- <div id="filter_wrap" style="display:none;"> -->
+    <div id="filter_wrap">
         <div id="filter">
             <span class="filter_title">Filter</span>
-            <!-- <span class="cancle_img">
-                <img src="./img/X.png" alt="팝업 닫기">
-            </span> -->
             <button type="button" id="close">
                 <img src="./img/X.png" alt="팝업 닫기">
             </button>
+
+            <form method="POST" action="submit_filter">
+                <label>날짜</label></br>
+                <input type="radio" name="filter_date" value="4">10월 4일
+                <input type="radio" name="filter_date" value="5"> 10월 5일
+
+                <label>시간대</label></br>
+                <input type="radio" name="filter_time" value="all">종일 시간
+                <input type="radio" name="filter_time" value="am">오전 시간</br>
+                <input type="radio" name="filter_time" value="pm"> 오후 시간</br>
+
+                <label>부스 종류</label></br>
+                <input type="radio" name="filter_booth" value="student">학생 부스
+                <input type="radio" name="filter_booth" value="partner">제휴 부스</br>
+                <input type="radio" name="filter_booth" value="Council">총학 부스
+                <input type="radio" name="filter_booth" value="administration">행정부서 부스
+            </form>
         </div>
     </div>
 </body>
@@ -87,4 +101,8 @@
     close_btn.addEventListener('click', function() {
         filter.style.display = 'none';
     });
+
+    function submit_filter() {
+        filter.style.display = 'none';
+    }
 </script>
