@@ -155,3 +155,62 @@ input {
     font-size: 11px;
     color: #A0A0A0;
 }
+
+/* 필터 */
+#filter_wrap { 
+    position:fixed;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background:rgba(0,0,0,.5); 
+    font-size: 16px; 
+    text-align: center;
+}
+
+#filter_wrap:after { 
+    display:inline-block; 
+    height:100%; 
+    vertical-align:middle; 
+    content:''; 
+}
+
+#filter {
+    display:inline-block; 
+    padding:30px; 
+    background:#fff; 
+    width:250px; 
+    vertical-align:middle;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.filter_title {
+    font-size: 20px;
+    font-weight: bold;
+    /* float: left; */
+}
+
+#close {
+    float: right;
+    border: 0;
+    background-color: transparent;
+}
+
+#close img {
+    width: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: flex;
+    margin-top: 30px;
+}
+
+input {
+    width: 14px;
+}
+
+input[type="radio"]{
+    border: 0.4em solid tomato;
+}
