@@ -19,7 +19,7 @@
                 <img src="./img/title_star.png"></img>
             </div>
             <div class="title_tx">부스 A to Z</div>
-            <a href="" id="filter_btn">
+            <a href="#popup_wrap" id="filter_btn">
                 <img src="./img/filter.png"></img>
             </a>
         </div>
@@ -55,98 +55,36 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="booth">
-                <div class="booth_img_wrap">
-                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
-                </div>
-                <div class="booth_info_wrap">
-                    <div class="booth_info1 corner">
-                        <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A01</div>
-                    </div>
-                    <div class="booth_info2">
-                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
-                        <div>공대생의 반란! 코딩하다 지친 수정이가 
-                            만드는 비즈 팔찌/반지 입니다 :)</div>
-                    </div>
-                    <div class="booth_info3 corner">
-                        <div class="map">
-                            <a src="">위치보기</a>
-                        </div>
-                        <div class="time">10월 4일 오전</div>
-                    </div>
-                </div>
-            </div>
-            <div class="booth">
-                <div class="booth_img_wrap">
-                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
-                </div>
-                <div class="booth_info_wrap">
-                    <div class="booth_info1 corner">
-                        <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A01</div>
-                    </div>
-                    <div class="booth_info2">
-                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
-                        <div>공대생의 반란! 코딩하다 지친 수정이가 
-                            만드는 비즈 팔찌/반지 입니다 :)</div>
-                    </div>
-                    <div class="booth_info3 corner">
-                        <div class="map">
-                            <a src="">위치보기</a>
-                        </div>
-                        <div class="time">10월 4일 오전</div>
-                    </div>
-                </div>
-            </div><div class="booth">
-                <div class="booth_img_wrap">
-                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
-                </div>
-                <div class="booth_info_wrap">
-                    <div class="booth_info1 corner">
-                        <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A01</div>
-                    </div>
-                    <div class="booth_info2">
-                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
-                        <div>공대생의 반란! 코딩하다 지친 수정이가 
-                            만드는 비즈 팔찌/반지 입니다 :)</div>
-                    </div>
-                    <div class="booth_info3 corner">
-                        <div class="map">
-                            <a src="">위치보기</a>
-                        </div>
-                        <div class="time">10월 4일 오전</div>
-                    </div>
-                </div>
-            </div><div class="booth">
-                <div class="booth_img_wrap">
-                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
-                </div>
-                <div class="booth_info_wrap">
-                    <div class="booth_info1 corner">
-                        <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A01</div>
-                    </div>
-                    <div class="booth_info2">
-                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
-                        <div>공대생의 반란! 코딩하다 지친 수정이가 
-                            만드는 비즈 팔찌/반지 입니다 :)</div>
-                    </div>
-                    <div class="booth_info3 corner">
-                        <div class="map">
-                            <a src="">위치보기</a>
-                        </div>
-                        <div class="time">10월 4일 오전</div>
-                    </div>
-                </div>
-            </div>
+    <div id="filter_wrap" style="display:none;">
+    <!-- <div id="filter_wrap"> -->
+        <div id="filter">
+            <span class="filter_title">Filter</span>
+            <!-- <span class="cancle_img">
+                <img src="./img/X.png" alt="팝업 닫기">
+            </span> -->
+            <button type="button" id="close">
+                <img src="./img/X.png" alt="팝업 닫기">
+            </button>
         </div>
     </div>
 </body>
 </html>
+
+<script>
+    var filter_btn = document.getElementById('filter_btn');
+    var filter = document.getElementById('filter_wrap');
+    var close_btn = document.getElementById('close')
+
+    //팝업 열기
+    filter_btn.addEventListener('click', function() {
+        filter.style.display = 'block';
+    });
+    
+    //팝업 닫기
+    close_btn.addEventListener('click', function() {
+        filter.style.display = 'none';
+    });
+</script>
