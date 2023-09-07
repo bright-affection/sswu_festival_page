@@ -5,6 +5,11 @@ class Goods(models.Model):
     price = models.IntegerField()
     image = models.ImageField(upload_to='order', null=True)
 
+    def __str__(self):
+        return self.name
+    def __str__(self):
+        return self.price
+
 DATE_CHOICES = [
     ('2023-10-04', '10월 4일'),
     ('2023-10-05', '10월 5일'),

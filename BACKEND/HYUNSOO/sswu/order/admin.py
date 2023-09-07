@@ -18,7 +18,11 @@ class ReservationAdmin(admin.ModelAdmin):
     get_goods_name.short_description = "굿즈 이름"
     get_total_price.short_description = "총 가격"
 
-admin.site.register(OrderItem)  
-admin.site.register(Goods)
+
+class Selected_Goods(admin.ModelAdmin):
+    list_display = ['name', 'price']
+
+#admin.site.register(OrderItem)  
+admin.site.register(Goods, Selected_Goods)
 admin.site.register(Reservation, ReservationAdmin)
 

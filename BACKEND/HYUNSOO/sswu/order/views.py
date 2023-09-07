@@ -42,7 +42,7 @@ def reserve_goods(request):
 
             messages.success(request, '예약이 완료되었습니다.')
             del request.session['selected_goods']
-            return redirect('order:home')
+            return redirect('order:reserve')
     else:
         form = ReservationForm()
         
