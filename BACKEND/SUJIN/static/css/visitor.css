@@ -1,0 +1,103 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
+body {
+    background-color: #FCF9FB;
+    font-family: Pretendard;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #F06786;
+}
+
+#wrap {
+    margin: 0 20px;
+}
+
+/* 타이틀 */
+#title {
+    font-size: 1.25em;
+    color: #F06786;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#title div {
+    display: inline-block;
+    
+    height: 100%;
+    vertical-align: middle;
+}
+
+.title_photo img{
+    /* width: 12px; */
+    width: 0.6em;
+}
+
+/* 본문 */
+.container {
+    width: 100%;
+    font-size: 1em;
+}
+
+.title_ex {
+    font-weight: 500;
+    line-height: 150%;
+}
+
+/* 글쓰기 버튼 */
+.write_btn {
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.write_btn_tx {
+    width: 100%;
+    margin: 16px 0;
+    padding: 16px 0;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #F06786;
+}
+
+/* 작성된 글 */
+.writing{
+    background-color: #fff;
+    border: 1px solid #F06786;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    box-shadow: 5px 5px 5px #E6E6E6;
+}
+
+.writing_tx {
+    margin-bottom: 2em;
+}
+
+.writing_info {
+    font-size: 0.8em;
+}
+
+.nickname {
+    color: #F06786;
+}
+
+.date {
+    color: #A0A0A0;
+    float: right;
+}
+
+/* 더보기 버튼 */
+.more {
+    margin: 2em 0;
+    text-align: center;
+    color: #F06786;
+    font-size: 0.8em;
+}
+
+.more span {
+    border: 1px solid #F06786;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}

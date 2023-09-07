@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visitor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="{% static 'css/visitor.css' %}" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+    <!-- 헤더는 나중에 js로 연결하기 -->
+    <header></header>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div id="wrap">
+        <div id="title">
+            <div class="title_photo">
+                <img src="{% static 'img/title_star.png' %}"></img>
+            </div>
+            <div class="title_tx">방명록</div>
+        </div>
+        <div class="container">
+            <div class="title_ex">수정이들의 소중한 방명록!</div>
+            <!-- 글쓰기 화면과 연결하기 -->
+            <a href="{% url 'visitor:visitor_write' %}" class="write_btn">
+                <div class="write_btn_tx">방명록 작성하기</div>
+            </a>
+
+            <!-- 백엔드랑 연결할 부분 -->
+            {% for visitor in visitor_list %}
+            <div class="writing">
+                <div class="writing_tx">{{visitor.content |truncatechars:100 }}</div>
+                <div class="writing_info">
+                    <span class="nickname">{{visitor.nickname}}</span>
+                    <span class="date">{{ visitor.date |date:"Y.m.d" }}</span>
+                </div>  
+            </div>
+            {% endfor %}
+            <!-- <div class="writing">
+                <div class="writing_tx">방명록에 작성된 글</div>
+                <div class="writing_info">
+                    <span class="nickname">성신멋사 11기</span>
+                    <span class="date">2023.08.30</span>
+                </div>
+            </div>
+            <div class="writing">
+                <div class="writing_tx">방명록에 작성된 글</div>
+                <div class="writing_info">
+                    <span class="nickname">성신멋사 11기</span>
+                    <span class="date">2023.08.30</span>
+                </div>
+            </div> -->
+
+            <!-- 더보기 버튼 -->
+            <div class="more">
+                <span>+ 더보기</span>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
