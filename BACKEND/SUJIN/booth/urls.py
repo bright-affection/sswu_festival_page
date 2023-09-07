@@ -1,8 +1,9 @@
 from django.urls import path
-# from .views import signup_view
+from .views import boothinfo, boothsearch
 
 app_name = 'booth'
 
 urlpatterns = [
-    # path('signup/', signup_view, name='signup'),
+    path('', boothinfo, name='boothinfo'),
+    path('search/', boothsearch, name='boothsearch'),
 ]
