@@ -29,6 +29,8 @@ body {
 .logo {
     margin-left: 15px;
     margin-top: -10px;
+    width : 89px;
+    height:auto;
     text-align: center;
     align-items: center;
 }
