@@ -36,7 +36,7 @@ select {
   font-size: 11px;
   padding-left: 18px;
   appearance: none;
-  background: #fff url("../img/big_pink_arrow.png") no-repeat center right; /*화살표 이미지 넣기*/
+  background: #fff url("../img/dropdown1.svg") no-repeat center right; /*화살표 이미지 넣기*/
   background-size: 52px 40px;
   margin-top: 10px;
 }
