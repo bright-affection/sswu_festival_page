@@ -58,8 +58,8 @@
         </div>
     </div>
 
-    <!-- <div id="filter_wrap" style="display:none;"> -->
-    <div id="filter_wrap">
+    <div id="filter_wrap" style="display:none;">
+    <!-- <div id="filter_wrap"> -->
         <div id="filter">
             <span class="filter_title">Filter</span>
             <button type="button" id="close">
@@ -67,22 +67,40 @@
             </button>
 
             <form method="POST" action="submit_filter">
-                <label>날짜</label></br>
-                <input type="radio" name="filter_date" value="4" class="filter_radio">10월 4일
-                <input type="radio" name="filter_date" value="5" class="filter_radio"> 10월 5일
+                <label class="label_title">날짜</label>
+                <div>
+                    <input type="checkbox" id="day4" name="day4" />
+                    <label for="day4" class="filter_text">10월 4일</label>
+                    <input type="checkbox" id="day5" name="day5" />
+                    <label for="day5">10월 5일</label>
+                </div>
 
-                <label>시간대</label></br>
-                <input type="radio" name="filter_time" value="all" class="filter_radio">종일 시간
-                <input type="radio" name="filter_time" value="am" class="filter_radio">오전 시간</br>
-                <input type="radio" name="filter_time" value="pm" class="filter_radio"> 오후 시간</br>
+                <label class="label_title">시간대</label>
+                <div>
+                    <input type="checkbox" id="all" name="all" />
+                    <label for="all" class="filter_text">종일 부스</label>
+                    <input type="checkbox" id="am" name="am" />
+                    <label for="am">오전 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pm" name="pm" />
+                    <label for="pm">오후 부스</label>
+                </div>
 
-                <label>부스 종류</label></br>
-                <input type="radio" name="filter_booth" value="student" class="filter_radio">학생 부스
-                <input type="radio" name="filter_booth" value="partner"class="filter_radio">제휴 부스</br>
-                <input type="radio" name="filter_booth" value="Council" class="filter_radio">총학 부스
-                <input type="radio" name="filter_booth" value="administration" class="filter_radio">행정부서 부스
+                <label class="label_title">부스 종류</label>
+                <div>
+                    <input type="checkbox" id="student" name="student" />
+                    <label for="student" class="filter_text">학생 부스</label>
+                    <input type="checkbox" id="partner" name="partner" />
+                    <label for="partner">제휴 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="council" name="council" />
+                    <label for="council" class="filter_text">총학 부스</label>
+                    <input type="checkbox" id="administration" name="administration" />
+                    <label for="administration">행정부서 부스</label>
+                </div>
                 
-                <!-- <input type='submit' id="submit" value="방명록 업로드"> -->
                 <input type="submit" id="filter_submit"  value="확인">
             </form>
         </div>
