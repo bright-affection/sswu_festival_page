@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+    <div class="container">
+        관리자 모드를 이용하기 위해서는 아이디와 비밀번호를 입력해주세요. :)
+        <form method="POST" action="{% url 'mainpage:administrator' %}">
+            {% csrf_token %}
+
+            아이디 : <br>
+            <input name="custom_id" type="text"><br>
+            비밀번호 : <br>
+            <input name="password" type="password"><br>
+            <a href='{% url "mainpage:mainpage" %}'>이전으로</a><br>
+            <input type="submit" class="btn btn-primary" value="다음">
+
+        </form>
+    </div>
+</body>
