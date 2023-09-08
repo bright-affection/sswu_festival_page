@@ -4,11 +4,11 @@ class Goods(models.Model):
     name = models.CharField(max_length=50)
     price = models.IntegerField()
     image = models.ImageField(upload_to='order', null=True)
-
+'''
     def __str__(self):
         return self.name
     def __str__(self):
-        return self.price
+        return self.price '''
 
 DATE_CHOICES = [
     ('2023-10-04', '10월 4일'),

@@ -41,6 +41,7 @@ def reserve_goods(request):
                 OrderItem(reservation=reservation, goods=good, quantity=data['quantity']).save()
 
             messages.success(request, '예약이 완료되었습니다.')
+            request.session['reservation_complete'] = True
             del request.session['selected_goods']
             return redirect('order:reserve')
     else:
@@ -49,4 +50,6 @@ def reserve_goods(request):
     total_price = sum([data['price'] * data['quantity'] for data in selected_goods_data.values()])
     return render(request, 'reserve.html', {'form': form, 'selected_goods': selected_goods_data, 'total_price': total_price})
 
+def home(request):
+    return render('home.html')
 

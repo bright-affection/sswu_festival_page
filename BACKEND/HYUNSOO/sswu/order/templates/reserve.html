@@ -2,6 +2,19 @@
 <html>
 <head>
     <title>굿즈 예약</title>
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid black;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <form method="post" action="{% url 'order:reserve' %}" onsubmit="showReservation();">
@@ -28,6 +41,12 @@
         <button type="submit">예약 완료</button>
         {% if form.errors %}{{ form.errors }}{% endif %}
     </form>
+    <div id="popup">
+        <h2>예약완료!</h2>
+        <div id="popup-content"></div>
+        <button onclick="Home()">홈으로이동</button>
+        <button onclick="showGoodsList()">굿즈목록보기</button>
+    </div>
     <script>
         function showReservation(){
             const userName = document.querySelector("[name='user_name']").value;
@@ -49,7 +68,16 @@
                 "예약시간: " + purchaseTime +
                 "총 금액: " + totalPrice + "원";
 
-            alert(message);
+            const popupContent = document.getElementById("popup-content");
+            popupContent.innerText = message;
+
+            document.getElementById('popup').style.display = 'block';
+        }
+        function Home() {
+            window.location.href = "{% url 'order:home' %}";
+        }
+        function showGoodsList() {
+            window.location.href = "{% url 'order:goods_list' %}";
         }
     </script>
 
