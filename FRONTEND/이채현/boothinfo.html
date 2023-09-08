@@ -16,19 +16,19 @@
     <div id="wrap">
         <div id="title">
             <div class="title_photo">
-                <img src="./img/title_star.png"></img>
+                <img src="./img/staricon.svg"></img>
             </div>
             <div class="title_tx">부스 A to Z</div>
             <a href="#popup_wrap" id="filter_btn">
-                <img src="./img/filter.png"></img>
+                <img src="./img/filter.svg"></img>
             </a>
         </div>
         <div class="container">
             <div class="title_ex">수정대동제에서 진행되는 각종 부스의 정보들을 살펴보세요!</div>
             <form method="POST" onsubmit="">
-                <input type="text" name="search" method="POST" placeholder="키워드로 부스 찾기">
+                <input type="text" name="search" method="POST" id="keyword" placeholder="키워드로 부스 찾기">
                 <button class="search_btn">
-                    <img src="./img/search.png">
+                    <img src="./img/searchicon.svg">
                 </button>
             </form>
             <!-- 나중에 booth 반복문에 넣어서 여러개 만들기 -->
@@ -58,8 +58,8 @@
         </div>
     </div>
 
-    <!-- <div id="filter_wrap" style="display:none;"> -->
-    <div id="filter_wrap">
+    <div id="filter_wrap" style="display:none;">
+    <!-- <div id="filter_wrap"> -->
         <div id="filter">
             <span class="filter_title">Filter</span>
             <button type="button" id="close">
@@ -67,20 +67,41 @@
             </button>
 
             <form method="POST" action="submit_filter">
-                <label>날짜</label></br>
-                <input type="radio" name="filter_date" value="4">10월 4일
-                <input type="radio" name="filter_date" value="5"> 10월 5일
+                <label class="label_title">날짜</label>
+                <div>
+                    <input type="checkbox" id="day4" name="day4" />
+                    <label for="day4" class="filter_text">10월 4일</label>
+                    <input type="checkbox" id="day5" name="day5" />
+                    <label for="day5">10월 5일</label>
+                </div>
 
-                <label>시간대</label></br>
-                <input type="radio" name="filter_time" value="all">종일 시간
-                <input type="radio" name="filter_time" value="am">오전 시간</br>
-                <input type="radio" name="filter_time" value="pm"> 오후 시간</br>
+                <label class="label_title">시간대</label>
+                <div>
+                    <input type="checkbox" id="all" name="all" />
+                    <label for="all" class="filter_text">종일 부스</label>
+                    <input type="checkbox" id="am" name="am" />
+                    <label for="am">오전 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pm" name="pm" />
+                    <label for="pm">오후 부스</label>
+                </div>
 
-                <label>부스 종류</label></br>
-                <input type="radio" name="filter_booth" value="student">학생 부스
-                <input type="radio" name="filter_booth" value="partner">제휴 부스</br>
-                <input type="radio" name="filter_booth" value="Council">총학 부스
-                <input type="radio" name="filter_booth" value="administration">행정부서 부스
+                <label class="label_title">부스 종류</label>
+                <div>
+                    <input type="checkbox" id="student" name="student" />
+                    <label for="student" class="filter_text">학생 부스</label>
+                    <input type="checkbox" id="partner" name="partner" />
+                    <label for="partner">제휴 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="council" name="council" />
+                    <label for="council" class="filter_text">총학 부스</label>
+                    <input type="checkbox" id="administration" name="administration" />
+                    <label for="administration">행정부서 부스</label>
+                </div>
+                
+                <input type="submit" id="filter_submit"  value="확인">
             </form>
         </div>
     </div>
