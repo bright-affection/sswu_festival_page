@@ -156,6 +156,14 @@ form {
     color: #A0A0A0;
 }
 
+.map {
+    float: left;
+}
+
+.time {
+    float: right;
+}
+
 /* 필터 */
 #filter_wrap { 
     position:fixed;
