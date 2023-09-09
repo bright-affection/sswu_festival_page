@@ -156,6 +156,14 @@ form {
     color: #A0A0A0;
 }
 
+.map {
+    float: left;
+}
+
+.time {
+    float: right;
+}
+
 /* 필터 */
 #filter_wrap { 
     position:fixed;
@@ -235,7 +243,7 @@ input[type="checkbox"] + label:before{
     
 /* label:before에 체크 된 상태 CSS */
 input[type="checkbox"]:checked  + label:before {
-    background-image: url('./img/checked.png');
+    background-image: url('../img/checked.png');
     background-repeat: no-repeat;
     background-position: center;
 }

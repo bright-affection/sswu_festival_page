@@ -21,19 +21,24 @@
             <div class="title_photo">
                 <img src="{% static 'img/staricon.svg' %}"></img>
             </div>
-            <div class="title_tx">부스 A to Z</div>
+            <div class="title_tx">부스 A to Z
+                
+            </div>
             <a href="#popup_wrap" id="filter_btn">
                 <img src="{% static 'img/filter.svg' %}"></img>
             </a>
         </div>
         <div class="container">
+            
             <div class="title_ex">수정대동제에서 진행되는 각종 부스의 정보들을 살펴보세요!</div>
-            <form method="POST" onsubmit="">
-                <input type="text" name="search" method="POST" id="keyword" placeholder="키워드로 부스 찾기">
-                <button class="search_btn">
-                    <img src="{% static 'img/searchicon.svg' %}">
-                </button>
-            </form>
+            <!-- <form method="POST" onsubmit=""> -->
+                <!-- <input type="submit" id="filter_submit"  value="확인"> -->
+            <input type="text" name="search" method="POST" id="keyword" placeholder="키워드로 부스 찾기">
+            <button type="submit" class="search_btn">
+                <img src="{% static 'img/searchicon.svg' %}">
+            </button>
+            <!-- </form> -->
+    
             <!-- 나중에 booth 반복문에 넣어서 여러개 만들기 -->
             {% for booth in booth_list %}
             <div class="booth">
@@ -44,7 +49,7 @@
                 <div class="booth_info_wrap">
                     <div class="booth_info1 corner">
                         <div class="booth_name">{{booth.name}}</div>
-                        <div class="booth_site">A01</div>
+                        <!-- <div class="booth_site">A01</div> -->
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
@@ -55,13 +60,14 @@
                         <div class="map">
                             <a src="">위치보기</a>
                         </div>
-                        <div class="time">{{booth.date}}&nbsp;&nbsp;{{booth.time}}</div>
+                        <div class="time">{{booth.date}}&nbsp;{{booth.time|slice:"-3"}}</div>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
+
 
     <div id="filter_wrap" style="display:none;">
     <!-- <div id="filter_wrap"> -->
@@ -72,37 +78,39 @@
             </button>
 
             <form method="POST" action="submit_filter">
+
                 <label class="label_title">날짜</label>
                 <div>
-                    <input type="checkbox" id="day4" name="day4" />
+                    <input type="checkbox" id="day4" name="date" value="10월 4일"/>
                     <label for="day4" class="filter_text">10월 4일</label>
-                    <input type="checkbox" id="day5" name="day5" />
+                    
+                    <input type="checkbox" id="day5" name="date" value="10월 5일" />
                     <label for="day5">10월 5일</label>
                 </div>
 
                 <label class="label_title">시간대</label>
                 <div>
-                    <input type="checkbox" id="all" name="all" />
+                    <input type="checkbox" id="all" name="time" value="종일 부스"/>
                     <label for="all" class="filter_text">종일 부스</label>
-                    <input type="checkbox" id="am" name="am" />
+                    <input type="checkbox" id="am" name="time" value="오전 부스"/>
                     <label for="am">오전 부스</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="pm" name="pm" />
+                    <input type="checkbox" id="pm" name="time" value="오후 부스"/>
                     <label for="pm">오후 부스</label>
                 </div>
 
                 <label class="label_title">부스 종류</label>
                 <div>
-                    <input type="checkbox" id="student" name="student" />
+                    <input type="checkbox" id="student" name="kind" value="학생 부스"/>
                     <label for="student" class="filter_text">학생 부스</label>
-                    <input type="checkbox" id="partner" name="partner" />
+                    <input type="checkbox" id="partner" name="kind" value="제휴 부스"/>
                     <label for="partner">제휴 부스</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="council" name="council" />
+                    <input type="checkbox" id="council" name="kind" value="총학 부스"/>
                     <label for="council" class="filter_text">총학 부스</label>
-                    <input type="checkbox" id="administration" name="administration" />
+                    <input type="checkbox" id="administration" name="kind" value="행정부서 부스"/>
                     <label for="administration">행정부서 부스</label>
                 </div>
                 
@@ -110,7 +118,7 @@
             </form>
         </div>
     </div>
-    </form>
+</form>
 </body>
 </html>
 
