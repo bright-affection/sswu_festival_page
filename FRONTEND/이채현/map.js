@@ -2,6 +2,7 @@ function initialize() {
     const texts = document.getElementsByClassName("map_select_tx")
     const imgs = document.getElementsByClassName("map_img")
     const resets = document.getElementsByClassName("reset")
+    const stamp = document.getElementsByClassName("stamp_")
 
     
     // 텍스트 색, 이미지, 리셋 버튼 초기화
@@ -21,6 +22,9 @@ function initialize() {
     function textClick(event) {
         const textId = event.target.id;
         resetAll();
+        for (var s of stamp) {
+            s.style.display = "none"
+        }
 
         if (textId == "booth") {
             event.target.style.color = '#F06786';
@@ -43,6 +47,10 @@ function initialize() {
     function defaultState(event) {
         resetAll();
         imgs[0].style.display = "block";
+
+        for (var s of stamp) {
+            s.style.display = "inline"
+        }
     }
     
     // 이벤트 리스너
