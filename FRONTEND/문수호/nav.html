@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
   <header class="header">
-      <a><img class="back" src="images/back.png" alt="뒤로가기" class="list_icon"></a>
-      <img class="prism" src="images/logo.png" alt="로고" class="list_icon2">
+      <a><img class="back" src="images/backicon.svg" alt="뒤로가기" class="list_icon"></a>
+      <img class="prism" src="images/prismPink.svg" alt="로고" class="list_icon2" id="logo">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class='menu-icon' for="menu-btn">
-    <div class='menu-button'><img src="images/Group 1_pink.png" alt="로고" class="Group 1_pink"></div>
+    <div class='menu-button' onclick="toggle()">
+      <img src="images/hamburger.svg" alt="로고" class="Group 1_pink">
+    </div>
   </label>
     <ul class="menu">
         <li><a href="#">타임테이블</a></li>
@@ -23,7 +25,22 @@
         <a href="#"><div class="box">관리자 모드</div></a>
     </ul>
   </header>
-<br>
-<h2>모자이크 되는지 실험 중</h2>
+  <div class="container" id="blur">
+    <br><br><br><br><br><br>
+    <h2>모자이크 되는지 실험 중</h2>
+  </div>
+
+
+
+<script type="text/javascript">
+
+function toggle(){
+  var blur=document.getElementById('blur');
+  blur.classList.toggle('active')
+}
+</script>
 </body>
 </html>
+
+
+
