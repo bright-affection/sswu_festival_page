@@ -1,20 +1,61 @@
 function initialize() {
     const texts = document.getElementsByClassName("map_select_tx")
-    const text1 = document.getElementById("booth");
-    const text2 = document.getElementById("food");
-    const text3 = document.getElementById("stage");
+    const imgs = document.getElementsByClassName("map_img")
+    const resets = document.getElementsByClassName("reset")
 
-    text1.onclick = function() {
-        text1.style.color = '#F06786';
+    
+    // 텍스트 색, 이미지, 리셋 버튼 초기화
+    function resetAll() {
+        for (var text of texts) {
+            text.style.color = "#000"
+        }
+        for (var img of imgs) {
+            img.style.display = "none"
+        }
+        for (var reset of resets) {
+            reset.style.display = "none"
+        }
     }
-    text2.onclick = function() {
-        text2.style.color = '#FAD07C';
+
+    // 위치 클릭했을 때
+    function textClick(event) {
+        const textId = event.target.id;
+        resetAll();
+
+        if (textId == "booth") {
+            event.target.style.color = '#F06786';
+            imgs[1].style.display = "block";
+            resets[0].style.display = "block"
+        }
+        else if (textId == "food") {
+            event.target.style.color = '#FAD07C';
+            imgs[2].style.display = "block";
+            resets[1].style.display = "block"
+        }
+        else if (textId == "stage") {
+            event.target.style.color = '#6C5C9C';
+            imgs[3].style.display = "block";
+            resets[2].style.display = "block"
+        }
     }
-    text3.onclick = function() {
-        texts.style.color = "#000"
-        text3.style.color = '#6C5C9C';
+
+    // 리셋 버튼 클릭
+    function defaultState(event) {
+        resetAll();
+        imgs[0].style.display = "block";
     }
+    
+    // 이벤트 리스너
+    for (var text of texts) {
+        text.addEventListener("click", textClick);
+    }
+
+    for (var reset of resets) {
+        reset.addEventListener("click", defaultState);
+    }
+
+    
 }
 
-// DOMContentLoaded 이벤트가 발생할 때 initialize 함수를 호출합니다.
+// DOMContentLoaded 이벤트가 발생할 때 initialize 함수를 호출
 document.addEventListener("DOMContentLoaded", initialize);
