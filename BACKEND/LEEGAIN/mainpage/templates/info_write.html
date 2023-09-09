@@ -6,14 +6,15 @@
 <body>
 
     <div class="container">
-        <form method="POST" action="{%url 'mainpage:info_write'%}">
+        <form method="POST" action="{%url 'mainpage:info_write'%}" enctype="multipart/form-data">
             {% csrf_token %}
             제목 : <br>
             <input name="title" type="text"><br>
             게시글 작성 : <br>
             <textarea name="content" rows="10" cols="30"></textarea><br>
-            이미지: <input type="file" name="image"><br>
-
+            이미지:
+            <input type="file" name="images" multiple>
+            <br>
             <button type="submit">게시글 업로드</button>
         </form>
     </div>

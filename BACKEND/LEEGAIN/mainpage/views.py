@@ -2,9 +2,10 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.http import HttpResponse
-from .models import Info
+from .models import Info, InfoImage
 from .forms import InfoForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 # 메인페이지
 def mainpage(request):
@@ -25,8 +26,13 @@ def administrator(request):
     return render(request, 'administrator.html')
 
 
+# info 목록 
+# 더보기를 눌렀을 때 6개씩 더 보이기
 def info_list(request):
+    page = request.GET.get('page', 1)
     infos = Info.objects.all()
+    paginator = Paginator(infos, 6)
+    infos = paginator.get_page(page)
     return render(request, 'info.html', {'infos': infos})
 
 
@@ -39,8 +45,10 @@ def info_write(request):
             info = Info()
             info.title = form.cleaned_data['title']
             info.content = form.cleaned_data['content']
-            info.image = form.cleaned_data['image']
-            info.save()
+            info.save() 
+            for i in request.FILES.getlist('images'):
+                InfoImage.objects.create(info=info, image=i)
+            # 작성 완료 후 info 목록으로 이동
             return redirect('mainpage:info')
     else:
         form = InfoForm()
@@ -48,5 +56,5 @@ def info_write(request):
 
 # info 상세보기
 def info_post(request, info_id):
-    info = get_object_or_404(info, pk=info_id)
+    info = get_object_or_404(Info, pk=info_id)
     return render(request, 'info_post.html', {'info': info})
