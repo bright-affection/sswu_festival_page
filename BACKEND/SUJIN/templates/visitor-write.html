@@ -18,27 +18,24 @@
     <div id="wrap">
         <div id="title">
             <div class="title_photo">
-                <img src="{% static 'img/title_star.png' %}"></img>
+                <img src="{% static 'img/staricon.svg' %}"></img>
             </div>
             <div class="title_tx">방명록</div>
         </div>
         <div class="container">
             <div class="title_ex">하고 싶은 말을 작성해 주세요 :)</div>
             <form method="POST" onsubmit="return validateForm()">
-                <textarea class="text" name="content" rows="15" placeholder="텍스트를 입력해주세요"></textarea>
-
+                <textarea class="text" rows="15" name="content" placeholder="텍스트를 입력해주세요"></textarea>
                 <div class="label_wrap">
                     <label for="name">작성자 닉네임</label>
                 </div>
                 <input type="text" id="nickname" name="nickname"
                     maxlength="20" minlength="1" placeholder="닉네임을 입력해주세요"/>
-
                 <div class="label_wrap">
                     <label for="code">작성자 코드</label>
                 </div>
                 <input type="text" id="code" name="code"
                     maxlength="4" minlength="4" placeholder="숫자 네 자리를 입력해주세요"/>
-                    
                 <div class="caution">
                     <div>* 작성자 코드 네 자리는 방명록에는 표시되지 않습니다.</div>
                     <div>* 방명록을 작성하시면 닉네임과 코드를 통해 럭키드로우 이벤트에 자동으로 참여됩니다.</div>
@@ -47,7 +44,7 @@
             </form>
         </div>
     </div>
-</form>
+    </form>
 </body>
 </html>
 
