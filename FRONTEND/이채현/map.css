@@ -24,28 +24,30 @@ header {
 /* 지도 선택하기 */
 .select_wrap {
     position: absolute;
-    width: calc(100% - 60px);
-    height: calc(30% - 60px);
-    /* background-color: aqua; */
+    width: calc(100% - 40px);
+    /* height: calc(30% - 60px); */
+    /* height: 210px; */
+    /* height: calc(280px - 60px); */
     bottom: 0;
     border-radius: 20px 20px 0 0;
     box-shadow: 0px -10px 10px #E6E6E6;
-    padding: 30px;
+    padding: 20px;
     font-weight: bold;
     background-color: #fff;
-}
-
-.map_select {
-    height: 30%;
-}
-
-.line {
-    border-top: 1px solid #E2E2E2;
 }
 
 .map_select > * {
     display: inline-block;
     vertical-align: middle;
+}
+
+.star {
+    margin-right: 10px;
+}
+
+.line {
+    border-top: 1px solid #E2E2E2;
+    margin: 20px 0;
 }
 
 .reset {
