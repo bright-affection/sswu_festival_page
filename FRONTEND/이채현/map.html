@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="map.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+    <script src="map.js"></script>
+</head>
+<body>
+    <!-- 헤더는 나중에 js로 연결하기 -->
+    <header></header>
+    <div class="map">
+        <img src="./img/map_default.png">
+    </div>
+    <div class="select_wrap">
+        <div class="map_select">
+            <img class="star" src="./img/stariconmap1.svg" alt="분홍색 별">
+            <div class="map_select_tx">부스 위치</div>
+            <img class="reset" src="./img/reset.svg" alt="리셋">
+        </div>
+        <div class="map_select line">
+            <img class="star" src="./img/stariconmap2.svg" alt="노란색 별">
+            <div class="map_select_tx">푸드트럭 위치</div>
+            <img class="reset" src="./img/reset.svg" alt="리셋" style="display:none">
+        </div>
+        <div class="map_select line">
+            <img class="star" src="./img/stariconmap3.svg" alt="파란색 별">
+            <div class="map_select_tx">무대 위치</div>
+            <img class="reset" src="./img/reset.svg" alt="리셋">
+        </div>
+    </div>
+</body>
