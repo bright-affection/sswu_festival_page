@@ -10,4 +10,4 @@ class Booth(models.Model):
     image = models.ImageField(verbose_name='image', null=True, blank=True)   
 
     def __str__(self):
-        return self.content
+        return self.name

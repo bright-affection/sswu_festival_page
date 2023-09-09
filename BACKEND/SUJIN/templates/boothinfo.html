@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boothinfo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- <link rel="stylesheet" href="visitor-write.css" /> -->
+    <link rel="stylesheet" href="{% static 'css/boothinfo.css' %}" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+    <!-- 헤더는 나중에 js로 연결하기 -->
+    <header></header>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div id="wrap">
+        <div id="title">
+            <div class="title_photo">
+                <img src="{% static 'img/staricon.svg' %}"></img>
+            </div>
+            <div class="title_tx">부스 A to Z</div>
+            <a href="#popup_wrap" id="filter_btn">
+                <img src="{% static 'img/filter.svg' %}"></img>
+            </a>
+        </div>
+        <div class="container">
+            <div class="title_ex">수정대동제에서 진행되는 각종 부스의 정보들을 살펴보세요!</div>
+            <form method="POST" onsubmit="">
+                <input type="text" name="search" method="POST" id="keyword" placeholder="키워드로 부스 찾기">
+                <button class="search_btn">
+                    <img src="{% static 'img/searchicon.svg' %}">
+                </button>
+            </form>
+            <!-- 나중에 booth 반복문에 넣어서 여러개 만들기 -->
+            {% for booth in booth_list %}
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img  src="{{booth.image.url }}" alt="부스 대표 이미지">
+                </div>
+                
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">{{booth.name}}</div>
+                        <div class="booth_site">A01</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
+                        <div>{{booth.content}}</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="map">
+                            <a src="">위치보기</a>
+                        </div>
+                        <div class="time">{{booth.date}}&nbsp;&nbsp;{{booth.time}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="filter_wrap" style="display:none;">
+    <!-- <div id="filter_wrap"> -->
+        <div id="filter">
+            <span class="filter_title">Filter</span>
+            <button type="button" id="close">
+                <img src="{% static 'img/X.png' %}" alt="팝업 닫기">
+            </button>
+
+            <form method="POST" action="submit_filter">
+                <label class="label_title">날짜</label>
+                <div>
+                    <input type="checkbox" id="day4" name="day4" />
+                    <label for="day4" class="filter_text">10월 4일</label>
+                    <input type="checkbox" id="day5" name="day5" />
+                    <label for="day5">10월 5일</label>
+                </div>
+
+                <label class="label_title">시간대</label>
+                <div>
+                    <input type="checkbox" id="all" name="all" />
+                    <label for="all" class="filter_text">종일 부스</label>
+                    <input type="checkbox" id="am" name="am" />
+                    <label for="am">오전 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pm" name="pm" />
+                    <label for="pm">오후 부스</label>
+                </div>
+
+                <label class="label_title">부스 종류</label>
+                <div>
+                    <input type="checkbox" id="student" name="student" />
+                    <label for="student" class="filter_text">학생 부스</label>
+                    <input type="checkbox" id="partner" name="partner" />
+                    <label for="partner">제휴 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="council" name="council" />
+                    <label for="council" class="filter_text">총학 부스</label>
+                    <input type="checkbox" id="administration" name="administration" />
+                    <label for="administration">행정부서 부스</label>
+                </div>
+                
+                <input type="submit" id="filter_submit"  value="확인">
+            </form>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+
+<script>
+    var filter_btn = document.getElementById('filter_btn');
+    var filter = document.getElementById('filter_wrap');
+    var close_btn = document.getElementById('close')
+
+    //팝업 열기
+    filter_btn.addEventListener('click', function() {
+        filter.style.display = 'block';
+    });
+    
+    //팝업 닫기
+    close_btn.addEventListener('click', function() {
+        filter.style.display = 'none';
+    });
+
+    function submit_filter() {
+        filter.style.display = 'none';
+    }
+</script>

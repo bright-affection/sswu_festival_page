@@ -36,7 +36,7 @@ def boothinfo(request):
         context = {
             'booth_list' : booth_list
         }
-        return render(request, 'visitor.html', context)
+        return render(request, 'boothinfo.html', context)
     else:
         #필터가 적용돼서 post요청이 온다면
         date = request.GET.getlist('size', None)
@@ -55,7 +55,7 @@ def boothinfo(request):
         context = {
             'booth_list' : booth_list
         }
-        return render(request, 'visitor.html', context)
+        return render(request, 'boothinfo.html', context)
     
 #검색어 입력
 def boothsearch(request):
@@ -64,7 +64,7 @@ def boothsearch(request):
         context = {
             'booth_list' : booth_list
         }
-        return render(request, 'visitor.html', context)
+        return render(request, 'boothinfo.html', context)
     else:
         #검색어가 입력돼서 post요청이 온다면
         searched = request.POST['searched']        
@@ -72,4 +72,4 @@ def boothsearch(request):
         context = {
             'booth_list' : booth_list
         }
-        return render(request, 'visitor.html', {'searched': searched, 'context': context})
+        return render(request, 'boothinfo.html', {'searched': searched, 'context': context})
