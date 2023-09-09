@@ -16,7 +16,7 @@
       </div>
       <form method="post" action="{% url 'order:goods_list' %}">
         {% csrf_token %}
-        {% for good in goods %}
+        {% for good in goods %} <!--반복문을 돌면서 admin에서 미리 저장해둔 굿즈 목록을 반환함.-->
             <div class="goods_choose">
                 <img src="{{ good.image.url }}" alt="{{ good.name }}" class="goods_img" />
                 <div class="text">
@@ -26,7 +26,7 @@
                     <span class="goods_price">{{ good.price }}₩</span>
                     <select class="num_select" name="quantity_{{good.id}}">
                         <option value="" disabled selected>개수</option>
-                        {% for i in "123456789"|make_list %}
+                        {% for i in "123456789"|make_list %} <!--수량을 선택-->
                             <option value="{{ i }}">{{ i }}개</option>
                         {% endfor %}
                     </select>

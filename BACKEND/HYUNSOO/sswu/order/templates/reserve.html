@@ -4,19 +4,19 @@
     <title>굿즈 예약</title>
 </head>
 <body>
-    <form method="post" action="{% url 'order:reserve' %}">
+    <form method="post" action="{% url 'order:reserve' %}" onsubmit="showReservation();">
         {% csrf_token %}
         
-        <!-- 사용자 정보 입력 부분 -->
+        <!--사용자 정보 입력 부분-->
         {{ form.user_name.label_tag }} {{ form.user_name }}<br>
         {{ form.phone_number.label_tag }} {{ form.phone_number }}<br>
         {{ form.user_mail.label_tag }} {{ form.user_mail }}<br>
         {{ form.purchase_date.label_tag }} {{ form.purchase_date }}<br>
         {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br>
 
-        <!-- 선택한 상품 및 총액 확인 부분 -->
+        <!--선택한 상품 및 총액 확인 부분-->
         <h3>선택한 상품</h3>
-        {% for good_name, good_info in request.session.selected_goods.items %}
+        {% for good_name, good_info in request.session.selected_goods.items %} <!--세션을 통해서 선택한 굿즈 정보를 가져옴-->
         <div>
             <h4>{{ good_name }}</h4>
             <p>가격: {{ good_info.price }} 원</p>
@@ -28,13 +28,30 @@
         <button type="submit">예약 완료</button>
         {% if form.errors %}{{ form.errors }}{% endif %}
     </form>
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <script>
+        function showReservation(){
+            const userName = document.querySelector("[name='user_name']").value;
+
+            let goodInfo = "";
+            const goodsElements = document.querySelectorAll("h4, p");
+            goodsElements.forEach(el => {
+                goodInfo += el.innerText + "\n";
+            });
+
+            const purchaseData = document.querySelector("[name ='purchase_data']").value;
+            const purchaseTime = document.querySelector("[name ='purchase_time']").value;
+            const totalPrice = "{{ total_price }}";
+
+            const message = 
+                "예약이 완료되었습니다. \n\n"+
+                userName + "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요."+
+                goodInfo+ "\n"+
+                "예약시간: " + purchaseTime +
+                "총 금액: " + totalPrice + "원";
+
+            alert(message);
+        }
+    </script>
 
 </body>
 </html>

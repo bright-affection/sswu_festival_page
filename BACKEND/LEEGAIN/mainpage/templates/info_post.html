@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+
+    <div class="container">
+        <form method="POST" action="{%url 'mainpage:info_write'%}" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            제목 : <br>
+            <input name="title" type="text"><br>
+            게시글 작성 : <br>
+            <textarea name="content" rows="10" cols="30"></textarea><br>
+            첨부파일 : <br>
+            <input name="image" type="image"><br>
+
+
+        </form>
+    </div>
+</body>

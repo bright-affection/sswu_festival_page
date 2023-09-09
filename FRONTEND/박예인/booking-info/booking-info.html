@@ -9,14 +9,20 @@
   <body>
     <!-- 상단바 -->
     <div class="top_bar">
-      <img src="..\img\back_btn.png" alt="백버튼" class="back_btn" />
-      <img src="..\img\logo_img.png" alt="로고" class="logo_img" />
-      <img src="..\img\ham_bar.png" alt="햄버거 버튼" class="ham_btn" />
+      <a href="https://">
+        <img src="..\img\backicon.svg" alt="백버튼" class="back_btn"
+      /></a>
+      <a href="https://">
+        <img src="..\img\prismPink.svg" alt="로고" class="logo_img"
+      /></a>
+      <a href="https://">
+        <img src="..\img\hamburger.svg" alt="햄버거 버튼" class="ham_btn"
+      /></a>
     </div>
     <!-- 굿즈 예약 설명 -->
     <div class="booking">
       <div class="top">
-        <img src="..\img\sparkle.png" alt="반짝이" class="sparkle" />
+        <img src="..\img\staricon.svg" alt="반짝이" class="sparkle" />
         <span class="booking_text">굿즈 예약</span>
       </div>
     </div>
@@ -45,7 +51,7 @@
       <div class="text">원하는 구매 일자</div>
       <div class="select_date">
         <img
-          src="../img/nonechecked.png"
+          src="../img/checkboxNull.svg"
           alt="체크 안 됨"
           id="check_icon1"
           class="check_icon"
@@ -53,7 +59,7 @@
         />
         <span class="date">10월 4일</span>
         <img
-          src="../img/nonechecked.png"
+          src="../img/checkboxNull.svg"
           alt="체크 안 됨"
           id="check_icon2"
           class="check_icon"
@@ -102,14 +108,14 @@
         const icon2 = document.getElementById(id2);
 
         if (isChecked1 && id1 === "check_icon1") {
-          icon1.src = "../img/nonechecked.png";
+          icon1.src = "../img/checkboxNull.svg";
           isChecked1 = false;
         } else if (isChecked2 && id1 === "check_icon2") {
-          icon1.src = "../img/nonechecked.png";
+          icon1.src = "../img/checkboxNull.svg";
           isChecked2 = false;
         } else {
-          icon1.src = "../img/checked.png";
-          icon2.src = "../img/nonechecked.png";
+          icon1.src = "../img/checkbox.svg";
+          icon1.src = "../img/checkboxNull.svg";
           isChecked1 = true;
           isChecked2 = false;
         }

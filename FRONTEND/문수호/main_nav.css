@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body{
+    margin: 0;
+    background-color: blue;
+}
+
+a{
+    color:#FCF9FB ;
+}
+
+.header{
+    background-color: #F06786;
+    position: fixed;
+    width:100%;
+    height: 75px;
+    z-index: 3;
+}
+
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #F06786;
+} 
+
+.header ul a{
+    display: block;
+    /* outline: 1px solid red; */
+    padding: 17px 36px;
+    text-decoration: none;
+}
+.header .menu{
+    clear:both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .prism{
+    border:1px solid red;
+    padding: 21.6px 20px;
+    position: relative;
+    float: left; 
+} 
+
+.header .menu-icon{
+    border:1px solid red;
+    padding: 26px 20px;
+    position: relative;
+    float: right; 
+    cursor: pointer;
+}
+
+.header .menu-btn{
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 500px;
+}
