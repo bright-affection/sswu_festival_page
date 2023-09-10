@@ -89,14 +89,14 @@ header {
 }
 
 /* 더보기 버튼 */
-.more {
+#more {
     margin: 2em 0;
     text-align: center;
     color: #F06786;
     font-size: 0.8em;
 }
 
-.more span {
+#more span {
     border: 1px solid #F06786;
     border-radius: 5px;
     padding: 0.5em 1em;
