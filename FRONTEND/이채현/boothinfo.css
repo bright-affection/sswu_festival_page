@@ -5,11 +5,11 @@ body {
     font-family: Pretendard;
 }
 
-header {
+/* header {
     width: 100%;
     height: 50px;
     background-color: #F06786;
-}
+} */
 
 #wrap {
     margin: 0 20px;
@@ -217,20 +217,20 @@ form {
 }
 
 /* 원래 체크박스 숨기기 */
-input[type="checkbox"]{
+body >input[type="checkbox"]{
     display:none;
 }
 
-input[type="checkbox"] + label{
+body >input[type="checkbox"] + label{
     cursor:pointer;
 }
 
-input[type="checkbox"] + label > div {
+body >input[type="checkbox"] + label > div {
     vertical-align: middle;
     padding-left: 5px;
 }
 
-input[type="checkbox"] + label:before{
+body >input[type="checkbox"] + label:before{
     content:"";
     display:inline-block;
     width:13px;
@@ -242,7 +242,7 @@ input[type="checkbox"] + label:before{
 }
     
 /* label:before에 체크 된 상태 CSS */
-input[type="checkbox"]:checked  + label:before {
+body >input[type="checkbox"]:checked  + label:before {
     background-image: url('./img/checked.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -268,3 +268,102 @@ form > div {
     color: #fff;
     margin-top: 30px;
 }
+
+/* header */
+
+  a{
+    color: #F06786;
+  }
+  
+  #logo{
+    height: 21px;
+    width: 89px;
+  }
+  
+  
+  .header ul{
+    margin-top: 74px;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #FCF9FB;
+  } 
+  .menu > li{
+    padding: 17px 36px;
+  }
+  .header ul a{
+  
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .header .menu{
+    clear:both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  .header .menu-icon{
+    display: flex;
+  
+  }
+  
+  
+  .header{
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    background-color: #FCF9FB;
+    position: fixed;
+    top:0;
+    height: 75px;
+    padding: 16px;
+    z-index: 3;
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+  }
+#menu-btn{
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu{
+    max-height: 500px;
+  }
+  
+  
+  .box{
+    text-align: center;
+    font-size: 12px;
+    margin: 23px 0px 50px 36px;
+    width: 80px;
+    height: 24px;
+    background-color: #ffffff00;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    border:1px solid #F06786ed;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container_main#blur.active{
+    filter: blur(5px);
+  }
+  
+  .container_main{
+    padding-top: 75px;
+  }
