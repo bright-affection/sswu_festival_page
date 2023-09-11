@@ -304,17 +304,14 @@ main {
     }
     #rectangle2 {
         width: 45%;
-        height: 160px;
-        border:none;
-        border-radius: 7px;
-        background: white;
         float: right;
         margin-bottom:25%;
         margin-right:4%;
     }
     #rectangle1-up, #rectangle2-up{
         width: 100%;
-        height: 83px;
+        height: auto;
+        /* height: 83px; */
         padding-top: 10%; 
         padding-bottom: 10%; 
     }
@@ -331,7 +328,7 @@ main {
         height: auto;
     }
     .boothimg{
-        width: 60%;
+        width: 65%;
         height: auto;
     }
     
