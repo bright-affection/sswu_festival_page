@@ -31,6 +31,7 @@ body{
 
 main {
     width: 100%;
+    height: 100vh;
     margin-top: 75px;
     background-size: cover;
     }
@@ -203,7 +204,7 @@ a{
   .box{
     text-align: center;
     font-size: 12px;
-    margin: 23px 0px 50px 36px;
+    margin: 23px 0px 50px 35px;
     width: 80px;
     height: 24px;
     background-color: #ffffff00;
@@ -218,5 +219,7 @@ a{
   }
 
   .container#blur.active{
-    filter: blur(5px);
+    filter: blur(5px) brightness(0.35);
   }
+
+  
