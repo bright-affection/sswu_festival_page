@@ -52,31 +52,10 @@ select:focus {
 option:focus {
   outline: none;
 }
-.top_bar {
+
+/* .booking {
   height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.back_btn {
-  float: left;
-  width: 12px;
-  height: 16px;
-}
-.logo_img {
-  display: block;
-  margin: 0 auto;
-  height: 21px;
-  width: 89px;
-}
-.ham_btn {
-  float: right;
-  width: 17px;
-  height: 15px;
-}
-.booking {
-  /* height: 70px; */
-}
+} */
 .top {
   display: flex;
   align-items: center; /* 수직 가운데 정렬 */
@@ -246,6 +225,7 @@ a{
 }
 
 .container{
+  
   margin-left: 20px;
   margin-right: 20px;
   padding-top: 75px;
