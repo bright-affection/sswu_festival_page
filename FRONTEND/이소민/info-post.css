@@ -265,13 +265,21 @@ body {
   }
   
   .container_main#blur.active{
-    filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.25);
+    filter: blur(5px) brightness(0.75)
   } 
   
   
 .container_main{
+  position: relative;
+  height: 100vh;
+  
+  }
+  
+  .container_box{
     position: relative;
     margin-right: 20px;
     margin-left: 20px;
   }
+  
   
