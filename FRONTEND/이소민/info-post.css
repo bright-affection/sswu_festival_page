@@ -82,6 +82,34 @@ body {
     white-space: nowrap;
 }
 
+@media screen and (max-width: 360px) {
+    .title h1 {
+        width: auto;
+    }
+
+    .title h2 {
+        left: 150px; 
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .title {
+        overflow: hidden;
+        height: 22px;
+    }
+
+    .title h2 {
+        position: absolute;
+        width: auto;
+        right: 17px;
+        text-align: right;
+        overflow: hidden;  
+    }
+}
+
+
+
 @media screen and (min-width: 361px) {
 
     .box {
