@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'order',
+    'rangefilter',
 ]
 
 MIDDLEWARE = [
