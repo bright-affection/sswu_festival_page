@@ -209,9 +209,11 @@ a{
 }
 
 .container#blur.active{
-  filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: blur(5px) brightness(0.75)
 }
 
 .container{
   padding-top: 75px;
+  height: 100%;
 }

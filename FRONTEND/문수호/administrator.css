@@ -219,7 +219,8 @@ a{
   }
 
   .container#blur.active{
-    filter: blur(5px) brightness(0.35);
+    background-color: rgba(0, 0, 0, 0.25);
+    filter: blur(5px) brightness(0.75)
   }
 
   
