@@ -68,9 +68,7 @@ option:focus {
   width: 17px;
   height: 15px;
 }
-.booking {
-  /* height: 70px; */
-}
+
 .top {
   display: flex;
   align-items: center; /* 수직 가운데 정렬 */

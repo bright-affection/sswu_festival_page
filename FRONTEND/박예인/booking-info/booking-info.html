@@ -107,17 +107,11 @@
         const icon1 = document.getElementById(id1);
         const icon2 = document.getElementById(id2);
 
-        if (isChecked1 && id1 === "check_icon1") {
-          icon1.src = "../img/checkboxNull.svg";
-          isChecked1 = false;
-        } else if (isChecked2 && id1 === "check_icon2") {
-          icon1.src = "../img/checkboxNull.svg";
-          isChecked2 = false;
+        if (icon1.getAttribute("src") === "../img/checkbox.svg") {
+          icon1.setAttribute("src", "../img/checkboxNull.svg");
         } else {
-          icon1.src = "../img/checkbox.svg";
-          icon1.src = "../img/checkboxNull.svg";
-          isChecked1 = true;
-          isChecked2 = false;
+          icon1.setAttribute("src", "../img/checkbox.svg");
+          icon2.setAttribute("src", "../img/checkboxNull.svg");
         }
       }
     </script>
