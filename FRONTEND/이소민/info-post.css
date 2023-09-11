@@ -29,8 +29,8 @@ body {
 .logo {
     margin-left: 15px;
     margin-top: -10px;
-    width : 89px;
-    height:auto;
+    width: 89px;
+    height: auto;
     text-align: center;
     align-items: center;
 }
@@ -88,7 +88,7 @@ body {
     }
 
     .title h2 {
-        left: 150px; 
+        left: 150px;
         margin-top: 18px;
     }
 }
@@ -104,7 +104,7 @@ body {
         width: auto;
         right: 17px;
         text-align: right;
-        overflow: hidden;  
+        overflow: hidden;
     }
 }
 
