@@ -374,12 +374,14 @@ body {
   }
   
   .container#blur.active{
-    filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.25);
+  filter: blur(5px) brightness(0.75)
   }
   
   .container{
+    height: 100%;
     padding-top: 75px;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
   
