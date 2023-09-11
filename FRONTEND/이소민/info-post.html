@@ -13,15 +13,30 @@
     </head>
     <body>
         <div class="container">
-             <!-- 상단바 -->
-             <div class="icon">
-                <a href=""><img src="img/backicon.svg" alt="뒤로가기" class="back"></a>
-                <a href=""><img src="img/prismPink.svg" alt="로고" class="logo"></a>
-                <a href=""><img src="img/hamburger.svg" alt="목록" class="list_icon"></a>
-            </div>
-
+            <!-- 상단바 -->
+            <header class="header">
+                <a><img class="back" src="img/backicon.svg" alt="뒤로가기" class="list_icon"></a>
+                <img class="prism" src="img/prismPink.svg" alt="로고" class="list_icon2" id="logo">
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class='menu-icon' for="menu-btn">
+                <div class='menu-button' onclick="toggle()">
+                    <img src="img/hamburger.svg" alt="로고" class="Group 1_pink">
+                </div>
+                </label>
+                <ul class="menu">
+                    <li><a href="#">타임테이블</a></li>
+                    <li><a href="#">축제 지도 확인하기</a></li>
+                    <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
+                    <li><a href="#">굿즈 구매 예약</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">방명록</a></li>
+                    <li><a href="#">만든이들</a></li>
+                    <a href="#"><div class="box">관리자 모드</div></a>
+                </ul>
+            </header>
+            <div class="container_main" id="blur">
             <!-- 전체 흰색 박스 -->
-            <div class="box">
+            <div class="white_box">
 
                 <!-- 제목,날짜 -->
                 <div class="title">
@@ -64,8 +79,14 @@
             </div>
 
         </div>
+    </div>
 
         <script>
+            //블러처러
+            function toggle(){
+            var blur=document.getElementById('blur');
+            blur.classList.toggle('active')
+            }
             let slider = document.querySelector(".slider");
             let innerSlider = document.querySelector(".slider-inner");
             let pressed = false;
