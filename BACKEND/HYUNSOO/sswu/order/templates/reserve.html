@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <form method="post" action="{% url 'order:reserve' %}" onsubmit="showReservation();">
+    <form method="post" action="{% url 'order:reserve' %}" onsubmit="showReservation(event);">
         {% csrf_token %}
         
         <!--사용자 정보 입력 부분-->
@@ -48,38 +48,53 @@
         <button onclick="showGoodsList()">굿즈목록보기</button>
     </div>
     <script>
-        function showReservation(){
-            const userName = document.querySelector("[name='user_name']").value;
+        function showReservation(event) {
+            event.preventDefault();
+    
+            const formData = new FormData(event.target);
 
-            let goodInfo = "";
-            const goodsElements = document.querySelectorAll("h4, p");
-            goodsElements.forEach(el => {
-                goodInfo += el.innerText + "\n";
+            fetch("{% url 'order:reserve' %}", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const userName = document.querySelector("[name='user_name']").value;
+                    let goodInfo = "";
+                    const goodsElements = document.querySelectorAll("h4, p");
+                    goodsElements.forEach(el => {
+                        goodInfo += el.innerText + "\n";
+                    });
+
+                    const purchaseDate = document.querySelector("[name='purchase_date']").value;
+                    const purchaseTime = document.querySelector("[name ='purchase_time']").value;
+                    const totalPrice = "{{ total_price }}";
+
+                    const message = 
+                        "예약이 완료되었습니다. \n\n"+
+                        userName + "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요.\n"+
+                        goodInfo+ "\n"+
+                        "예약시간: " + purchaseTime +
+                        "총 금액: " + totalPrice + "원";
+
+                    const popupContent = document.getElementById("popup-content");
+                    popupContent.innerText = message;
+
+                    document.getElementById('popup').style.display = 'block';
+                } else {
+                    alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
+                }
             });
-
-            const purchaseData = document.querySelector("[name ='purchase_data']").value;
-            const purchaseTime = document.querySelector("[name ='purchase_time']").value;
-            const totalPrice = "{{ total_price }}";
-
-            const message = 
-                "예약이 완료되었습니다. \n\n"+
-                userName + "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요."+
-                goodInfo+ "\n"+
-                "예약시간: " + purchaseTime +
-                "총 금액: " + totalPrice + "원";
-
-            const popupContent = document.getElementById("popup-content");
-            popupContent.innerText = message;
-
-            document.getElementById('popup').style.display = 'block';
         }
         function Home() {
             window.location.href = "{% url 'order:home' %}";
         }
+
         function showGoodsList() {
             window.location.href = "{% url 'order:goods_list' %}";
         }
-    </script>
 
+    </script>
 </body>
 </html>

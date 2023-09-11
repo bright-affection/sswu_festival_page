@@ -7,7 +7,7 @@ class OrderItemInline(admin.TabularInline):
     extra = 1  
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ['user_name', 'phone_number', 'user_mail', 'get_goods_name', 'get_total_price']
+    list_display = ['user_name', 'phone_number', 'user_mail', 'get_goods_name', 'get_total_price','reserved_at']
     inlines = [OrderItemInline]
 
     def get_goods_name(self, obj):

@@ -23,6 +23,7 @@ class Reservation(models.Model):
    # quantity = models.PositiveIntegerField()
     purchase_date = models.CharField(max_length=10, choices=DATE_CHOICES)
     purchase_time = models.CharField(max_length=5, choices=TIME_CHOICES)
+    reserved_at = models.DateTimeField(auto_now_add=True)
     
 class OrderItem(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name='item')
