@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from order.forms import ReservationForm
 from .models import Goods, Reservation, OrderItem
 from django.contrib import messages
+from django.urls import reverse
+from django.http import JsonResponse
 
 def goods_list(request):
     goods = Goods.objects.all()
@@ -41,12 +43,23 @@ def reserve_goods(request):
                 OrderItem(reservation=reservation, goods=good, quantity=data['quantity']).save()
 
             messages.success(request, '예약이 완료되었습니다.')
+            request.session['reservation_complete'] = True
             del request.session['selected_goods']
-            return redirect('order:reserve')
+            
+            return JsonResponse({'success':True})
+            #next_url = request.POST.get('next', reverse('order:reserve'))
+            #return redirect(next_url)
+        else:
+            return JsonResponse({'success':False, 'errors': form.errors})
+            #print(form.errors)
     else:
         form = ReservationForm()
+        total_price = sum([data['price'] * data['quantity'] for data in selected_goods_data.values()])
+        return render(request, 'reserve.html', {'form': form, 'selected_goods': selected_goods_data, 'total_price': total_price})
         
-    total_price = sum([data['price'] * data['quantity'] for data in selected_goods_data.values()])
-    return render(request, 'reserve.html', {'form': form, 'selected_goods': selected_goods_data, 'total_price': total_price})
+    #total_price = sum([data['price'] * data['quantity'] for data in selected_goods_data.values()])
+    #return render(request, 'reserve.html', {'form': form, 'selected_goods': selected_goods_data, 'total_price': total_price})
 
+def home(request):
+    return render(request, 'home.html')
 

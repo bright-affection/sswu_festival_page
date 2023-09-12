@@ -1,12 +1,13 @@
 from django.contrib import admin
 from .models import Goods, Reservation, OrderItem
+from django.contrib.auth.models import PermissionsMixin
 
 class OrderItemInline(admin.TabularInline):  
     model = OrderItem
     extra = 1  
 
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ['user_name', 'phone_number', 'user_mail', 'get_goods_name', 'get_total_price']
+    list_display = ['user_name', 'phone_number', 'user_mail', 'get_goods_name', 'get_total_price','reserved_at']
     inlines = [OrderItemInline]
 
     def get_goods_name(self, obj):
@@ -18,6 +19,8 @@ class ReservationAdmin(admin.ModelAdmin):
     get_goods_name.short_description = "굿즈 이름"
     get_total_price.short_description = "총 가격"
 
+    list_filter = ['item__goods__name',]
+    search_fields = ['user_name','phone_number','user_mail',]
 
 class Selected_Goods(admin.ModelAdmin):
     list_display = ['name', 'price']
