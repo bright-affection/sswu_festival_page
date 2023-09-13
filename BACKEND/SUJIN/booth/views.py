@@ -4,7 +4,6 @@ from django.db.models import Q
 
 def boothinfo(request):
     if request.method == 'GET':
-        print("ㅎㅇㅎㅇㅎㅇ")
         booth_list = Booth.objects.all().order_by('name')
         context = {
             'booth_list' : booth_list
@@ -12,11 +11,9 @@ def boothinfo(request):
         return render(request, 'boothinfo.html', context)
     else:
         #검색어
-        if request.POST['search']:
+        if 'search' in request.POST:
             searched = request.POST['search']    
-            print(searched)    
             booth_list = Booth.objects.filter(name__icontains=searched).order_by('name')
-            print(Booth.objects.filter(name__icontains=searched).order_by('name').query)
             context = {
                 'booth_list' : booth_list
             }
