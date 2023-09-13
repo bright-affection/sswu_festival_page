@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    공지사항
+    <!-- 글쓰기 클릭시 info_write로 이동 -->
+    <a href="{% url 'mainpage:info_write' %}">글쓰기</a>
+
+    <ul id="postList">
+        {% for q in infos %}
+        <li class="{% if forloop.counter > 6 %}hidden{% endif %}">
+            {% if q.images %}
+            <!-- 첫번째 이미지 표시 -->
+            <img src="{{ q.images.first.image.url }}" width="200">
+            {% else %}
+            <p>이미지 없음</p>
+            {% endif %}
+            <br>
+            <a href="{% url 'mainpage:info_post' q.id %}">{{ q.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <button id="loadMore">더보기</button>
+    <script>
+        document.getElementById("loadMore").addEventListener("click", function () {
+            const hiddenPosts = document.querySelectorAll("#postList .hidden");
+            let shownCount = 0;
+            for (let i = 0; i < 6 && i < hiddenPosts.length; i++) {
+                hiddenPosts[i].classList.remove("hidden");
+                shownCount++;
+            }
+            // 숨겨진 게시물이 더 이상 없다면 "더보기" 버튼 숨기기
+            if (shownCount < 6 || hiddenPosts.length - shownCount <= 0) {
+                document.getElementById("loadMore").style.display = "none";
+            }
+        });
+    </script>
+</body>

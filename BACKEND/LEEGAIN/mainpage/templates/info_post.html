@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+
+    <div class="container">
+        <form method="POST" action="{%url 'mainpage:info_write'%}" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <h1>{{ info.title }}</h1>
+            <p>{{ info.content }}</p>
+            <p>{{ info.create_date|date:"Y.m.d" }}</p>
+            {% for image in info.images.all %}
+            <img src="{{ image.image.url }}" alt="info_image" width="300px" height="300px">
+            {% endfor %}
+
+        </form>
+    </div>
+</body>

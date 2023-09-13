@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boothinfo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- <link rel="stylesheet" href="visitor-write.css" /> -->
+    <link rel="stylesheet" href="boothinfo.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+    <header class="header">
+        <a><img class="back" src="img/backicon.svg" alt="뒤로가기" class="list_icon"></a>
+        <img class="prism" src="img/prismPink.svg" alt="로고" class="list_icon2" id="logo">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class='menu-icon' for="menu-btn">
+            <div class='menu-button' onclick="toggle()">
+                <img src="img/hamburger.svg" alt="로고" class="Group 1_pink">
+            </div>
+        </label>
+        <ul class="menu">
+            <li><a href="#">타임테이블</a></li>
+            <li><a href="#">축제 지도 확인하기</a></li>
+            <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
+            <li><a href="#">굿즈 구매 예약</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">방명록</a></li>
+            <li><a href="#">만든이들</a></li>
+            <a href="#"><div class="box">관리자 모드</div></a>
+        </ul>
+    </header>
+    <div class="container_main" id="blur">
+    <div id="wrap">
+        <div id="title">
+            <div class="title_photo">
+                <img src="./img/staricon.svg"></img>
+            </div>
+            <div class="title_tx">부스 A to Z</div>
+            <a href="#popup_wrap" id="filter_btn">
+                <img src="./img/filter.svg"></img>
+            </a>
+        </div>
+        <div class="container">
+            <div class="title_ex">수정대동제에서 진행되는 각종 부스의 정보들을 살펴보세요!</div>
+            <form method="POST" onsubmit="">
+                <input type="text" name="search" method="POST" id="keyword" placeholder="키워드로 부스 찾기">
+                <button class="search_btn">
+                    <img src="./img/searchicon.svg">
+                </button>
+            </form>
+            <!-- 나중에 booth 반복문에 넣어서 여러개 만들기 -->
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">A01</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
+                        <div>공대생의 반란! 코딩하다 지친 수정이가 
+                            만드는 비즈 팔찌/반지 입니다 :)</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="map">
+                            <a src="">위치보기</a>
+                        </div>
+                        <div class="time">10월 4일 오전</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="filter_wrap" style="display:none;">
+    <!-- <div id="filter_wrap"> -->
+        <div id="filter">
+            <span class="filter_title">Filter</span>
+            <button type="button" id="close">
+                <img src="./img/X.png" alt="팝업 닫기">
+            </button>
+
+            <form method="POST" action="submit_filter">
+                <label class="label_title">날짜</label>
+                <div>
+                    <input type="checkbox" class="checkbox" id="day4" name="day4"  value="4"/>
+                    <label for="day4" class="filter_text">10월 4일</label>
+                    <input type="checkbox" class="checkbox" id="day5" name="day5" value="5"/>
+                    <label for="day5">10월 5일</label>
+                </div>
+
+                <label class="label_title">시간대</label>
+                <div>
+                    <input type="checkbox" class="checkbox" id="all" name="all" value="all"/>
+                    <label for="all" class="filter_text">종일 부스</label>
+                    <input type="checkbox" class="checkbox" id="am" name="am" value="am" />
+                    <label for="am">오전 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="checkbox" id="pm" name="pm" value="pm" />
+                    <label for="pm">오후 부스</label>
+                </div>
+
+                <label class="label_title">부스 종류</label>
+                <div>
+                    <input type="checkbox" class="checkbox" id="student" name="student" value="student" />
+                    <label for="student" class="filter_text">학생 부스</label>
+                    <input type="checkbox" class="checkbox" id="partner" name="partner" value="parner" />
+                    <label for="partner">제휴 부스</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="checkbox" id="council" name="council" value="council" />
+                    <label for="council" class="filter_text">총학 부스</label>
+                    <input type="checkbox" class="checkbox" id="administration" name="administration" value="administration" />
+                    <label for="administration">행정부서 부스</label>
+                </div>
+                
+                <input type="submit" id="filter_submit"  value="확인">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    //블러처리
+    function toggle(){
+        var blur=document.getElementById('blur');
+        blur.classList.toggle('active')
+        }
+
+    var filter_btn = document.getElementById('filter_btn');
+    var filter = document.getElementById('filter_wrap');
+    var close_btn = document.getElementById('close')
+
+    //팝업 열기
+    filter_btn.addEventListener('click', function() {
+        filter.style.display = 'block';
+    });
+    
+    //팝업 닫기
+    close_btn.addEventListener('click', function() {
+        filter.style.display = 'none';
+    });
+
+    function submit_filter() {
+        filter.style.display = 'none';
+    }
+</script>
