@@ -1,98 +1,82 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
 
+header {
+    width: 100%;
+    height: 75px;
+    background-color: #F06786;
+}
+
 body {
-    background-color: #FCF9FB;
     font-family: Pretendard;
 }
 
-#wrap {
-    margin: 0 20px;
+.stamp {
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
-/* 타이틀 */
-#title {
-    font-size: 1.25em;
-    color: #F06786;
-    font-weight: bold;
-    padding: 10px 0;
-}
-
-#title div {
-    display: inline-block;
-    
-    height: 100%;
+.stamp > * {
+    display: inline;
     vertical-align: middle;
 }
 
-.title_photo img{
-    width: 0.6em;
-}
-
-/* 본문 */
-.container {
+.map{
     width: 100%;
-    font-size: 0.8em;
+    overflow: hidden;
 }
 
-.title_ex {
-    font-weight: 500;
-    line-height: 150%;
-}
-
-.container form {
+.map_img{
     width: 100%;
 }
 
-.text {
-    border: 1px solid #F06786;
-    border-radius: 5px;
-    margin: 8px 0;
-    width: calc(100% - 32px);
-    /* width: 100%; */
-    resize: none;
-    padding: 16px;
-    font-family: Pretendard;
-    outline: none;
+/* 지도 선택하기 */
+.select_wrap {
+    position: absolute;
+    width: calc(100% - 50px);
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px -10px 10px #E6E6E6;
+    padding: 25px;
+    font-weight: bold;
+    background-color: #fff;
 }
 
-.label_wrap {
-    margin-top: 10px;
-    font-weight: 500;
+.map_select > * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.container input {
-    border: 1px solid #F06786;
-    border-radius: 5px;
-    width: calc(100% - 32px);
-    padding: 16px;
-    margin: 8px 0;
-    outline: none;
+.star {
+    margin-right: 10px;
 }
 
-#submit {
-    width: 100%;
-    padding: 16px 0;
-    background-color: #F06786;
-    color: #fff;
-    font-weight: 700;
+.line {
+    border-top: 1px solid #E2E2E2;
+    margin: 25px 0;
 }
 
-/* 주의사항 */
-.caution {
-    font-size: 0.8em;
-    color: #A0A0A0;
-    margin: 16px 0;
-}
-
-.caution div {
-    margin: 8px 0;
+.reset {
+    float: right;
 }
 
 /* 헤더 */
-  html,body{
+/* @font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-style: normal;
+    }
+  
+  
+  * {
+    box-sizing: border-box;
+    list-style: none;
+  }
+   */
+  /* html,body{
     margin: 0;
     height: 100%;
-  }
+  } */
   
   a{
     color: #F06786;
@@ -132,8 +116,6 @@ body {
   
   
   .header{
-    box-sizing: border-box;
-    list-style: none;
     display: flex;
     width: 100%;
     background-color: #FCF9FB;
@@ -146,6 +128,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+    list-style: none;
   }
   .menu{
     position: absolute;
@@ -155,6 +139,7 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    
     
   }
   .header .menu-btn{
@@ -183,12 +168,12 @@ body {
     align-items: center;
   }
   
-  .container#blur.active{
+  .container_main#blur.active{
     background-color: rgba(0, 0, 0, 0.25);
-    filter: blur(5px) brightness(0.75)
+  filter: blur(5px) brightness(0.75)
   }
   
-  .container{
+  .container_main{
     height: 100vh;
     padding-top: 75px;
   }
