@@ -147,6 +147,12 @@
       <!-- <button type="submit">예약 완료</button> -->
       {% if form.errors %}{{ form.errors }}{% endif %}
     </form>
+    <div id="popup">
+      <h2>예약완료!</h2>
+      <div id="popup-content"></div>
+      <button onclick="Home()">홈으로이동</button>
+      <button onclick="showGoodsList()">굿즈목록보기</button>
+    </div>
     <script>
       function showReservation() {
         const userName = document.querySelector("[name='user_name']").value;
@@ -178,23 +184,6 @@
           "원";
 
         alert(message);
-      }
-
-      //   날짜 선택
-      let isChecked1 = false; // 10월 4일 이미지 상태
-      let isChecked2 = false; // 10월 5일 이미지 상태
-
-      function toggleImage(id1, id2) {
-        const icon1 = document.getElementById(id1);
-        const icon2 = document.getElementById(id2);
-        // src="{% static 'img/checkboxNull.svg' %}"
-
-        if (icon1.getAttribute("src") === "{% static 'img/checkbox.svg' %}") {
-          icon1.setAttribute("src", "{% static 'img/checkboxNull.svg' %}");
-        } else {
-          icon1.setAttribute("src", "{% static 'img/checkbox.svg' %}");
-          icon2.setAttribute("src", "{% static 'img/checkboxNull.svg' %}");
-        }
       }
     </script>
   </body>
