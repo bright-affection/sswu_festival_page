@@ -61,10 +61,10 @@
           <span class="goods_price">{{ good.price }}₩</span>
           <select class="num_select" id="num" name="quantity_{{good.id}}">
             <option value="" disabled selected>개수</option>
-            <option value="">선택없음</option>
+            <option value="" class="noChoose">선택없음</option>
             {% for i in "123456789"|make_list %}
             <!--수량을 선택-->
-            <option value="{{ i }}">{{ i }}개</option>
+            <option value="{{ i }}" class="cnt">{{ i }}개</option>
             {% endfor %}
           </select>
         </div>
@@ -180,6 +180,25 @@
       // 모든 select 요소에 대한 변경 이벤트 리스너를 추가합니다.
       selectElements.forEach(function (selectElement) {
         selectElement.addEventListener("change", handleSelectChange);
+      });
+
+      // select 간격
+      // num select 요소 선택
+      var numSelect = document.getElementById("num");
+
+      // num select 요소의 change 이벤트 감지
+      numSelect.addEventListener("change", function () {
+        // 선택된 옵션의 클래스 확인
+        var selectedOption = this.options[this.selectedIndex];
+
+        // 선택된 옵션이 cnt 클래스를 가지고 있다면
+        if (selectedOption.classList.contains("cnt")) {
+          // padding-left 값을 변경
+          selectedOption.style.paddingLeft = "28px";
+        } else {
+          // 다른 옵션을 선택한 경우, 기본 padding-left 값을 설정
+          selectedOption.style.paddingLeft = "10px";
+        }
       });
     </script>
   </body>
