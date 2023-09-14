@@ -27,7 +27,6 @@ class Reservation(models.Model):
     purchase_time = models.CharField(max_length=15, choices=TIME_CHOICES)
     reserved_at = models.DateTimeField(auto_now_add=True)
 
-    
 class OrderItem(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE, related_name='item')
     goods = models.ForeignKey(Goods, on_delete=models.CASCADE)
