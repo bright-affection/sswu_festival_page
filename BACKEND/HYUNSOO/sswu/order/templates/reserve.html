@@ -54,6 +54,7 @@
           placeholder="성함을 입력해주세요."
           class="text_input"
           name="user_name"
+          required
         />
       </div>
       <div class="insert">
@@ -63,6 +64,7 @@
           placeholder="하이픈(-) 없이 작성해주세요."
           class="text_input"
           name="phone_number"
+          required
         />
       </div>
       <div class="insert">
@@ -72,6 +74,7 @@
           placeholder="ex) mutsa@gmail.com"
           class="text_input"
           name="user_mail"
+          required
         />
       </div>
 
@@ -86,33 +89,30 @@
                 type="radio" 
                 name="{{ form.purchase_date.name }}" 
                 value="{{ choice_value }}" 
-                style="display:none;" 
+                style="opacity: 0; position: absolute; z-index: -1;" 
                 id="radio_{{ forloop.counter }}"
-                />
+                {% if forloop.first %}required{% endif %} />
                 <img
                 src="{% static 'img/checkboxNull.svg' %}"
                 alt="체크 안 됨"
                 id="check_icon{{ forloop.counter }}"
                 class="check_icon"
-                onclick="toggleImage('check_icon{{ forloop.counter }}', 'radio_{{ forloop.counter }}')"
-                />
+                onclick="toggleImage('check_icon{{ forloop.counter }}', 'radio_{{ forloop.counter }}')" />
                 <span class="date">{{ choice_label }}</span>
             </label>
             {% endfor %}
         </div>
-    </div>
-
-      <!-- {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br /> -->
-      <!-- 구매 시간 -->
-        <div class="insert">
+      </div>
+    
+      <div class="insert">
           <div class="text">구매 시간</div>
-          <select class="num_select" name="purchase_time">
+          <select class="num_select" name="purchase_time" required>
               <option value="" disabled selected>시간 선택</option>
               {% for time_value, time_label in form.purchase_time.field.choices %}
               <option value="{{ time_value }}">{{ time_label }}</option>
               {% endfor %}
           </select>
-      </div>
+      </div>    
       <hr />
 
       <!--선택한 상품 및 총액 확인 부분-->
@@ -154,6 +154,7 @@
       <button onclick="Home()">홈으로이동</button>
       <button onclick="showGoodsList()">굿즈목록보기</button>
     </div>
+
     <script>
       function showReservation() {
         const userName = document.querySelector("[name='user_name']").value;
