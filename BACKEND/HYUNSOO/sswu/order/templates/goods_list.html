@@ -61,6 +61,7 @@
           <span class="goods_price">{{ good.price }}₩</span>
           <select class="num_select" id="num" name="quantity_{{good.id}}">
             <option value="" disabled selected>개수</option>
+            <option value="">선택없음</option>
             {% for i in "123456789"|make_list %}
             <!--수량을 선택-->
             <option value="{{ i }}">{{ i }}개</option>
@@ -91,7 +92,7 @@
             const checkImage =
               this.closest(".goods_choose").querySelector(".check");
 
-            if (this.value !== "") {
+            if (this.value !== "" && this.value !== "선택 없음") {
               checkImage.style.display = "block";
               goodsChoose.style.border = "2px solid blue"; // 선택한 옵션이 있을 때 border 추가
             } else {
