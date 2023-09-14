@@ -1,5 +1,4 @@
 {% load static %}
-{% load custom_filters %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +13,7 @@
     <div class="top_bar">
       <a href="https://">
         <img
-          src="{% static 'img/hamburger.svg' %}"
+          src="{% static 'img/backicon.svg' %}"
           alt="백버튼"
           class="back_btn"
       /></a>
@@ -80,75 +79,53 @@
       <div class="insert">
         <div class="text">원하는 구매 일자</div>
         <div class="select_date">
+            {% for choice_value, choice_label in form.purchase_date.field.choices %}
             <label>
                 <input 
-                    type="checkbox" 
-                    name="{{ form.purchase_date.name }}" 
-                    value="{{ form.purchase_date.field.choices.0.0 }}" 
-                    {% if form.purchase_date.value == form.purchase_date.field.choices.0.0 %}checked{% endif %}
-                    style="display:none;" 
-                    onclick="toggleImage('check_icon1', 'check_icon2')"
+                type="radio" 
+                name="{{ form.purchase_date.name }}" 
+                value="{{ choice_value }}" 
+                style="display:none;" 
+                id="radio_{{ forloop.counter }}"
                 />
                 <img
-                    src="{% static 'img/checkboxNull.svg' %}"
-                    alt="체크 안 됨"
-                    id="check_icon1"
-                    class="check_icon"
+                src="{% static 'img/checkboxNull.svg' %}"
+                alt="체크 안 됨"
+                id="check_icon{{ forloop.counter }}"
+                class="check_icon"
+                onclick="toggleImage('check_icon{{ forloop.counter }}', 'radio_{{ forloop.counter }}')"
                 />
-                <span class="date">{{ form.purchase_date.field.choices.0.1 }}</span>
+                <span class="date">{{ choice_label }}</span>
             </label>
-            
-            <label>
-                <input 
-                    type="checkbox" 
-                    name="{{ form.purchase_date.name }}" 
-                    value="{{ form.purchase_date.field.choices.1.0 }}" 
-                    {% if form.purchase_date.value == form.purchase_date.field.choices.1.0 %}checked{% endif %}
-                    style="display:none;" 
-                    onclick="toggleImage('check_icon2', 'check_icon1')"
-                />
-                <img
-                    src="{% static 'img/checkboxNull.svg' %}"
-                    alt="체크 안 됨"
-                    id="check_icon2"
-                    class="check_icon"
-                />
-                <span class="date">{{ form.purchase_date.field.choices.1.1 }}</span>
-            </label>
+            {% endfor %}
         </div>
     </div>
-    
-    
-    
+
       <!-- {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br /> -->
       <!-- 구매 시간 -->
-      <div class="insert">
-        <div class="text">구매 시간</div>
-        <select class="num_select" id="time_select" name="purchase_time">
-          <option value="" disabled selected>시간 선택</option>
-          <option value="one">11:00 ~ 12:00</option>
-          <option value="two">12:00 ~ 13:00</option>
-          <option value="three">13:00 ~ 14:00</option>
-          <option value="four">14:00 ~ 15:00</option>
-          <option value="five">17:00 ~ 18:00</option>
-          <option value="six">18:00 ~ 19:00</option>
-        </select>
+        <div class="insert">
+          <div class="text">구매 시간</div>
+          <select class="num_select" name="purchase_time">
+              <option value="" disabled selected>시간 선택</option>
+              {% for time_value, time_label in form.purchase_time.field.choices %}
+              <option value="{{ time_value }}">{{ time_label }}</option>
+              {% endfor %}
+          </select>
       </div>
       <hr />
 
       <!--선택한 상품 및 총액 확인 부분-->
-      <h3>선택한 상품</h3>
+      <!-- <h3>선택한 상품</h3> -->
       {% for good_name, good_info in request.session.selected_goods.items %}
       <!--세션을 통해서 선택한 굿즈 정보를 가져옴-->
 
       <!-- 예약 목록 -->
       <div class="list">
         <div class="select_item">
-            <span class="item">{{ good_name }} - {{ good_info.quantity }}개</span>
-            <span class="price">{{ good_info.price|multiply:good_info.quantity }}₩</span>
+          <span class="item">{{ good_name }} - {{ good_info.quantity }}개</span>
+          <span class="price">{{ good_info.price }}₩</span>
         </div>
       </div>
-    
       {% endfor %}
       <h3>총액: {{ total_price }} 원</h3>
 
@@ -208,6 +185,25 @@
 
         alert(message);
       }
+
+      //   날짜 선택
+      let isChecked1 = false; // 10월 4일 이미지 상태
+      let isChecked2 = false; // 10월 5일 이미지 상태
+
+      function toggleImage(iconId, radioId) {
+        const icon = document.getElementById(iconId);
+        const radio = document.getElementById(radioId);
+    
+        if (!radio.checked) {
+            // 모든 아이콘을 초기 상태로 설정합니다.
+            document.querySelectorAll('.check_icon').forEach((iconElem) => {
+                iconElem.setAttribute("src", "{% static 'img/checkboxNull.svg' %}");
+            });
+            // 선택한 아이콘만 체크 상태로 변경합니다.
+            icon.setAttribute("src", "{% static 'img/checkbox.svg' %}");
+            radio.checked = true;
+        }
+      }    
     </script>
   </body>
 </html>

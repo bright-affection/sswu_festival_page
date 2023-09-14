@@ -4,7 +4,7 @@ from .models import Reservation, DATE_CHOICES
 class ReservationForm(forms.ModelForm):
     purchase_date = forms.ChoiceField(
         choices=DATE_CHOICES,
-        widget=forms.CheckboxSelectMultiple
+        widget=forms.RadioSelect
     )
 
     class Meta:
