@@ -31,8 +31,6 @@ def administrator(request):
 def info_list(request):
     page = request.GET.get('page', 1)
     infos = Info.objects.all()
-    paginator = Paginator(infos, 6)
-    infos = paginator.get_page(page)
     return render(request, 'info.html', {'infos': infos})
 
 

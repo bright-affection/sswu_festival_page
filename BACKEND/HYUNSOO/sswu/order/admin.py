@@ -28,4 +28,3 @@ class Selected_Goods(admin.ModelAdmin):
 #admin.site.register(OrderItem)  
 admin.site.register(Goods, Selected_Goods)
 admin.site.register(Reservation, ReservationAdmin)
-

@@ -1,100 +1,190 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/reserve.css' %}" />
+
     <title>굿즈 예약</title>
-    <style>
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border: 1px solid black;
-            z-index: 999;
-        }
-    </style>
-</head>
-<body>
-    <form method="post" action="{% url 'order:reserve' %}" onsubmit="showReservation(event);">
-        {% csrf_token %}
-        
-        <!--사용자 정보 입력 부분-->
-        {{ form.user_name.label_tag }} {{ form.user_name }}<br>
-        {{ form.phone_number.label_tag }} {{ form.phone_number }}<br>
-        {{ form.user_mail.label_tag }} {{ form.user_mail }}<br>
-        {{ form.purchase_date.label_tag }} {{ form.purchase_date }}<br>
-        {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br>
+  </head>
+  <body>
+    <!-- 상단바 -->
+    <div class="top_bar">
+      <a href="https://">
+        <img
+          src="{% static 'img/hamburger.svg' %}"
+          alt="백버튼"
+          class="back_btn"
+      /></a>
+      <a href="https://">
+        <img src="{% static 'img/prismPink.svg' %}" alt="로고" class="logo_img"
+      /></a>
+      <a href="https://">
+        <img
+          src="{% static 'img/hamburger.svg' %}"
+          alt="햄버거 버튼"
+          class="ham_btn"
+      /></a>
+    </div>
 
-        <!--선택한 상품 및 총액 확인 부분-->
-        <h3>선택한 상품</h3>
-        {% for good_name, good_info in request.session.selected_goods.items %} <!--세션을 통해서 선택한 굿즈 정보를 가져옴-->
-        <div>
-            <h4>{{ good_name }}</h4>
-            <p>가격: {{ good_info.price }} 원</p>
-            <p>수량: {{ good_info.quantity }}</p>
+    <form
+      method="post"
+      action="{% url 'order:reserve' %}"
+      onsubmit="showReservation();"
+    >
+      {% csrf_token %}
+
+      <!-- 굿즈 예약 설명 -->
+      <div class="booking">
+        <div class="top">
+          <img
+            src="{% static 'img/staricon.svg' %}"
+            alt="반짝이"
+            class="sparkle"
+          />
+          <span class="booking_text">굿즈 예약</span>
         </div>
-        {% endfor %}
-        <h3>총액: {{ total_price }} 원</h3>
+      </div>
+      <div class="insert">
+        <div class="text">성함</div>
+        <input
+          type="text"
+          placeholder="성함을 입력해주세요."
+          class="text_input"
+          name="user_name"
+        />
+      </div>
+      <div class="insert">
+        <div class="text">연락처</div>
+        <input
+          type="text"
+          placeholder="하이픈(-) 없이 작성해주세요."
+          class="text_input"
+          name="phone_number"
+        />
+      </div>
+      <div class="insert">
+        <div class="text">이메일</div>
+        <input
+          type="text"
+          placeholder="ex) mutsa@gmail.com"
+          class="text_input"
+          name="user_mail"
+        />
+      </div>
 
-        <button type="submit">예약 완료</button>
-        {% if form.errors %}{{ form.errors }}{% endif %}
+      <!-- {{ form.purchase_date.label_tag }} {{ form.purchase_date }}<br /> -->
+      <!-- 원하는 구매 일자 -->
+      <div class="insert">
+        <div class="text">원하는 구매 일자</div>
+        <div class="select_date">
+          <img
+            src="{% static 'img/checkboxNull.svg' %}"
+            alt="체크 안 됨"
+            id="check_icon1"
+            class="check_icon"
+            onclick="toggleImage('check_icon1', 'check_icon2')"
+          />
+          <span class="date">10월 4일</span>
+          <img
+            src="{% static 'img/checkboxNull.svg' %}"
+            alt="체크 안 됨"
+            id="check_icon2"
+            class="check_icon"
+            onclick="toggleImage('check_icon2', 'check_icon1')"
+          />
+          <span class="date">10월 5일</span>
+        </div>
+      </div>
+
+      <!-- {{ form.purchase_time.label_tag }} {{ form.purchase_time }}<br /> -->
+      <!-- 구매 시간 -->
+      <div class="insert">
+        <div class="text">구매 시간</div>
+        <select class="num_select" id="time_select" name="purchase_time">
+          <option value="" disabled selected>시간 선택</option>
+          <option value="one">11:00 ~ 12:00</option>
+          <option value="two">12:00 ~ 13:00</option>
+          <option value="three">13:00 ~ 14:00</option>
+          <option value="four">14:00 ~ 15:00</option>
+          <option value="five">17:00 ~ 18:00</option>
+          <option value="six">18:00 ~ 19:00</option>
+        </select>
+      </div>
+      <hr />
+
+      <!--선택한 상품 및 총액 확인 부분-->
+      <h3>선택한 상품</h3>
+      {% for good_name, good_info in request.session.selected_goods.items %}
+      <!--세션을 통해서 선택한 굿즈 정보를 가져옴-->
+
+      <!-- 예약 목록 -->
+      <div class="list">
+        <div class="select_item">
+          <span class="item">{{ good_name }} - {{ good_info.quantity }}개</span>
+          <span class="price">{{ good_info.price }}₩</span>
+        </div>
+      </div>
+      {% endfor %}
+      <h3>총액: {{ total_price }} 원</h3>
+
+      <!-- <div>
+        <h4>{{ good_name }}</h4>
+        <p>가격: {{ good_info.price }} 원</p>
+        <p>수량: {{ good_info.quantity }}</p>
+      </div>
+      <h3>총액: {{ total_price }} 원</h3> -->
+
+      <!-- 예약 버튼 -->
+      <!-- 예약 버튼 -->
+      <a href="https://">
+        <div class="btn">
+          <button type="submit" class="booking_btn">예약하기</button>
+        </div></a
+      >
+
+      <!-- <button type="submit">예약 완료</button> -->
+      {% if form.errors %}{{ form.errors }}{% endif %}
     </form>
     <div id="popup">
-        <h2>예약완료!</h2>
-        <div id="popup-content"></div>
-        <button onclick="Home()">홈으로이동</button>
-        <button onclick="showGoodsList()">굿즈목록보기</button>
+      <h2>예약완료!</h2>
+      <div id="popup-content"></div>
+      <button onclick="Home()">홈으로이동</button>
+      <button onclick="showGoodsList()">굿즈목록보기</button>
     </div>
     <script>
-        function showReservation(event) {
-            event.preventDefault();
-    
-            const formData = new FormData(event.target);
+      function showReservation() {
+        const userName = document.querySelector("[name='user_name']").value;
 
-            fetch("{% url 'order:reserve' %}", {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    const userName = document.querySelector("[name='user_name']").value;
-                    let goodInfo = "";
-                    const goodsElements = document.querySelectorAll("h4, p");
-                    goodsElements.forEach(el => {
-                        goodInfo += el.innerText + "\n";
-                    });
+        let goodInfo = "";
+        const goodsElements = document.querySelectorAll("h4, p");
+        goodsElements.forEach((el) => {
+          goodInfo += el.innerText + "\n";
+        });
 
-                    const purchaseDate = document.querySelector("[name='purchase_date']").value;
-                    const purchaseTime = document.querySelector("[name ='purchase_time']").value;
-                    const totalPrice = "{{ total_price }}";
+        const purchaseData = document.querySelector(
+          "[name ='purchase_data']"
+        ).value;
+        const purchaseTime = document.querySelector(
+          "[name ='purchase_time']"
+        ).value;
+        const totalPrice = "{{ total_price }}";
 
-                    const message = 
-                        "예약이 완료되었습니다. \n\n"+
-                        userName + "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요.\n"+
-                        goodInfo+ "\n"+
-                        "예약시간: " + purchaseTime +
-                        "총 금액: " + totalPrice + "원";
+        const message =
+          "예약이 완료되었습니다. \n\n" +
+          userName +
+          "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요." +
+          goodInfo +
+          "\n" +
+          "예약시간: " +
+          purchaseTime +
+          "총 금액: " +
+          totalPrice +
+          "원";
 
-                    const popupContent = document.getElementById("popup-content");
-                    popupContent.innerText = message;
-
-                    document.getElementById('popup').style.display = 'block';
-                } else {
-                    alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
-                }
-            });
-        }
-        function Home() {
-            window.location.href = "{% url 'order:home' %}";
-        }
-
-        function showGoodsList() {
-            window.location.href = "{% url 'order:goods_list' %}";
-        }
-
+        alert(message);
+      }
     </script>
-</body>
+  </body>
 </html>
