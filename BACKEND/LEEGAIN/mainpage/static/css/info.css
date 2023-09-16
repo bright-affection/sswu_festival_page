@@ -51,7 +51,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .fst .notice_icon {
@@ -114,7 +114,7 @@ body {
         font-size: 10px;
         color: #f06786;
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 0px;
     }
 
     .fst a {
@@ -153,28 +153,32 @@ body {
         font-size: 10px;
         color: #f06786;
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 0px;
     }
 
     .fst a {
         text-decoration: none;
     }
+
+
+
 }
 
 /* 공지사항들 */
 .category_container {
-    position: absolute;
+    position: relative;
     width: calc(100% - 40px); /* 화면 너비에서 20px씩 제외하여 컨테이너의 너비를 계산 */
     height: 440px;
-    margin-top: 120px;
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Two columns, adjust as needed */
+    gap: 20px; 
 }
 
 .category {
@@ -185,8 +189,8 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 0;
-    width: 50%;
     height: auto;
+    width: 100%; /* Each category takes up 100% of its container */
 }
 
 .category h2 {
@@ -198,7 +202,6 @@ body {
     font-size: 13px;
     line-height: 16px;
     color: black;
-    /* top: 165px; */
     margin-top: 100px;
     left: 9px;
     margin: 0;
@@ -213,10 +216,9 @@ body {
 }
 
 @media (min-width: 361px) {
-
     .category_container {
         width: calc(100% - 40px);
-        margin-top: 120px;
+        margin-top: 0px;
     }
     .category img {
         width: 45vw;
@@ -224,14 +226,18 @@ body {
     }
     .category h2 {
         left: 10%;
-        /* transform: translateX(-50%); */
     }
+}
+
+.plus {
+    position: relative;
+    text-align: center; 
+    margin-top: 40px; 
 }
 
 .plusbutton {
     position: absolute;
     left: calc(50% - 84px/2);
-    top: 140%;
     width: 84px;
     height: 33px;
     /* Rectangle 23 */
@@ -239,10 +245,8 @@ body {
     border: 1.1px solid #F06786;
     border-radius: 7px;
     z-index: 2;
-}
+    background-color: white;
 
-/* + 더 보기 텍스트 스타일 */
-.plusbutton h3 {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 600;
@@ -251,30 +255,25 @@ body {
     color: #F06786;
 }
 
-/* 361px 이상에서 더보기 버튼 위치 조정 */
-@media screen and (min-width: 361px) {
-
-    .plusbutton {
-        position: relative;
-        top: 10%;
-        margin-bottom: 30px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+.footer {
+    height: 10vh;
 }
 
+@media (min-width: 361px) {
+    .plus {
+        position: relative;
+        text-align: center; 
+        margin-top: 60px; 
+    }
+    
+}
+/* 
 .rowplus {
     display: none;
     justify-content: space-between;
     margin-bottom: 30px;
     visibility: hidden;
-}
-
-.footer {
-    height: 10vw;
-}
-
-
+} */
 /* 상단바 */
 * {
     box-sizing: border-box;

@@ -166,6 +166,13 @@ body {
     height: 100%;
 }
 
+/* 사진이 잘리지 않도록 비율맞춰 줄이기 */
+.slider-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* 헤더 */
   * {
     box-sizing: border-box;

@@ -41,11 +41,6 @@
         </ul>
     </header>
     <div class="container" id="blur">
-        <!-- <div class="icon">
-                <a href=""><img src="img/backicon.svg" alt="뒤로가기" class="back"></a>
-                <a href=""><img src="img/prismPink.svg" alt="로고" class="logo"></a>
-                <a href=""><img src="img/hamburger.svg" alt="목록" class="list_icon"></a>
-            </div> -->
 
         <!-- 공지사항,글쓰기 -->
         <div class="fst">
@@ -58,9 +53,9 @@
 
         <!-- 공지사항들 -->
         <div class="category_container">
-            <div class="row">
+            <div class="grid" id="postList">
                 {% for q in infos %}
-                <div class="category">
+                <div class="category {% if forloop.counter > 6 %}hidden{% endif %} ">
                     <a href="{% url 'mainpage:info_post' q.id %}">
                         <!-- 이미지가 있을 경우 출력, 없으면 '이미지 없음' 출력 -->
                         {% if q.images.first %}
@@ -73,55 +68,38 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="plus">
+                <button class="plusbutton" id="loadMore">+더보기</button>
+            </div>
+            <div class="footer"></div>
         </div>
     </div>
-    <div class="plusbutton" id="moreButton">
-        <h3>+더보기</h3>
 
-        <script>
-            document.getElementById("moreButton").addEventListener("click", function () {
-                const hiddenPosts = document.querySelectorAll("#postList .hidden");
-                let shownCount = 0;
-                for (let i = 0; i < 6 && i < hiddenPosts.length; i++) {
-                    hiddenPosts[i].classList.remove("hidden");
-                    shownCount++;
-                }
-                // 숨겨진 게시물이 더 이상 없다면 "더보기" 버튼 숨기기
-                if (shownCount < 6 || hiddenPosts.length - shownCount <= 0) {
-                    document.getElementById("moreButton").style.display = "none";
-                }
-            });
 
-            function toggle() {
-                var blur = document.getElementById('blur');
-                blur.classList.toggle('active')
+    <script>
+
+        document.getElementById("loadMore").addEventListener("click", function () {
+            const hiddenPosts = document.querySelectorAll("#postList .hidden");
+            let shownCount = 0;
+            for (let i = 0; i < 6 && i < hiddenPosts.length; i++) {
+                hiddenPosts[i].classList.remove("hidden");
+                shownCount++;
             }
+            // 숨겨진 게시물이 더 이상 없다면 "더보기" 버튼 숨기기
+            if (shownCount < 6 || hiddenPosts.length - shownCount <= 0) {
+                document.getElementById("loadMore").style.display = "none";
+            }
+        });
 
-            const moreButton = document.getElementById('moreButton');
-            const rowPlusElements = document.querySelectorAll('.rowplus');
-            let isVisible = false; // 추가: 더보기 요소의 가시성 상태 변수
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active')
+        }
 
-        // moreButton.addEventListener('click', function () {
-        //     rowPlusElements.forEach(element => {
-        //         element.style.display = 'flex';
-        //         element.style.visibility = 'visible';
-        //     });
-
-        //     moreButton.style.display = 'none'; // "더보기" 버튼 숨기기
-        //     isVisible = true; // 더보기 요소가 보이도록 상태 업데이트
-        // });
-
-        // // 페이지가 로드될 때 한 번만 실행
-        // window.addEventListener('load', function () {
-        //     if (isVisible) {
-        //         rowPlusElements.forEach(element => {
-        //             element.style.display = 'flex';
-        //             element.style.visibility = 'visible';
-        //         });
-        //         moreButton.style.display = 'none'; // "더보기" 버튼 숨기기
-        //     }
-        // });
-        </script>
+        const moreButton = document.getElementById('moreButton');
+        const rowPlusElements = document.querySelectorAll('.rowplus');
+        let isVisible = false; // 추가: 더보기 요소의 가시성 상태 변수
+    </script>
 
 </body>
 
