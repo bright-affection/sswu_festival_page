@@ -63,20 +63,17 @@
 
                 <!-- 첨부 파일 -->
                 <div class="plusfile">
-                    <!-- <h2>첨부 파일</h2> -->
+                    <h2>첨부 파일</h2>
                 </div>
+
                 <div class="addimg">
-                    <input type="file" name="images" multiple>
-                    <h2 onclick="toggleImgFile()">사진 추가</h2>
+                    <input id="files" type="file" name="images" multiple>
+                    <label for="files">사진 추가</label>
                 </div>
 
                 <!-- 게시글 업로드 -->
                 <div class="upload">
-                    <!-- <a href='{% url "mainpage:mainpage" %}'>
-                        <input type="button" value="이전으로" class="preview-btn"></a> -->
-                    <a><input value="게시글 업로드" type="submit"> </a>
-                    <h2>게시글 업로드</h2>
-
+                    <button type="submit">게시글 업로드</button>
                 </div>
 
                 <!-- 파일이름.png -->
@@ -90,6 +87,7 @@
     </div>
 
     <script>
+
         function toggle() {
             var blur = document.getElementById('blur');
             blur.classList.toggle('active')
@@ -112,6 +110,30 @@
                 uploadButton.style.top = '635px';
             }
         }
+
+        // 파일 input 요소에 이벤트 리스너 추가
+        document.getElementById('files').addEventListener('change', function (event) {
+            // 파일들의 개수 가져오기
+            const fileCount = event.target.files.length;
+
+            // 첫 번째 파일의 이름 가져오기 (여러 파일을 선택할 수 있으므로 배열 형태로 반환)
+            const firstFileName = event.target.files[0].name;
+
+            // 파일 이름을 표시할 문자열 생성
+            let displayText = firstFileName;
+            if (fileCount > 1) {
+                displayText = `${firstFileName} 외 ${fileCount - 1}개`;
+            }
+            // 파일 이름을 표시할 요소에 문자열 설정
+            document.querySelector('.imgfile h2').textContent = displayText;
+
+            // 파일이 선택되었으므로 .imgfile 요소 표시
+            imgFile.style.display = 'block';
+
+            // 업로드 버튼의 위치를 조정
+            uploadButton.style.top = '690px';
+        });
+
     </script>
 </body>
 
