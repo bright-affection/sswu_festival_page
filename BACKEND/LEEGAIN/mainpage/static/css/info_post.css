@@ -14,12 +14,13 @@ body {
 
 .white_box {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 15px);
     height: 600px;
     top: 70px;
     background: #FFFFFF;
     box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
+    margin-left: 10px;
 }
 
 .title h1 {
@@ -84,15 +85,16 @@ body {
 
 @media screen and (min-width: 361px) {
 
-    .white_box {
-        position: absolute;
-        width: 100%;
-        height: 600px;
-        top: 70px;
-        background: #FFFFFF;
-        box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
-        border-radius: 7px;
-    }
+  .white_box {
+    position: absolute;
+    width: calc(100% - 15px);
+    height: 600px;
+    top: 70px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    margin-left: 10px;
+}
 
     .title h1 {
         position: absolute;
@@ -123,7 +125,7 @@ body {
     left: 10px;
     right: 10px;
     height: 0;
-    top: 74px;
+    top: 64px;
     border: 0.7px solid #E2E2E2;
 }
 
@@ -133,7 +135,7 @@ body {
     width: calc(100% - 40px);
     left: 20px;
     right: 20px;
-    top: 90px;
+    top: 70px;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
@@ -168,8 +170,8 @@ body {
 
 /* 사진이 잘리지 않도록 비율맞춰 줄이기 */
 .slider-item img {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
     display: block;
 }
 
@@ -180,7 +182,7 @@ body {
   }
   
   html,body{
-    margin: 0;
+    /* margin: 0; */
     height: 100%;
   }
   
