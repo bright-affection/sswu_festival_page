@@ -29,6 +29,10 @@ body {
     width: 0.6em;
 }
 
+.title_tx {
+    margin-left: 11px;
+}
+
 /* 본문 */
 .container {
     width: 100%;
@@ -37,6 +41,7 @@ body {
 
 .title_ex {
     font-weight: 500;
+    font-size: 13px;
     line-height: 150%;
 }
 
@@ -86,14 +91,17 @@ body {
 #more {
     margin: 2em 0;
     text-align: center;
-    color: #F06786;
-    font-size: 0.8em;
 }
 
 #more > * {
     border: 1px solid #F06786;
-    border-radius: 5px;
+    color: #F06786;
+    background-color:transparent;
+    border-radius: 7px;
     padding: 0.5em 1em;
+    
+    font-size: 12px;
+    font-weight: 600;
 }
 
 /* 헤더 */
@@ -200,7 +208,3 @@ body {
     height: 100vh;
     padding-top: 75px;
   }
-  
-  
-  
-  
