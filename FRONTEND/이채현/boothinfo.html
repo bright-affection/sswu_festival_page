@@ -57,8 +57,8 @@
         </div>
     </div>
 
-    <div id="filter_wrap" style="display:none;">
-    <!-- <div id="filter_wrap"> -->
+    <!-- <div id="filter_wrap" style="display:none;"> -->
+    <div id="filter_wrap">
         <div id="filter">
             <span class="filter_title">Filter</span>
             <button type="button" id="close">
@@ -99,8 +99,8 @@
                     <input type="checkbox" id="administration" name="administration" value="administration" />
                     <label for="administration">행정부서 부스</label>
                 </div>
-                
-                <input type="submit" id="filter_submit"  value="확인">
+                <button type="button" class="filter_end" id="filter_close">닫기</button>
+                <input type="submit" class="filter_end" id="filter_submit"  value="확인">
             </form>
         </div>
     </div>
@@ -111,6 +111,7 @@
     var filter_btn = document.getElementById('filter_btn');
     var filter = document.getElementById('filter_wrap');
     var close_btn = document.getElementById('close')
+    var filter_close = document.getElementById('filter_close');
 
     //팝업 열기
     filter_btn.addEventListener('click', function() {
@@ -119,6 +120,10 @@
     
     //팝업 닫기
     close_btn.addEventListener('click', function() {
+        filter.style.display = 'none';
+    });
+    
+    filter_close.addEventListener('click', function() {
         filter.style.display = 'none';
     });
 

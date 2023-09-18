@@ -203,11 +203,14 @@ form {
     vertical-align:middle;
     text-align: left;
     border-radius: 10px;
+
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .filter_title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 700;
     /* float: left; */
 }
 
@@ -222,7 +225,6 @@ form {
 }
 
 .label_title {
-    font-weight: bold;
     display: flex;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -235,12 +237,14 @@ input[type="checkbox"]{
 
 input[type="checkbox"] + label{
     cursor:pointer;
+
+    /* vertical-align: middle; */
 }
 
-input[type="checkbox"] + label > div {
+/* input[type="checkbox"] + label > div {
     vertical-align: middle;
     padding-left: 5px;
-}
+} */
 
 input[type="checkbox"] + label:before{
     content:"";
@@ -268,15 +272,26 @@ form > div {
     margin-top: 15px;
 }
 
+.filter_end {
+    width: 47.5%;
+    border: none;
+    border-radius: 20.5px;
+    padding: 12px;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+#filter_close {
+    border: 1px solid #F194B4;
+    color: #F194B4;
+    background-color: #fff;
+    margin-right: 1.5%;
+}
+
 /* 제출 버튼 */
 #filter_submit {
-    width: 100%;
-    border: none;
     background-color: #F06786;
-    border-radius: 30px;
-    padding: 12px 16px;
-    font-size: 1em;
     font-family: Pretendard;
     color: #fff;
-    margin-top: 30px;
+    margin-left: 1.5%;
 }
