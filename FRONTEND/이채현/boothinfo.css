@@ -35,6 +35,10 @@ header {
     width: 0.6em;
 }
 
+.title_tx {
+    margin-left: 11px;
+}
+
 #filter_btn {
     float: right;
 }

@@ -96,7 +96,7 @@ header {
     font-size: 0.8em;
 }
 
-#more span {
+#more > * {
     border: 1px solid #F06786;
     border-radius: 5px;
     padding: 0.5em 1em;
