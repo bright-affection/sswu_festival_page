@@ -68,7 +68,7 @@ header {
 
 .container input {
     border: 1px solid #F06786;
-    border-radius: 5px;
+    border-radius: 7px;
     width: calc(100% - 32px);
     padding: 16px;
     margin: 8px 0;
