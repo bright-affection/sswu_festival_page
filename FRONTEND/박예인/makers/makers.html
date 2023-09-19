@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="makers.css" />
   </head>
   <body>
-    <!-- 상단바 -->
-    <div class="top_bar">
-      <a href="https://">
-        <img src="..\img\backicon.svg" alt="백버튼" class="back_btn"
-      /></a>
-      <a href="https://">
-        <img src="..\img\prismPink.svg" alt="로고" class="logo_img"
-      /></a>
-      <a href="https://">
-        <img src="..\img\hamburger.svg" alt="햄버거 버튼" class="ham_btn"
-      /></a>
+    <header class="header">
+      <a><img class="back" src="..\img\backicon.svg" alt="뒤로가기" class="list_icon"></a>
+      <img class="prism" src="..\img\prismPink.svg" alt="로고" class="list_icon2" id="logo">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class='menu-icon' for="menu-btn">
+    <div class='menu-button' onclick="toggle()">
+      <img src="..\img\hamburger.svg" alt="로고" class="Group 1_pink">
     </div>
+  </label>
+    <ul class="menu">
+        <li><a href="#">타임테이블</a></li>
+        <li><a href="#">축제 지도 확인하기</a></li>
+        <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
+        <li><a href="#">굿즈 구매 예약</a></li>
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">방명록</a></li>
+        <li><a href="#">만든이들</a></li>
+        <a href="#"><div class="box">관리자 모드</div></a>
+    </ul>
+  </header>
+  <div class="container" id="blur">
     <!-- 만든사람들 선 -->
     <div class="line">
       <div class="texts">
@@ -45,7 +54,7 @@
         <img src="..\img\FE.png" class="profile_img" />
         <span class="name">김소정</span>
         <span class="major">AI융합학부 21</span>
-        <span class="mission">프론트엔드</span>
+        <span class="mission">프론트엔드 총괄</span>
       </div>
       <div class="row">
         <!-- FE2 -->
@@ -109,7 +118,7 @@
           <img src="..\img\BE.png" class="profile_img" />
           <span class="name">이예령</span>
           <span class="major">컴퓨터공학과 22</span>
-          <span class="mission">백엔드</span>
+          <span class="mission">백엔드 총괄</span>
         </div>
         <!-- FE2 -->
         <div class="profile_info">
@@ -120,5 +129,13 @@
         </div>
       </div>
     </div>
+  </div>
+    <script type="text/javascript">
+
+      function toggle(){
+        var blur=document.getElementById('blur');
+        blur.classList.toggle('active')
+      }
+      </script>
   </body>
 </html>

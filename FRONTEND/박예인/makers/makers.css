@@ -5,6 +5,7 @@
   font-weight: 500;
   font-style: normal;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -12,30 +13,6 @@ body {
   /* margin-left: 20px;
     margin-right: 20px; */
   font-family: "Pretendard-Regular";
-}
-.top_bar {
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.back_btn {
-  float: left;
-  width: 12px;
-  height: 16px;
-}
-.logo_img {
-  display: block;
-  margin: 0 auto;
-  height: 21px;
-  width: 89px;
-}
-.ham_btn {
-  float: right;
-  width: 17px;
-  height: 15px;
 }
 .line {
   display: flex;
@@ -123,7 +100,7 @@ body {
   margin-top: 10px;
 }
 .major {
-  font-size: 5px !important;
+  font-size: 7px;
   font-weight: 500;
   color: #f06786;
   margin-top: 5px;
@@ -138,4 +115,100 @@ body {
   display: flex;
   margin-top: 10px;
   justify-content: space-between; /* 자식 요소 사이에 공간을 나눕니다. */
+}
+
+/* 상단바 */
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  color: #f06786;
+}
+
+#logo {
+  height: 21px;
+  width: 89px;
+}
+
+.header ul {
+  margin-top: 74px;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fcf9fb;
+}
+.menu > li {
+  padding: 17px 36px;
+}
+.header ul a {
+  text-decoration: none;
+  font-size: 15px;
+}
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #fcf9fb;
+  position: fixed;
+  top: 0;
+  height: 75px;
+  padding: 16px;
+  z-index: 3;
+  align-items: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 500px;
+}
+
+.box {
+  text-align: center;
+  font-size: 12px;
+  margin: 23px 0px 50px 35px;
+  width: 80px;
+  height: 24px;
+  background-color: #ffffff00;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid #f06786ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container#blur.active {
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: blur(5px) brightness(0.75);
+}
+
+.container {
+  padding-top: 75px;
+  height: 100%;
 }
