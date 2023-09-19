@@ -77,6 +77,7 @@ option:focus {
 
 .choose_ex {
   font-size: 13px;
+  color: #313131;
 }
 .goods_choose {
   background-color: white;
@@ -112,11 +113,13 @@ option:focus {
 .goods_name {
   font-size: 14px;
   font-weight: bold;
+  color: #313131;
 }
 .goods_price {
   float: left;
   font-size: 11px;
   margin-top: 2%;
+  color: #313131;
 }
 .num_select {
   margin-top: 60px;
@@ -124,6 +127,7 @@ option:focus {
 .detail {
   float: right;
   font-size: 11px;
+  color: #313131;
 }
 .btn {
   width: 100%;

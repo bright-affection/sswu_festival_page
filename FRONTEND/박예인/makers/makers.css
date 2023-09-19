@@ -119,16 +119,18 @@ body {
 .name {
   font-size: 13px;
   color: #333333;
-  font-weight: bold;
+  font-weight: 900;
   margin-top: 10px;
 }
 .major {
-  font-size: 7px;
+  font-size: 5px !important;
+  font-weight: 500;
   color: #f06786;
   margin-top: 5px;
 }
 .mission {
   color: #333333;
+  font-weight: 700;
   font-size: 9px;
   padding-top: 7px;
 }
