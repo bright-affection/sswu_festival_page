@@ -96,16 +96,18 @@ body {
 .name {
   font-size: 13px;
   color: #333333;
-  font-weight: bold;
+  font-weight: 900;
   margin-top: 10px;
 }
 .major {
   font-size: 7px;
+  font-weight: 500;
   color: #f06786;
   margin-top: 5px;
 }
 .mission {
   color: #333333;
+  font-weight: 700;
   font-size: 9px;
   padding-top: 7px;
 }
@@ -115,56 +117,51 @@ body {
   justify-content: space-between; /* 자식 요소 사이에 공간을 나눕니다. */
 }
 
-
 /* 상단바 */
 * {
   box-sizing: border-box;
   list-style: none;
 }
 
-a{
-  color: #F06786;
+a {
+  color: #f06786;
 }
 
-#logo{
+#logo {
   height: 21px;
   width: 89px;
 }
 
-
-.header ul{
+.header ul {
   margin-top: 74px;
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #FCF9FB;
-} 
-.menu > li{
+  background-color: #fcf9fb;
+}
+.menu > li {
   padding: 17px 36px;
 }
-.header ul a{
-
+.header ul a {
   text-decoration: none;
   font-size: 15px;
 }
-.header .menu{
-  clear:both;
+.header .menu {
+  clear: both;
   max-height: 0;
-  transition: max-height .2s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
-.header .menu-icon{
+.header .menu-icon {
   display: flex;
-
 }
 
-
-.header{
+.header {
   display: flex;
   width: 100%;
-  background-color: #FCF9FB;
+  background-color: #fcf9fb;
   position: fixed;
-  top:0;
+  top: 0;
   height: 75px;
   padding: 16px;
   z-index: 3;
@@ -173,7 +170,7 @@ a{
   align-items: center;
   justify-content: space-between;
 }
-.menu{
+.menu {
   position: absolute;
   top: 0;
   left: 0;
@@ -181,18 +178,16 @@ a{
   width: 100%;
   justify-content: center;
   align-items: center;
-  
 }
-.header .menu-btn{
+.header .menu-btn {
   display: none;
 }
 
-.header .menu-btn:checked ~ .menu{
+.header .menu-btn:checked ~ .menu {
   max-height: 500px;
 }
 
-
-.box{
+.box {
   text-align: center;
   font-size: 12px;
   margin: 23px 0px 50px 35px;
@@ -202,18 +197,18 @@ a{
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  border:1px solid #F06786ed;
+  border: 1px solid #f06786ed;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container#blur.active{
+.container#blur.active {
   background-color: rgba(0, 0, 0, 0.25);
-  filter: blur(5px) brightness(0.75)
+  filter: blur(5px) brightness(0.75);
 }
 
-.container{
+.container {
   padding-top: 75px;
   height: 100%;
 }
