@@ -4,6 +4,8 @@ body {
     background-color: #FCF9FB;
     font-family: Pretendard;
     background-image: url("./img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* 
 header {
@@ -37,6 +39,10 @@ header {
     width: 0.6em;
 }
 
+.title_tx {
+    margin-left: 11px;
+}
+
 .container {
     width: 90%;
     background-color: #fff;
@@ -50,30 +56,33 @@ header {
 /* 날짜 버튼 */
 .buttons {
     width: 100%;
-    height: 30px;
-    text-align: center;
-
-    display: table;
-    border-spacing: 10px 0;
-    font-size: 0.8em;
+    font-size: 11px;
+    font-weight: 600;
 }
 
 .date_btn {
-    width: 45%;
     height: 100%;
     text-align: center;
     border-radius: 6px;
-    border: 2px solid #F06786;
-    display: table-cell;
     vertical-align: middle;
+    
+    width: calc(50% - 28px);
+    padding: 10px;
+    display: inline-block;
+}
+
+#fourth {
+    margin-right: 10px;
 }
 
 .non-clicked {
-    color: #F06786;
+    color: #F194B4;
+    border: 1px solid #F194B4;
 }
 
 .clicked {
     background-color: #F06786;
+    border: 1px solid #F06786;
     color: #fff;
 }
 
@@ -88,17 +97,19 @@ table {
     margin: 10% 0;
     table-layout: fixed;
     color: #777777;
-    font-size: 0.5em;
+    font-size: 9px;
+    font-weight: 500;
     position: relative;
 }
 
 table tr {
     height: 5vh;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .time {
     vertical-align: middle;
+    width: 40px;
 }
 
 .empty {
@@ -124,20 +135,30 @@ table tr {
     display:table;
     position: absolute;
     background-color: #fff;
-    font-size: 0.5rem;
+    /* font-size: 0.5rem; */
+    font-size: 11px;
+    font-weight: 600;
     
     animation: fadeInUp 1s;
 }
 
-.schedule span{
+.schedule span {
     display:table-cell;
-    vertical-align:middle;
+    /* vertical-align:middle; */
     text-align: center;
     line-height: 150%;
 }
 
+.long {
+    padding-top: 120px;
+}
+
+.short span {
+    vertical-align:middle;
+}
+
 #day1 {
-    height: calc(100% - 6px);
+    height: calc(100% - 126px);
     top: calc(0% + 2px);
     left: 20%;
     border: 1px solid #F06786;
@@ -146,7 +167,7 @@ table tr {
 }
 
 #day2 {
-    height: calc(75% - 6px);
+    height: calc(75% - 126px);
     top: calc(0% + 2px);
     left: 40%;
     border: 1px solid #71A6D4;
@@ -155,7 +176,7 @@ table tr {
 }
 
 #day3 {
-    height: calc(75% - 6px);
+    height: calc(75% - 126px);
     top: calc(0% + 2px);
     left: 60%;
     border: 1px solid #FFB82F;
@@ -307,6 +328,5 @@ table tr {
   }
   
   .container_main{
-    height: 100vh;
     padding-top: 75px;
   }
