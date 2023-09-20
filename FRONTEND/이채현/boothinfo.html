@@ -62,13 +62,12 @@
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <!-- 폴드에서 깨지는데 어떻게 해야할지... -->
                         <div>공대생의 반란! 코딩하다 지친 수정이가 
                             만드는 비즈 팔찌/반지 입니다 :)</div>
                     </div>
                     <div class="booth_info3 corner">
                         <div class="map">
-                            <a src="">위치보기</a>
+                            <a href="./map.html">위치보기</a>
                         </div>
                         <div class="time">10월 4일 오전</div>
                     </div>
@@ -119,8 +118,8 @@
                     <input type="checkbox" class="checkbox" id="administration" name="administration" value="administration" />
                     <label for="administration">행정부서 부스</label>
                 </div>
-                
-                <input type="submit" id="filter_submit"  value="확인">
+                <button type="button" class="filter_end" id="filter_close">닫기</button>
+                <input type="submit" class="filter_end" id="filter_submit"  value="확인">
             </form>
         </div>
     </div>
@@ -138,6 +137,7 @@
     var filter_btn = document.getElementById('filter_btn');
     var filter = document.getElementById('filter_wrap');
     var close_btn = document.getElementById('close')
+    var filter_close = document.getElementById('filter_close');
 
     //팝업 열기
     filter_btn.addEventListener('click', function() {
@@ -146,6 +146,10 @@
     
     //팝업 닫기
     close_btn.addEventListener('click', function() {
+        filter.style.display = 'none';
+    });
+    
+    filter_close.addEventListener('click', function() {
         filter.style.display = 'none';
     });
 

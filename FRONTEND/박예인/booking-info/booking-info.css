@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-html{
+html {
   margin: 0;
   height: 100%;
 }
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fcf9fb;
-  
+
   font-family: "Pretendard-Regular";
 }
 
@@ -92,8 +92,8 @@ option:focus {
 }
 .date {
   font-size: 11px;
-  margin-left: 17px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -127,54 +127,49 @@ option:focus {
   color: #313131;
 }
 
-
 /* header */
 * {
   box-sizing: border-box;
   list-style: none;
 }
 
-a{
-  color: #F06786;
+a {
+  color: #f06786;
 }
 
-#logo{
+#logo {
   height: 21px;
   width: 89px;
 }
 
-
-.header ul{
+.header ul {
   margin-top: 74px;
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #FCF9FB;
-} 
-.menu > li{
+  background-color: #fcf9fb;
+}
+.menu > li {
   padding: 17px 36px;
 }
-.header ul a{
-
+.header ul a {
   text-decoration: none;
   font-size: 15px;
 }
-.header .menu{
-  clear:both;
+.header .menu {
+  clear: both;
   max-height: 0;
-  transition: max-height .2s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
-.header .menu-icon{
+.header .menu-icon {
   display: flex;
-
 }
 
-
-.header{
+.header {
   display: flex;
   width: 100%;
-  background-color: #FCF9FB;
+  background-color: #fcf9fb;
   position: fixed;
   height: 75px;
   padding: 16px;
@@ -184,8 +179,7 @@ a{
   align-items: center;
   justify-content: space-between;
 }
-.menu{
-  
+.menu {
   position: absolute;
   top: 0;
   left: 0;
@@ -193,18 +187,16 @@ a{
   width: 100%;
   justify-content: center;
   align-items: center;
-  
 }
-.header .menu-btn{
+.header .menu-btn {
   display: none;
 }
 
-.header .menu-btn:checked ~ .menu{
+.header .menu-btn:checked ~ .menu {
   max-height: 500px;
 }
 
-
-.box{
+.box {
   text-align: center;
   font-size: 12px;
   margin: 23px 0px 50px 35px;
@@ -214,19 +206,19 @@ a{
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  border:1px solid #F06786ed;
+  border: 1px solid #f06786ed;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container#blur.active{
+.container#blur.active {
   background-color: rgba(0, 0, 0, 0.25);
-  filter: blur(5px) brightness(0.75)
+  filter: blur(5px) brightness(0.75);
 }
 
-.container{
+.container {
   height: 100%;
   padding-left: 20px;
   padding-right: 20px;
