@@ -58,7 +58,7 @@
                 <div class="booth_info_wrap">
                     <div class="booth_info1 corner">
                         <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A02</div>
+                        <div class="booth_site">A04</div>
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
@@ -78,7 +78,7 @@
                 <div class="booth_info_wrap">
                     <div class="booth_info1 corner">
                         <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">E03</div>
+                        <div class="booth_site">B12</div>
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
@@ -192,8 +192,15 @@
             <button type="button" id="place_close">
                 <img src="./img/X.png" alt="필터 닫기">
             </button>
-            <div class="place_container" id="place_containerA">
-                <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+
+            <div class="place_container">
+                <div class="place_grid" id="place_gridA">
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                </div>
+            </div>
+            <div class="place_container" id="place_containerB" style="display: none">
+                <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
             </div>
             <img src="./img/place_A.svg" class="place_map" alt="수정관 처마, 성신관과 제일 먼 쪽">
             <!-- <img src="./img/place_A.svg" class="place_map" style="display: none" alt="수정관 처마, 성신관과 제일 먼 쪽"> -->
@@ -249,12 +256,17 @@
     const place_title = document.getElementById('place_title');
     const place_title_ex = document.getElementById('place_title_ex');
     const place_maps = document.getElementsByClassName('place_map');
-    var place_container;
+    
+    const place_containers = document.getElementsByClassName('place_container');
+    // var place_container;
     // const place_containers = document.getElementsByClassName('place_container');
 
     function resetPlace() {
         for (var map of place_maps) {
             map.style.display = "none"
+        }
+        for (var container of place_containers) {
+            container.style.display = "none"
         }
     }
 
@@ -265,9 +277,8 @@
 
             var current_place =  booth_sites[i].textContent;
             var current_site = current_place.charAt(0);
-            var current_number = current_place.substr(1);
+            var current_number = current_place.charAt(2);
             current_number *= 1;
-            console.log(current_number);
 
             place_title.innerText = current_place;
 
@@ -277,10 +288,11 @@
                     place_title_ex.innerText = '처마 밑 학생 부스';
                     place_maps[0].style.display = "block";
                     
-                    place_container = document.getElementById('place_containerA');
-                    console.log(place_container);
+                    // place_container = document.getElementById('place_containerA');
+                    place_containers[0].style.display = "block"
+                    // console.log(place_containers[0]);
 
-                    box = place_container.getElementsByTagName('div');
+                    box = place_containers[0].getElementsByTagName('div');
                     console.log(box[0]);
                     box[current_number - 1].style.backgroundColor = "#F06786";
                     break;

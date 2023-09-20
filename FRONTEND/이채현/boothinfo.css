@@ -309,19 +309,27 @@ form > div {
 }
 
 .place_container {
-    width: 100%;
-    height: 33px;
     margin: 30px 0 20px 0;
+}
+
+.place_grid {
+    height: 33px;
     display: grid;
+
 }
 
 .place_box {
     border: 1px solid #333333;
 }
 
-#place_containerA {
+#place_gridA {
     grid-template-columns: repeat(4, auto);
     gap: 10px;
+}
+
+#place_containerB {
+    grid-template-columns: repeat(10, auto);
+    gap: 5px;
 }
 
 
