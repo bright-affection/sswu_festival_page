@@ -198,7 +198,7 @@ form {
 
 .popup {
     display:inline-block; 
-    padding:30px; 
+    /* padding:30px;  */
     background:#fff; 
     /* width:250px;  */
     vertical-align:middle;
@@ -211,6 +211,7 @@ form {
 
 #filter {
     width:250px; 
+    padding:30px; 
 }
 
 .popup_title {
@@ -299,12 +300,15 @@ form > div {
 
 /* booth_place 팝업 */
 #place {
-    width: 288px;
+    width: 307px;
+    padding: 20px;
 }
 
 #place_close img {
     width: 20px;
 }
+
+
 
 /* header */
 
