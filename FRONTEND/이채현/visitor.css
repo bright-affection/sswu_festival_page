@@ -199,5 +199,10 @@ body {
   }
   
   .container_main{
+    height: 100%;
     padding-top: 75px;
   }
+  html, body {
+    height: 100%;
+    width: 100%; 
+}
