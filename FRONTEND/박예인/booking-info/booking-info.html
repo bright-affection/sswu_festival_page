@@ -8,9 +8,8 @@
   </head>
   <body>
     <!-- 상단바 -->
-    
     <header class="header">
-      <a><img class="back" src="..\img\backicon.svg" alt="뒤로가기" class="list_icon"></a>
+      <a><img class="backicon" src="..\img\backicon.svg" alt="뒤로가기" class="list_icon"></a>
       <img class="prism" src="..\img\prismPink.svg" alt="로고" class="list_icon2" id="logo">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class='menu-icon' for="menu-btn">
@@ -92,7 +91,7 @@
         <option value="six">18:00 ~ 19:00</option>
       </select>
     </div>
-    <hr />
+    <hr class="back"/>
     <!-- 예약 목록 -->
     <div class="list">
       <div class="select_item">
@@ -105,11 +104,63 @@
       </div>
     </div>
     <!-- 예약 버튼 -->
-    <a href="https://">
-      <div class="btn">
-        <input type="button" class="booking_btn" value="예약하기" /></div
-    ></a>
+    <div class="btn">
+        <input
+          type="button"
+          class="booking_btn"
+          value="예약하기"
+          id="modalOpenButton"
+        />
+    </div>
+
+    <!-- 모달 창 -->
+    <div id="modalContainer" class="hidden">
+      <div id="modalContent">
+        <div class="done">
+          <p class="booking_done">예약 완료!</p>
+
+          <img src="..\img\close.svg" class="close" alt="닫기버튼" id="closeBtn" />
+        </div>
+        <div class="explain">
+          <p class="content">송지연 님의 굿즈 구매 예약이 완료되었습니다!</p>
+          <p class="content">
+          해당 시간에 총학 부스에 와서 결제 후 수령해주세요.
+          </p>
+        </div>
+        <div class="select_item">
+          <ul>
+            <div class="text2">
+              <li class="popup_item">PRISM 볼펜 - 1개</span>
+              <span class="popup_detail">1,500₩</span>
+            </div>
+            <div class="text2">
+              <li class="popup_item">PRISM 시리얼컵 - 1개</span>
+              <span class="popup_detail">12,000₩</span>
+            </div>
+          </ul>
+        </div>
+        <hr />
+        <div class="select_item">
+          <span class="popup_item">예약 시간</span>
+          <span class="popup_detail">11:00 ~ 12:00</span>
+        </div>
+        <hr />
+        <div class="select_item">
+          <span class="total_price">총 결제 금액</span>
+          <span class="total_price2">13,500₩</span>
+        </div>
+
+        <!-- btns를 modalContent 내에 위치시킵니다. -->
+        <div class="btns">
+          <button id="HomeButton" class="home">홈으로</button>
+          <button id="goodsMoreButton" class="more">굿즈 더 보기</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
     <!-- js -->
     <script>
       function toggle(){
@@ -131,6 +182,45 @@
           icon2.setAttribute("src", "../img/checkboxNull.svg");
         }
       }
+
+      
+      // 모달 창
+      const modalOpenButton = document.getElementById("modalOpenButton");
+      const HomeButton = document.getElementById("HomeButton");
+      const goodsMoreButton = document.getElementById("goodsMoreButton");
+      const closeButton = document.getElementById("closeBtn");
+      const modal = document.getElementById("modalContainer");
+      const header = document.querySelector(".header"); // header 요소 선택
+      const overlay = document.createElement("div"); // 어두운 배경을 생성
+
+      modalOpenButton.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        overlay.style.display = "block"; // 어두운 배경 표시
+        document.body.style.overflow = "hidden"; // 스크롤 비활성화
+        header.style.filter = "brightness(50%)"; // 헤더 어둡게 만들기
+
+      });
+
+      HomeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+      });
+      goodsMoreButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+      closeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+
+
+
     </script>
   </body>
 </html>
