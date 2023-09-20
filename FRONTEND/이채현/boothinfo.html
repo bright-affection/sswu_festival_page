@@ -38,7 +38,7 @@
                 <img src="./img/staricon.svg"></img>
             </div>
             <div class="title_tx">부스 A to Z</div>
-            <a href="#popup_wrap" id="filter_btn">
+            <a id="filter_btn">
                 <img src="./img/filter.svg"></img>
             </a>
         </div>
@@ -66,9 +66,7 @@
                             만드는 비즈 팔찌/반지 입니다 :)</div>
                     </div>
                     <div class="booth_info3 corner">
-                        <div class="map">
-                            <a href="./map.html">위치보기</a>
-                        </div>
+                        <div class="place_btn">위치보기</div>
                         <div class="time">10월 4일 오전</div>
                     </div>
                 </div>
@@ -76,13 +74,15 @@
         </div>
     </div>
 
-    <div id="filter_wrap" style="display:none;">
-    <!-- <div id="filter_wrap"> -->
-        <div id="filter">
-            <span class="filter_title">Filter</span>
-            <button type="button" id="close">
-                <img src="./img/X.png" alt="팝업 닫기">
-            </button>
+    <!-- <div id="filter_wrap" class="popup_wrap" style="display:none;"> -->
+    <div id="filter_wrap" class="popup_wrap">
+        <div id="filter" class="popup">
+            <div class="popup_title">
+                <span class="popup_title">Filter</span>
+                <button type="button" id="close">
+                    <img src="./img/X.png" alt="필터 닫기">
+                </button>
+            </div>
 
             <form method="POST" action="submit_filter">
                 <label class="label_title">날짜</label>
@@ -123,6 +123,17 @@
             </form>
         </div>
     </div>
+
+    <div id="place_wrap" class="popup_wrap" style="display:none;">
+    <!-- <div id="place_wrap" class="popup_wrap"> -->
+        <div id="place" class="popup">
+            <span class="popup_title">A01</span>
+            <span>처마 밑 학생부스</span>
+            <button type="button" id="close">
+                <img src="./img/X.png" alt="필터 닫기">
+            </button>
+        </div>
+    </div>
 </div>
 </body>
 </html>
@@ -132,19 +143,20 @@
     function toggle(){
         var blur=document.getElementById('blur');
         blur.classList.toggle('active')
-        }
+    }
 
-    var filter_btn = document.getElementById('filter_btn');
-    var filter = document.getElementById('filter_wrap');
-    var close_btn = document.getElementById('close')
-    var filter_close = document.getElementById('filter_close');
+    // 필터
+    const filter_btn = document.getElementById('filter_btn');
+    const filter = document.getElementById('filter_wrap');
+    const close_btn = document.getElementById('close')
+    const filter_close = document.getElementById('filter_close');
 
-    //팝업 열기
+    //필터 열기
     filter_btn.addEventListener('click', function() {
         filter.style.display = 'block';
     });
     
-    //팝업 닫기
+    //필터 닫기
     close_btn.addEventListener('click', function() {
         filter.style.display = 'none';
     });
@@ -156,4 +168,14 @@
     function submit_filter() {
         filter.style.display = 'none';
     }
+
+    // booth_place 열기
+    const place_btns = document.getElementsByClassName('place_btn')
+    const place = document.getElementById('place_wrap');
+
+    for (let i = 0; i < place_btns.length; i++) {
+    place_btns[i].addEventListener('click', function() {
+        place.style.display = 'block';
+    });
+}
 </script>
