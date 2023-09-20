@@ -46,6 +46,9 @@ select {
 select:focus {
   outline: none;
 }
+option {
+  padding-left: 10px;
+}
 option:focus {
   outline: none;
 }
