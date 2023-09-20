@@ -200,7 +200,7 @@ form {
     display:inline-block; 
     padding:30px; 
     background:#fff; 
-    width:250px; 
+    /* width:250px;  */
     vertical-align:middle;
     text-align: left;
     border-radius: 10px;
@@ -209,12 +209,17 @@ form {
     font-weight: 500;
 }
 
+#filter {
+    width:250px; 
+}
+
 .popup_title {
     font-size: 15px;
     font-weight: 700;
+    margin-right: 10px;
 }
 
-#close {
+#close, #place_close {
     float: right;
     border: 0;
     background-color: transparent;
@@ -290,6 +295,15 @@ form > div {
     font-family: Pretendard;
     color: #fff;
     margin-left: 1.5%;
+}
+
+/* booth_place 팝업 */
+#place {
+    width: 288px;
+}
+
+#place_close img {
+    width: 20px;
 }
 
 /* header */
