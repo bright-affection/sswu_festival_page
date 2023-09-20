@@ -104,11 +104,6 @@ body {
 }
 
 /* 헤더 */
-  html,body{
-    margin: 0;
-    height: 100%;
-  }
-  
   a{
     color: #F06786;
   }
@@ -204,6 +199,5 @@ body {
   }
   
   .container_main{
-    height: 100vh;
     padding-top: 75px;
   }
