@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-style: normal;
+    }
+
+* {
+    font-family: "Pretendard-Regular";
+    box-sizing: border-box;
+    list-style: none;
+}
+
 body {
     height: 100%;
     margin-right: 20px;
@@ -11,6 +24,7 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    overflow-y: auto; /* 수직 스크롤바 활성화 */
 }
 
 #wrap {
@@ -293,6 +307,7 @@ body {
     margin-bottom: 30px;
     visibility: hidden;
 } */
+
 /* 상단바 */
 * {
     box-sizing: border-box;
@@ -385,7 +400,6 @@ body {
     border-radius: 50px;
     cursor: pointer;
     border:1px solid #F06786ed;
-  
     display: flex;
     justify-content: center;
     align-items: center;

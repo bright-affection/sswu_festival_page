@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    overflow-y: auto; /* 수직 스크롤바 활성화 */
 }
 
 #wrap {
@@ -51,7 +52,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
 }
 
 .fst .notice_icon {
@@ -166,7 +166,7 @@ body {
     position: absolute;
     width: calc(100% - 40px); /* 화면 너비에서 20px씩 제외하여 컨테이너의 너비를 계산 */
     height: 440px;
-    margin-top: 120px;
+    margin-top: 90px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -216,7 +216,7 @@ body {
 
     .category_container {
         width: calc(100% - 40px);
-        margin-top: 120px;
+        margin-top: 90px;
     }
     .category img {
         width: 45vw;

@@ -201,3 +201,7 @@ body {
   .container_main{
     padding-top: 75px;
   }
+  html, body {
+    height: 100%;
+    width: 100%; 
+}

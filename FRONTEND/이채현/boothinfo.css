@@ -5,12 +5,6 @@ body {
     font-family: Pretendard;
 }
 
-/* header {
-    width: 100%;
-    height: 50px;
-    background-color: #F06786;
-} */
-
 #wrap {
     margin: 0 20px;
 }
@@ -183,7 +177,7 @@ form {
 }
 
 /* 필터 */
-#filter_wrap { 
+.popup_wrap { 
     position:fixed;
     top: 0; 
     left: 0; 
@@ -192,20 +186,21 @@ form {
     background:rgba(0,0,0,.5); 
     font-size: 16px; 
     text-align: center;
+    z-index: 4;
 }
 
-#filter_wrap:after { 
+.popup_wrap:after { 
     display:inline-block; 
     height:100%; 
     vertical-align:middle; 
     content:''; 
 }
 
-#filter {
+.popup {
     display:inline-block; 
-    padding:30px; 
+    /* padding:30px;  */
     background:#fff; 
-    width:250px; 
+    /* width:250px;  */
     vertical-align:middle;
     text-align: left;
     border-radius: 10px;
@@ -214,13 +209,18 @@ form {
     font-weight: 500;
 }
 
-.filter_title {
-    font-size: 15px;
-    font-weight: 700;
-    /* float: left; */
+#filter {
+    width:250px; 
+    padding:30px; 
 }
 
-#close {
+.popup_title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+#close, #place_close {
     float: right;
     border: 0;
     background-color: transparent;
@@ -262,11 +262,12 @@ form {
     border:2px solid #F06786;
     border-radius: 4px;
     vertical-align:middle;
-    margin-right: 5px;
+    
+    margin-right: 15px;
 }
 
 .filter_text {
-    margin-right: 30px;
+    margin-right: 55px;
 }
 
 form > div {
@@ -295,6 +296,54 @@ form > div {
     font-family: Pretendard;
     color: #fff;
     margin-left: 1.5%;
+}
+
+/* booth_place 팝업 */
+#place {
+    width: 307px;
+    padding: 20px;
+}
+
+#place_close img {
+    width: 20px;
+}
+
+.place_container {
+    margin: 30px 0 20px 0;
+}
+
+.place_grid {
+    height: 33px;
+    display: grid;
+}
+
+.place_box {
+    border: 1px solid #333333;
+}
+
+#place_grid4 {
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+
+#place_grid10 {
+    grid-template-columns: repeat(10, auto);
+    gap: 5px;
+}
+
+#place_grid6 {
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+#place_grid9 {
+    height: 50px;
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+.under{
+    height: 10px;
 }
 
 /* header */
