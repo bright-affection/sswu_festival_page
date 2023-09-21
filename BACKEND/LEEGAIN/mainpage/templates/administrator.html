@@ -51,8 +51,7 @@
                     <p class="exp">비밀번호</p>
                     <input type="text" name="password" class="text-field" placeholder="비밀번호를 입력해주세요.">
                     <div class="ad-btn">
-                        <a href='{% url "mainpage:mainpage" %}'>
-                            <input type="button" value="이전으로" class="preview-btn"></a>
+                            <input type="button" value="이전으로" class="preview-btn" id="goBackButton">
                         <input type="submit" value="다음" class="submit-btn">
                     </div>
 
@@ -67,6 +66,9 @@
             var blur = document.getElementById('blur');
             blur.classList.toggle('active')
         }
+        document.getElementById("goBackButton").addEventListener("click", function() {
+        window.history.back(); // 뒤로 가기 동작 수행
+});
     </script>
 </body>
 
