@@ -58,7 +58,7 @@
                 <div class="booth_info_wrap">
                     <div class="booth_info1 corner">
                         <div class="booth_name">코딩파업함</div>
-                        <div class="booth_site">A01</div>
+                        <div class="booth_site">A02</div>
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
@@ -71,6 +71,87 @@
                     </div>
                 </div>
             </div>
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">E05</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <div>공대생의 반란! 코딩하다 지친 수정이가 
+                            만드는 비즈 팔찌/반지 입니다 :)</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="place_btn">위치보기</div>
+                        <div class="time">10월 4일 오전</div>
+                    </div>
+                </div>
+            </div>
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">F02</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <div>공대생의 반란! 코딩하다 지친 수정이가 
+                            만드는 비즈 팔찌/반지 입니다 :)</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="place_btn">위치보기</div>
+                        <div class="time">10월 4일 오전</div>
+                    </div>
+                </div>
+            </div>
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">B04</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <div>공대생의 반란! 코딩하다 지친 수정이가 
+                            만드는 비즈 팔찌/반지 입니다 :)</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="place_btn">위치보기</div>
+                        <div class="time">10월 4일 오전</div>
+                    </div>
+                </div>
+            </div>
+            <div class="booth">
+                <div class="booth_img_wrap">
+                    <img src="./img/booth_img.png" alt="부스 대표 이미지">
+                </div>
+                <div class="booth_info_wrap">
+                    <div class="booth_info1 corner">
+                        <div class="booth_name">코딩파업함</div>
+                        <div class="booth_site">B14</div>
+                    </div>
+                    <div class="booth_info2">
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <div>공대생의 반란! 코딩하다 지친 수정이가 
+                            만드는 비즈 팔찌/반지 입니다 :)</div>
+                    </div>
+                    <div class="booth_info3 corner">
+                        <div class="place_btn">위치보기</div>
+                        <div class="time">10월 4일 오전</div>
+                    </div>
+                </div>
+            </div>
+            <div class="under"></div>
         </div>
     </div>
 
@@ -127,11 +208,44 @@
     <div id="place_wrap" class="popup_wrap" style="display:none;">
     <!-- <div id="place_wrap" class="popup_wrap"> -->
         <div id="place" class="popup">
-            <span class="popup_title">A01</span>
-            <span>처마 밑 학생부스</span>
-            <button type="button" id="close">
+            <span class="popup_title" id="place_title"></span>
+            <span id="place_title_ex">잘못된 장소입니다.</span>
+            <button type="button" id="place_close">
                 <img src="./img/X.png" alt="필터 닫기">
             </button>
+
+            <div class="place_container" style="display:none">
+                <div class="place_grid" id="place_grid4">
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                </div>
+            </div>
+            <div class="place_container" style="display:none">
+                <div class="place_grid" id="place_grid10">
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                </div>
+            </div>
+            <div class="place_container" style="display:none">
+                <div class="place_grid" id="place_grid6">
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                </div>
+            </div>
+            <div class="place_container" style="display:none">
+                <div class="place_grid" id="place_grid9">
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                    <div class="place_box"></div><div class="place_box"></div><div class="place_box"></div>
+                </div>
+            </div>
+
+            <img src="./img/place_A.svg" class="place_map" style="display:none" alt="성신관 처마, 성신관과 제일 먼 쪽">
+            <img src="./img/place_B1.svg"class="place_map"  style="display: none" alt="성신관 중앙에 있는 문 근처">
+            <img src="./img/place_B2.svg"class="place_map"  style="display: none" alt="성신관 처마, 성신관과 가까운 부분">
+            <img src="./img/place_C.svg" class="place_map" style="display: none">
+            <img src="./img/place_D.svg"class="place_map"  style="display: none">
+            <img src="./img/place_E.svg"class="place_map"  style="display: none">
+            <img src="./img/place_F.svg"class="place_map"  style="display: none">
         </div>
     </div>
 </div>
@@ -169,13 +283,99 @@
         filter.style.display = 'none';
     }
 
-    // booth_place 열기
-    const place_btns = document.getElementsByClassName('place_btn')
-    const place = document.getElementById('place_wrap');
 
+
+    // 부스
+    const place = document.getElementById('place_wrap');
+    const place_btns = document.getElementsByClassName('place_btn');
+    const booth_sites = document.getElementsByClassName("booth_site");
+
+    const place_title = document.getElementById('place_title');
+    const place_title_ex = document.getElementById('place_title_ex');
+    const place_maps = document.getElementsByClassName('place_map');
+    const place_containers = document.getElementsByClassName('place_container');
+    var box;
+
+    function resetPlace() {
+        for (var map of place_maps) {
+            map.style.display = "none"
+        }
+        for (var container of place_containers) {
+            container.style.display = "none"
+        }
+    }
+
+    // 부스 장소 열기
     for (let i = 0; i < place_btns.length; i++) {
-    place_btns[i].addEventListener('click', function() {
-        place.style.display = 'block';
+        place_btns[i].addEventListener('click', function() {
+            place.style.display = 'block';
+
+            var current_place =  booth_sites[i].textContent;
+            resetPlace();
+            place_title.innerText = current_place;
+            var booth_num = current_place.substr(1) * 1;
+
+            switch (current_place.charAt(0)) {
+                case "A":
+                    place_title_ex.innerText = '처마 밑 학생 부스';
+                    place_containers[0].style.display = "block";
+                    place_maps[0].style.display = "block";
+                    box = place_containers[0].getElementsByTagName('div')[booth_num];
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                case "B":
+                    place_title_ex.innerText = '처마 밑 행정 부스';
+                    if (booth_num < 11) {
+                        place_containers[1].style.display = "block";
+                        place_maps[1].style.display = "block";
+                        box = place_containers[1].getElementsByTagName('div')[booth_num];
+                    } else {
+                        booth_num %= 10;
+                        place_containers[2].style.display = "block";
+                        place_maps[2].style.display = "block";
+                        box = place_containers[2].getElementsByTagName('div')[booth_num];
+                    }
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                case "C":
+                    place_title_ex.innerText = '총학생회 부스';
+                    place_containers[2].style.display = "block";
+                    place_maps[4].style.display = "block";
+                    box = place_containers[2].getElementsByTagName('div')[booth_num];
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                case "D":
+                    place_title_ex.innerText = '외부 부스';
+                    place_containers[3].style.display = "block";
+                    place_maps[4].style.display = "block";
+                    box = place_containers[3].getElementsByTagName('div')[booth_num];
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                case "E":
+                    place_title_ex.innerText = '파라솔 학생 부스';
+                    place_containers[1].style.display = "block";
+                    place_maps[5].style.display = "block";
+                    box = place_containers[1].getElementsByTagName('div')[booth_num];
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                case "F":
+                    place_title_ex.innerText = '캐노피 학생 부스';
+                    place_containers[2].style.display = "block";
+                    place_maps[6].style.display = "block";
+                    box = place_containers[2].getElementsByTagName('div')[booth_num];
+                    box.style.backgroundColor = "#F06786";
+                    break;
+                default:
+                    place_title_ex.innerText = '없는 장소 입니다.';
+                    break;
+            }
+        });
+    }
+
+    // 부스 장소 닫기
+    const place_close_btn = document.getElementById('place_close')
+    place_close_btn.addEventListener('click', function() {
+        place.style.display = 'none';
+        box.style.backgroundColor = "#fff";
     });
-}
 </script>

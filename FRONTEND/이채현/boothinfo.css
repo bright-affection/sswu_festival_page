@@ -198,9 +198,9 @@ form {
 
 .popup {
     display:inline-block; 
-    padding:30px; 
+    /* padding:30px;  */
     background:#fff; 
-    width:250px; 
+    /* width:250px;  */
     vertical-align:middle;
     text-align: left;
     border-radius: 10px;
@@ -209,12 +209,18 @@ form {
     font-weight: 500;
 }
 
+#filter {
+    width:250px; 
+    padding:30px; 
+}
+
 .popup_title {
     font-size: 15px;
     font-weight: 700;
+    margin-right: 10px;
 }
 
-#close {
+#close, #place_close {
     float: right;
     border: 0;
     background-color: transparent;
@@ -290,6 +296,54 @@ form > div {
     font-family: Pretendard;
     color: #fff;
     margin-left: 1.5%;
+}
+
+/* booth_place 팝업 */
+#place {
+    width: 307px;
+    padding: 20px;
+}
+
+#place_close img {
+    width: 20px;
+}
+
+.place_container {
+    margin: 30px 0 20px 0;
+}
+
+.place_grid {
+    height: 33px;
+    display: grid;
+}
+
+.place_box {
+    border: 1px solid #333333;
+}
+
+#place_grid4 {
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+
+#place_grid10 {
+    grid-template-columns: repeat(10, auto);
+    gap: 5px;
+}
+
+#place_grid6 {
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+#place_grid9 {
+    height: 50px;
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+.under{
+    height: 10px;
 }
 
 /* header */
