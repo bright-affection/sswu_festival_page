@@ -85,10 +85,20 @@ option:focus {
   font-size: 20px;
   margin-left: 10px;
 }
-
+.choose {
+  display: flex;
+}
 .choose_ex {
   font-size: 13px;
   color: #313131;
+}
+.detail_btn {
+  /* float: right; */
+
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: -5px;
 }
 .goods_choose {
   background-color: white;
