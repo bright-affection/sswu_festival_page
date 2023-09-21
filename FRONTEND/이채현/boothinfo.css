@@ -321,16 +321,30 @@ form > div {
     border: 1px solid #333333;
 }
 
-#place_gridA {
+#place_grid4 {
     grid-template-columns: repeat(4, auto);
     gap: 10px;
 }
 
-#place_containerB {
+#place_grid10 {
     grid-template-columns: repeat(10, auto);
     gap: 5px;
 }
 
+#place_grid6 {
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+#place_grid9 {
+    height: 50px;
+    grid-template-columns: repeat(6, auto);
+    gap: 6px;
+}
+
+.under{
+    height: 10px;
+}
 
 /* header */
 
