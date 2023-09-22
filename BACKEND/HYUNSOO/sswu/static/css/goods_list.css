@@ -24,7 +24,8 @@ select {
   height: 25px;
   font-family: "Pretendard-Regular";
   font-size: 11px;
-  padding-left: 18px;
+  padding-right: 23px;
+  text-align: center;
   appearance: none;
   background: #fff url("../img/dropdown2.svg") no-repeat center right; /*화살표 이미지 넣기*/
   background-size: 26px 26px;
@@ -93,6 +94,7 @@ option:focus {
   display: none;
 }
 .goods_img {
+  border-radius: 7px;
   height: auto;
   width: 150px;
 }
