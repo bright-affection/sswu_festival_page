@@ -83,9 +83,19 @@
         src="{% static 'img/mini_button_goods.svg' %}"
         alt="굿즈 상세보기"
         class="detail_btn"
+        id="modalBtn"
+
       />
       </div>
     </div>
+    <!-- 상세 이미지 -->
+    <div id="myModal" class="modal">
+      <span class="close" id="closeBtn">&times;</span>
+      <img src="{% static 'img/goods_detail.png' %}" alt="디테일컷" class="modal-content" id="modalBtn">
+      <img src="{% static 'img/close.svg' %}" alt="close" class="closebtn" id="close">
+    </div>
+
+
     <form method="post" action="{% url 'order:goods_list' %}">
       {% csrf_token %} {% for good in goods %}
       <!--반복문을 돌면서 admin에서 미리 저장해둔 굿즈 목록을 반환함.-->
@@ -126,6 +136,7 @@
         />
       </div>
     </form>
+  </body>
     <!-- js -->
     <script>
       // nav클릭시 blur처리
@@ -250,6 +261,36 @@
           selectedOption.style.paddingLeft = "10px";
         }
       });
+      var modal = document.getElementById("myModal");
+      var modalContent = document.getElementById("modal-content"); // 모달 이미지 요소
+var modalBtn = document.getElementById("modalBtn");
+var closeBtn = document.getElementById("closeBtn");
+var closeb = document.getElementById("close");
+
+modalBtn.onclick = function() {
+  modal.style.display = "block";
+  modalContent.src = this.src; // 모달 이미지 요소의 src를 변경
+  document.body.style.overflow = "hidden"; // 스크롤 비활성화
+
+}
+closeb.onclick = function() {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // 스크롤 비활성화
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+  enableBackgroundScroll(); // 배경 스크롤 활성화
+
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    enableBackgroundScroll(); // 배경 스크롤 활성화
+
+  }
+}
     </script>
   </body>
 </html>
