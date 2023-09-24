@@ -14,15 +14,13 @@
     <script src="{% static 'js/visitor.js' %}"></script>
 </head>
 <body>
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
     <!-- 헤더는 나중에 js로 연결하기 -->
     <header class="header">
         <a><img class="back" src="{% static 'img/backicon.svg' %}" alt="뒤로가기" class="list_icon"></a>
         <img class="prism" src="{% static 'img/prismPink.svg' %}" alt="로고" class="list_icon2" id="logo">
         <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class='menu-icon' for="menu-btn">
-        <div class='menu-button' onclick="toggle()">
+        <label class='menu-icon' for="menu-btn" onclick="toggle()">
+        <div class='menu-button'>
             <img src="{% static 'img/hamburger.svg' %}" alt="로고" class="Group 1_pink">
         </div>
         </label>
@@ -37,7 +35,10 @@
             <a href="#"><div class="box">관리자 모드</div></a>
         </ul>
     </header>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
     <div class="container_main" id="blur">
+    <main>
     <div id="wrap">
         <div id="title">
             <div class="title_photo">
@@ -55,7 +56,7 @@
             <!-- 백엔드랑 연결할 부분 -->
             {% for visitor in visitor_list %}
             <div class="writing">
-                <div class="writing_tx">{{visitor.content |truncatechars:100 }}</div>
+                <div class="writing_tx">{{visitor.content}}</div>
                 <div class="writing_info">
                     <span class="nickname">{{visitor.nickname}}</span>
                     <span class="date">{{ visitor.date |date:"Y.m.d" }}</span>
@@ -65,18 +66,19 @@
 
             <!-- 더보기 버튼 -->
             <div id="more">
-                <span>+ 더보기</span>
+                <!-- <span>+ 더보기</span> -->
+                <button onclick="loadItem()">+ 더보기</button>
             </div>
         </div>
     </div>
+</main>
 </div>
+</form>
 <script type="text/javascript">
-
     function toggle(){
         var blur=document.getElementById('blur');
         blur.classList.toggle('active')
     }
     </script>
-</form>
 </body>
 </html>
