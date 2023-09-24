@@ -85,7 +85,7 @@ body {
   text-align: center;
 
   width: 148px;
-  height: 226px;
+  height: 232px;
   margin: 0 5px; /* 좌우 여백을 5px로 설정합니다. */
 }
 .profile_img {
@@ -110,6 +110,8 @@ body {
   font-weight: 700;
   font-size: 9px;
   padding-top: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .row {
   display: flex;
@@ -211,4 +213,50 @@ a {
 .container {
   padding-top: 75px;
   height: 100%;
+}
+hr {
+  margin-top: 50px;
+  border-top: 10px solid #fad07c;
+}
+.fes {
+  margin-top: 15px;
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+.fes_pos {
+  font-size: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #313131;
+}
+.fes_name {
+  /* width: 55px; */
+
+  font-weight: 700;
+  font-size: 13px;
+  /* margin-top: 10px; */
+  color: #313131;
+}
+.fes_major {
+  font-size: 3px;
+  color: #f06786;
+  margin-top: 7px;
+}
+.members {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  justify-content: space-between; /* 가로 공간을 동일하게 분배하여 요소를 나란히 표시 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+/* mem3 클래스에 대한 스타일 */
+.mem3 {
+  /* width: 55px; */
+
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+.mem2 {
+  width: 110px;
+
+  margin-right: 10px;
+  margin-left: 10px;
 }
