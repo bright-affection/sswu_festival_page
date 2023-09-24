@@ -17,7 +17,7 @@ def visitor_write(request):
         return redirect('/visitor')
     
 def visitor(request):
-    visitor_list = Visitor.objects.all().order_by('-date')[:3]
+    visitor_list = Visitor.objects.all().order_by('-date')
     context = {
         'visitor_list' : visitor_list
     }

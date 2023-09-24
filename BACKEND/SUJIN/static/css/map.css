@@ -37,11 +37,18 @@ body {
     border-radius: 20px 20px 0 0;
     box-shadow: 0px -10px 10px #E6E6E6;
     padding: 25px;
+    padding-bottom: 60px;
     font-weight: bold;
     background-color: #fff;
 }
 
-.map_select > * {
+.map_select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.select_area > * {
     display: inline-block;
     vertical-align: middle;
 }
@@ -55,8 +62,8 @@ body {
     margin: 25px 0;
 }
 
-.reset {
-    float: right;
+.reset_wrap {
+    display: flex;
 }
 
 /* 헤더 */
@@ -177,7 +184,3 @@ body {
     height: 100vh;
     padding-top: 75px;
   }
-  
-  
-  
-  
