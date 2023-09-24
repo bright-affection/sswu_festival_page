@@ -1,13 +1,15 @@
 {% load static %} {% load custom_filters %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>booking-info</title>
-    <link rel="stylesheet" href="{% static 'css/reserve.css' %}"  />
+    <link rel="stylesheet" href="{% static 'css/reserve.css' %}" />
+
   </head>
   <body>
+
     <!-- 상단바 -->
     <header class="header">
       <a><img class="backicon" src="{% static 'img/backicon.svg' %}" alt="뒤로가기" class="list_icon"></a>
@@ -32,12 +34,13 @@
   <div class="container" id="blur">
 
   
-  <form
-    method="post"
-    action="{% url 'order:reserve' %}"
-    onsubmit="showReservation();"
-  >
-    {% csrf_token %}
+
+    <form
+      method="post"
+      action="{% url 'order:reserve' %}"
+      onsubmit="showReservation(event);"
+    >
+      {% csrf_token %}
 
 
     <!-- 굿즈 예약 설명 -->
@@ -134,68 +137,133 @@
       </div>
       {% endfor %}
 
-      <h3>총액: {{ total_price }} 원</h3>
+      <!-- <h3>총액: {{ total_price }} 원</h3> -->
 
     <!-- 예약 버튼 -->
     <div class="btn">
       <button type="submit" class="booking_btn" id="modalOpenButton">예약하기</button>
     </div>
+    {% if form.errors %}{{ form.errors }}{% endif %}
+    </form>
 
+    <!-- 팝업 -->
 
-    <!-- 모달 창 -->
-    <div id="modalContainer" class="hidden">
-      <div id="modalContent">
-        <div class="done">
-          <p class="booking_done">예약 완료!</p>
+  <div id="modalContainer" class="hidden">
+    <div id="modalContent">
+      <div class="done">
+        <p class="booking_done">예약 완료!</p>
 
-          <img src="{% static 'img/close.svg' %}" class="close" alt="닫기버튼" id="closeBtn" />
-        </div>
-        <div class="explain">
-          <p class="content">송지연 님의 굿즈 구매 예약이 완료되었습니다!</p>
-          <p class="content">
-          해당 시간에 총학 부스에 와서 결제 후 수령해주세요.
-          </p>
-        </div>
-        {% for good_name, good_info in request.session.selected_goods.items %}
+        <img src="{% static 'img/close.svg' %}" class="close" alt="닫기버튼" id="closeBtn" onclick="showGoodsList()" />
+      </div>
+      <div class="explain">
+        <p id="user-name-display" class="content"></p>
+        <p class="content">
+        해당 시간에 총학 부스에 와서 결제 후 수령해주세요.
+        </p>
+      </div>
+      {% for good_name, good_info in request.session.selected_goods.items %}
 
-        <div class="select_item">
-          <ul>
-            <div class="text2">
-              <li class="popup_item">{{ good_name }} - {{ good_info.quantity }}개</span>
-              <span class="popup_detail">{{ good_info.price|multiply:good_info.quantity }}₩</span>
-            </div>
-            <!-- <div class="text2">
-              <li class="popup_item">PRISM 시리얼컵 - 1개</span>
-              <span class="popup_detail">{{ good_info.price|multiply:good_info.quantity }}₩</span>
-            </div> -->
-          </ul>
-        </div>
-        {% endfor %}
+      <div class="select_item">
+        <ul>
+          <div class="text2">
+            <li class="popup_item">{{ good_name }} - {{ good_info.quantity }}개</span>
+            <span class="popup_detail">{{ good_info.price|multiply:good_info.quantity }}₩</span>
+          </div>
+        </ul>
+      </div>
+      {% endfor %}
 
-        <hr />
-        <div class="select_item">
-          <span class="popup_item">예약 시간</span>
-          <span class="popup_detail">11:00 ~ 12:00</span>
-        </div>
-        <hr />
-        <div class="select_item">
-          <span class="total_price">총 결제 금액</span>
-          <span class="total_price2">{{ total_price }}₩</span>
-        </div>
+      <hr />
+      <div class="select_item">
+        <span class="popup_item">예약 시간</span>
+        <p id="user-time-display" class="popup_detail"></p>
+        <!-- <span class="popup_detail">11:00 ~ 12:00</span> -->
+      </div>
+      <hr />
+      <div class="select_item">
+        <span class="total_price">총 결제 금액</span>
+        <span class="total_price2">{{ total_price }}₩</span>
+      </div>
 
-        <!-- btns를 modalContent 내에 위치시킵니다. -->
-        <div class="btns">
-          <button id="HomeButton" class="home">홈으로</button>
-          <button id="goodsMoreButton" class="more">굿즈 더 보기</button>
-        </div>
+      <div class="btns">
+        <button id="HomeButton" class="home" onclick="goHome()">홈으로</button>
+        <button id="goodsMoreButton" class="more" onclick="showGoodsList()">굿즈 더 보기</button>
       </div>
     </div>
   </div>
+</div>
+
 
 
 
     <!-- js -->
     <script>
+      function showReservation(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        fetch("{% url 'order:reserve' %}", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              const userName =
+                document.querySelector("[name='user_name']").value;
+              const userNameDisplay = document.getElementById("user-name-display");
+              userNameDisplay.textContent = userName+'님의 굿즈 구매 예약이 완료되었습니다!';
+
+
+              let goodInfo = "";
+              const goodsElements = document.querySelectorAll("h4, p");
+              goodsElements.forEach((el) => {
+                goodInfo += el.innerText + "\n";
+              });
+
+              const purchaseDate = document.querySelector(
+                "[name='purchase_date']"
+              ).value;
+              const purchaseTime = document.querySelector(
+                "[name ='purchase_time']"
+              ).value;
+              const userTimeDisplay = document.getElementById("user-time-display");
+              userTimeDisplay.textContent = purchaseTime;
+
+              const totalPrice = "{{ total_price }}";
+
+              const message =
+                "예약이 완료되었습니다. \n\n" +
+                userName +
+                "님의 굿즈 구매 예약이 완료되었습니다!\n 해당 시간에 총학 부스에 와서 결제 후 수령해주세요.\n" +
+                goodInfo +
+                "\n" +
+                "예약시간: " +
+                purchaseTime +
+                "총 금액: " +
+                totalPrice +
+                "원";
+
+              const popupContent = document.getElementById("popup-content");
+              popupContent.innerText = message;
+
+              document.getElementById("popup").style.display = "block";
+            } else {
+              alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
+            }
+          });
+      }
+      function Home() {
+        window.location.href = "{% url 'order:home' %}";
+      }
+
+      function showGoodsList() {
+        window.location.href = "{% url 'order:goods_list' %}";
+      }
+
+
+      // 나머지 js
       function toggle(){
         var blur=document.getElementById('blur');
         blur.classList.toggle('active')
@@ -221,9 +289,9 @@
       }
 
 
-      
-      // 모달 창
-      const modalOpenButton = document.getElementById("modalOpenButton");
+
+       // 모달 창
+       const modalOpenButton = document.getElementById("modalOpenButton");
       const HomeButton = document.getElementById("HomeButton");
       const goodsMoreButton = document.getElementById("goodsMoreButton");
       const closeButton = document.getElementById("closeBtn");
@@ -256,7 +324,6 @@
         header.style.filter = "brightness(100%)"; // 헤더 복원
 
       });
-
 
 
     </script>
