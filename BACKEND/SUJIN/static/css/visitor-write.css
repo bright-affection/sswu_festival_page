@@ -89,6 +89,11 @@ body {
 }
 
 /* 헤더 */
+
+  /* html,body{
+    margin: 0;
+    height: 100%;
+  } */
   
   a{
     color: #F06786;
@@ -190,11 +195,19 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
-
   }
-  
+
   html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden; /* 스크롤 숨기기 */
+}
+
+
+/* form 스타일 설정 */
+form {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
