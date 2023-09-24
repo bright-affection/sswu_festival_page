@@ -29,3 +29,5 @@ def visitor_more(request):
         'visitor_list' : visitor_list
     }
     return render(request, 'visitor.html', context)
+
+# ---------ajax 테스트 -----------
