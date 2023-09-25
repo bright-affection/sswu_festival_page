@@ -31,3 +31,4 @@ def visitor_more(request):
     return render(request, 'visitor.html', context)
 
 # ---------ajax 테스트 -----------
+# 아오!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
