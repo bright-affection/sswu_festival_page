@@ -200,8 +200,20 @@ body {
   
   .container_main{
     padding-top: 75px;
+    height: 100%;
+    overflow-y: scroll; /* 세로 스크롤 추가 */
   }
   html, body {
     height: 100%;
     width: 100%; 
 }
+
+
+/* form 스타일 설정 */
+form {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+  
+

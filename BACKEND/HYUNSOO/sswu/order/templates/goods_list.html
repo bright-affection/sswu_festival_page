@@ -211,6 +211,9 @@
       const bookingBtn = document.getElementById("bookingBtn");
       const selectElements = document.querySelectorAll(".num_select");
 
+      bookingBtn.disabled = true;
+
+
       // select 요소가 변경될 때마다 실행되는 함수를 정의합니다.
       function handleSelectChange() {
         let atLeastOneOptionSelected = false;
@@ -225,14 +228,18 @@
         // 하나 이상의 옵션이 선택되었는지에 따라 버튼의 CSS 색상을 변경합니다.
         if (atLeastOneOptionSelected) {
           bookingBtn.style.backgroundColor = "#F06786"; // 버튼의 색상을 변경합니다.
+          bookingBtn.disabled = false; // 선택된 옵션이 있을 때 버튼을 활성화합니다.
+
           // 예약 버튼을 클릭했을 때, 원하는 페이지로 이동하도록 설정합니다.
           bookingBtn.addEventListener("click", function () {
             window.location.href = "https://www.naver.com"; // 여기에 이동할 페이지의 URL을 넣으세요.
           });
-        } else {
+        } else {handleSelectChange
           bookingBtn.style.backgroundColor = ""; // 선택한 옵션이 없을 때 기본 색상으로 변경합니다.
+          bookingBtn.disabled = true; // 선택된 옵션이 없을 때 버튼을 비활성화합니다.
+
           bookingBtn.removeEventListener("click", function () {
-            window.location.href = "https://www.naver.com"; // 이전에 설정된 이벤트 제거
+            window.location.href = ""; // 이전에 설정된 이벤트 제거
           });
         }
       }
