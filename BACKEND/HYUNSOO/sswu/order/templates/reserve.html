@@ -198,6 +198,56 @@
 
     <!-- js -->
     <script>
+       // 모달 창
+       const modalOpenButton = document.getElementById("modalOpenButton");
+      const HomeButton = document.getElementById("HomeButton");
+      const goodsMoreButton = document.getElementById("goodsMoreButton");
+      const closeButton = document.getElementById("closeBtn");
+      const modal = document.getElementById("modalContainer");
+      const header = document.querySelector(".header"); // header 요소 선택
+      const overlay = document.createElement("div"); // 어두운 배경을 생성
+
+      modalOpenButton.addEventListener("click", () => {
+
+    // HTML에서 전화번호 입력 필드의 값을 가져옵니다.
+    const phoneNumberInput = document.querySelector("input[name='phone_number']");
+    const phoneNumber = phoneNumberInput.value;
+
+    // 전화번호에 하이픈(-)이 포함되었는지 확인합니다.
+    if (phoneNumber.includes('-')) {
+      // alert("전화번호에 하이픈(-)을 포함할 수 없습니다.");
+      return; // 모달 창을 띄우지 않고 함수를 종료합니다.
+    }
+
+
+        modal.classList.remove("hidden");
+        overlay.style.display = "block"; // 어두운 배경 표시
+        document.body.style.overflow = "hidden"; // 스크롤 비활성화
+        header.style.filter = "brightness(50%)"; // 헤더 어둡게 만들기
+
+      });
+
+      HomeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+      });
+      goodsMoreButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+      closeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+
+
+
+
       function showReservation(event) {
         event.preventDefault();
 
@@ -250,9 +300,10 @@
 
               document.getElementById("popup").style.display = "block";
             } 
-            // else {
-            //   alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
-            // }
+            else {
+              alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
+
+            }
           });
       }
       function Home() {
@@ -291,40 +342,6 @@
 
 
 
-       // 모달 창
-       const modalOpenButton = document.getElementById("modalOpenButton");
-      const HomeButton = document.getElementById("HomeButton");
-      const goodsMoreButton = document.getElementById("goodsMoreButton");
-      const closeButton = document.getElementById("closeBtn");
-      const modal = document.getElementById("modalContainer");
-      const header = document.querySelector(".header"); // header 요소 선택
-      const overlay = document.createElement("div"); // 어두운 배경을 생성
-
-      modalOpenButton.addEventListener("click", () => {
-        modal.classList.remove("hidden");
-        overlay.style.display = "block"; // 어두운 배경 표시
-        document.body.style.overflow = "hidden"; // 스크롤 비활성화
-        header.style.filter = "brightness(50%)"; // 헤더 어둡게 만들기
-
-      });
-
-      HomeButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-      });
-      goodsMoreButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-
-      });
-      closeButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-
-      });
 
 
     </script>
