@@ -30,6 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'order',
+    'mainpage',
+    'booth',
+    'main',
+    'visitor',
     'rangefilter',
 ]
 
