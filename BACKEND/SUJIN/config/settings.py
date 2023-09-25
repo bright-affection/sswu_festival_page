@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-lybi+l4!z2ta_vq8^w8w2phqu^xlu*v3_x&$l-$gz5#vu0#x^%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ec2-43-202-63-237.ap-northeast-2.compute.amazonaws.com',
+]
 
 
 # Application definition
