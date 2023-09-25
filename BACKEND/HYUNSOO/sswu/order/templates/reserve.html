@@ -198,6 +198,95 @@
 
     <!-- js -->
     <script>
+       // 모달 창
+       const modalOpenButton = document.getElementById("modalOpenButton");
+      const HomeButton = document.getElementById("HomeButton");
+      const goodsMoreButton = document.getElementById("goodsMoreButton");
+      const closeButton = document.getElementById("closeBtn");
+      const modal = document.getElementById("modalContainer");
+      const header = document.querySelector(".header"); // header 요소 선택
+      const overlay = document.createElement("div"); // 어두운 배경을 생성
+
+      modalOpenButton.addEventListener("click", () => {
+
+      // HTML에서 전화번호 입력 필드의 값을 가져옵니다.
+      const phoneNumberInput = document.querySelector("input[name='phone_number']");
+      const phoneNumber = phoneNumberInput.value;
+
+      // 전화번호에 하이픈(-)이 포함되었는지 확인합니다.
+      if (phoneNumber.includes('-')) {
+        // alert("전화번호에 하이픈(-)을 포함할 수 없습니다.");
+        return; // 모달 창을 띄우지 않고 함수를 종료합니다.
+      }
+
+
+        modal.classList.remove("hidden");
+        overlay.style.display = "block"; // 어두운 배경 표시
+        document.body.style.overflow = "hidden"; // 스크롤 비활성화
+        header.style.filter = "brightness(50%)"; // 헤더 어둡게 만들기
+
+      });
+
+      HomeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+      });
+      goodsMoreButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+      closeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto"; // 스크롤 활성화
+        header.style.filter = "brightness(100%)"; // 헤더 복원
+
+      });
+
+      // 버튼 비활성화
+      document.addEventListener("DOMContentLoaded", function () {
+        const bookingBtn = document.querySelector(".booking_btn");
+        const userNameInput = document.querySelector("input[name='user_name']");
+        const phoneNumberInput = document.querySelector("input[name='phone_number']");
+        const userMailInput = document.querySelector("input[name='user_mail']");
+        const purchaseDateInputs = document.querySelectorAll("input[name='purchase_date']");
+        const purchaseTimeSelect = document.querySelector("select[name='purchase_time']");
+
+        // 예약하기 버튼의 초기 상태를 설정합니다.
+        updateBookingButtonState();
+
+        // 입력 필드나 선택 상태가 변경될 때 예약하기 버튼의 상태를 업데이트합니다.
+        userNameInput.addEventListener("input", updateBookingButtonState);
+        phoneNumberInput.addEventListener("input", updateBookingButtonState);
+        userMailInput.addEventListener("input", updateBookingButtonState);
+        purchaseDateInputs.forEach((input) => {
+          input.addEventListener("change", updateBookingButtonState);
+        });
+        purchaseTimeSelect.addEventListener("change", updateBookingButtonState);
+
+        function updateBookingButtonState() {
+          // 필수 입력 필드가 모두 입력되었고, 선택한 일자와 시간이 있는지 확인합니다.
+          const isUserNameValid = userNameInput.value.trim() !== "";
+          const isPhoneNumberValid = phoneNumberInput.value.trim() !== "";
+          const isUserMailValid = userMailInput.value.trim() !== "";
+          const isPurchaseDateSelected = Array.from(purchaseDateInputs).some(input => input.checked);
+          const isPurchaseTimeSelected = purchaseTimeSelect.value !== "";
+
+          // 모든 필수 조건이 충족되었을 때 버튼을 활성화합니다.
+          if (isUserNameValid && isPhoneNumberValid && isUserMailValid && isPurchaseDateSelected && isPurchaseTimeSelected) {
+            bookingBtn.removeAttribute("disabled");
+            bookingBtn.style.backgroundColor="#f06786"
+
+          } else {
+          bookingBtn.setAttribute("disabled", "disabled");
+          }
+        }
+      });
+
+
+
       function showReservation(event) {
         event.preventDefault();
 
@@ -250,9 +339,9 @@
 
               document.getElementById("popup").style.display = "block";
             } 
-            // else {
-            //   alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
-            // }
+            else {
+              alert("예약 중 오류가 발생했습니다. 다시 시도해주세요.");
+            }
           });
       }
       function Home() {
@@ -291,40 +380,6 @@
 
 
 
-       // 모달 창
-       const modalOpenButton = document.getElementById("modalOpenButton");
-      const HomeButton = document.getElementById("HomeButton");
-      const goodsMoreButton = document.getElementById("goodsMoreButton");
-      const closeButton = document.getElementById("closeBtn");
-      const modal = document.getElementById("modalContainer");
-      const header = document.querySelector(".header"); // header 요소 선택
-      const overlay = document.createElement("div"); // 어두운 배경을 생성
-
-      modalOpenButton.addEventListener("click", () => {
-        modal.classList.remove("hidden");
-        overlay.style.display = "block"; // 어두운 배경 표시
-        document.body.style.overflow = "hidden"; // 스크롤 비활성화
-        header.style.filter = "brightness(50%)"; // 헤더 어둡게 만들기
-
-      });
-
-      HomeButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-      });
-      goodsMoreButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-
-      });
-      closeButton.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "auto"; // 스크롤 활성화
-        header.style.filter = "brightness(100%)"; // 헤더 복원
-
-      });
 
 
     </script>
