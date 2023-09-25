@@ -360,7 +360,7 @@ body {
   .container_main{
     height: 100vh;
     padding-top: 75px;
-    
+    overflow-y: scroll; /* 세로 스크롤 추가 */
   }
   
   
