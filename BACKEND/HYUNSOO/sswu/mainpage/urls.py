@@ -5,8 +5,6 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'mainpage'
-
 urlpatterns = [
     path('', views.mainpage, name='mainpage'),
     path('administrator/', views.administrator, name='administrator'),
