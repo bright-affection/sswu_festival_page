@@ -86,13 +86,14 @@
         alt="굿즈 상세보기"
         class="detail_btn"
         id="modalBtn"
+        onclick="detail()"
 
       />
       </div>
     </div>
     <!-- 상세 이미지 -->
     <div id="myModal" class="modal">
-      <span class="close" id="closeBtn">&times;</span>
+      <!-- <span class="close" id="closeBtn">&times;</span> -->
       <img src="{% static 'img/goods_detail.png' %}" alt="디테일컷" class="modal-content" id="modalBtn">
       <img src="{% static 'img/close.svg' %}" alt="close" class="closebtn" id="close">
     </div>
@@ -104,7 +105,7 @@
 
       <!-- 굿즈 선택 1 -->
       <div class="goods_choose" onclick="toggleGoods(this)">
-        <img src="{% static 'img/checkicon.svg' %}" alt="체크" class="check" />
+        <img src="{% static 'img/checkicon.svg' %}" alt="체크" class="check" id="checkimg" />
         <img
           src="{{ good.image.url }}"
           alt="{{ good.name }}"
@@ -275,36 +276,44 @@ var modalBtn = document.getElementById("modalBtn");
 var closeBtn = document.getElementById("closeBtn");
 var closeb = document.getElementById("close");
 
-modalBtn.onclick = function() {
-  modal.style.display = "block";
-  modalContent.src = this.src; // 모달 이미지 요소의 src를 변경
-  document.body.style.overflow = "hidden"; // 스크롤 비활성화
 
-}
-closeb.onclick = function() {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // 스크롤 비활성화
-}
+// modalBtn.onclick = function() {
+//   modal.style.display = "block";
+//   modalContent.src = this.src; // 모달 이미지 요소의 src를 변경
+//   document.body.style.overflow = "hidden"; // 스크롤 비활성화
 
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-  enableBackgroundScroll(); // 배경 스크롤 활성화
 
-}
+// }
+// closeb.onclick = function() {
+//   modal.style.display = "none";
+//   document.body.style.overflow = "auto"; // 스크롤 비활성화
+
+// }
+
+// closeBtn.onclick = function() {
+//   modal.style.display = "none";
+//   enableBackgroundScroll(); // 배경 스크롤 활성화
+// }
 
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
     enableBackgroundScroll(); // 배경 스크롤 활성화
 
+
   }
 }
-function Home() {
-        window.location.href = "{% url 'mainpage:mainpage' %}";
-      }
-      function goBack() {
+    function Home() {
+      window.location.href = "{% url 'mainpage:mainpage' %}";
+    }
+    function goBack() {
     window.history.back();
-  }
+    }
+    function detail() {
+      window.location.href = "{% url 'order:home' %}";
+    }
+
+  
     </script>
   </body>
 </html>
