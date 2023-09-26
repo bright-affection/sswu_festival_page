@@ -92,7 +92,7 @@ drawHtml(contentData);
 });
 
 // 초기 페이지 로딩시 몇 개의 글을 보여줄 것인지 설정
-var itemsPerPage = 10;
+var itemsPerPage = 3;
 var currentPage = 1;
 var isLoading = false;
 
