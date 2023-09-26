@@ -11,6 +11,9 @@ from django.core.paginator import Paginator
 def mainpage(request):
     return render(request, 'mainpage.html')
 
+def makers(request):
+    return render(request, 'makers.html')
+
 # 관리자 로그인
 def administrator(request):
     if request.method == 'POST':
