@@ -116,7 +116,7 @@ $(document).ready(function() {
 // 초기 페이지 로딩 시 글 불러오기
 
 // 해당 스크립트 호출하여, ajax호출해야하나 호출할곳이 없기에 주석처리했습니다. =============================================
-//loadItems();
+    loadItems();
 
 // 맨위에 contentData 임시데이터를 사용했습니다. =============================================
 // drawHtml(contentData); // 맨 처음에 가져오기
@@ -136,30 +136,30 @@ var isLoading = false;
 
 // 글을 불러오는 함수
 function loadItems() {
-if (isLoading) return; // 이미 로딩 중이면 중복 요청 방지
-isLoading = true;
+    if (isLoading) return; // 이미 로딩 중이면 중복 요청 방지
+    isLoading = true;
 
 // 로딩 표시를 보이게 하고, API 또는 데이터 소스로부터 데이터를 가져옵니다.
-$('#loading').show();
+    $('#loading').show();
 
 // 데이터를 가져온 후 처리하는 로직을 추가합니다.
 // 예를 들면, AJAX 요청을 사용하여 데이터를 가져올 수 있습니다.
-$.ajax({
-    // 해당 url에 원하시는 서버단 주소 붙여넣으세요 =============================================
-    url: './visitor',
-    data: {
-        page: currentPage, per_page: itemsPerPage 
-    },
-    success: function(data) {
-        // 데이터를 가져와서 화면에 표시하는 코드 작성
-        
-        drawHtml(data);
-    },
-    complete: function() {
-        $('#loading').hide(); // 로딩 표시 숨기기
-        isLoading = false; // 로딩 완료
-    }
-});
+    $.ajax({
+        // 해당 url에 원하시는 서버단 주소 붙여넣으세요 =============================================
+        url: './visitor.json',
+        data: {
+            page: currentPage, per_page: itemsPerPage 
+        },
+        success: function(data) {
+            // 데이터를 가져와서 화면에 표시하는 코드 작성
+            
+            drawHtml(data);
+        },
+        complete: function() {
+            $('#loading').hide(); // 로딩 표시 숨기기
+            isLoading = false; // 로딩 완료
+        }
+    });
 
 
 }

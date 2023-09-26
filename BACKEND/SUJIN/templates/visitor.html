@@ -15,7 +15,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-    <script defer src="{% static 'js/visitor_test.js' %}"></script>
+    <script defer src="{% static 'js/visitor.js' %}"></script>
 </head>
 <body>
     <!-- 헤더는 나중에 js로 연결하기 -->
@@ -58,7 +58,7 @@
             </a>
 
             <!-- 백엔드랑 연결할 부분 -->
-            {% for visitor in visitor_list %}
+            <!-- {% for visitor in visitor_list %}
             <div class="writing">
                 <div class="writing_tx">{{visitor.content}}</div>
                 <div class="writing_info">
@@ -66,7 +66,7 @@
                     <span class="date">{{ visitor.date |date:"Y.m.d" }}</span>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %} -->
             <div id="content">
                 
             </div>
