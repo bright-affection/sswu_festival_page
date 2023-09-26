@@ -12,8 +12,8 @@
 
     <!-- 상단바 -->
     <header class="header">
-      <a><img class="backicon" src="{% static 'img/backicon.svg' %}" alt="뒤로가기" class="list_icon"></a>
-      <img class="prism" src="{% static 'img/prismPink.svg' %}" alt="로고" class="list_icon2" id="logo">
+      <a><img class="backicon" src="{% static 'img/backicon.svg' %}" alt="뒤로가기" class="list_icon" onclick="goBack()"></a>
+      <img class="prism" src="{% static 'img/prismPink.svg' %}" alt="로고" class="list_icon2" id="logo" onclick="Home()">
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class='menu-icon' for="menu-btn">
     <div class='menu-button' onclick="toggle()">
@@ -186,7 +186,7 @@
       </div>
 
       <div class="btns">
-        <button id="HomeButton" class="home" onclick="goHome()">홈으로</button>
+        <button id="HomeButton" class="home" onclick="Home()">홈으로</button>
         <button id="goodsMoreButton" class="more" onclick="showGoodsList()">굿즈 더 보기</button>
       </div>
     </div>
@@ -344,14 +344,19 @@
             }
           });
       }
+      // 홈으로 가기(로고 클릭, 팝업 홈으로 가기)
       function Home() {
-        window.location.href = "{% url 'order:home' %}";
+        window.location.href = "{% url 'mainpage:mainpage' %}";
       }
-
+      // 굿즈 더보기(팝업)
       function showGoodsList() {
         window.location.href = "{% url 'order:goods_list' %}";
       }
 
+      // 뒤로가기
+      function goBack() {
+    window.history.back();
+    }
 
       // 나머지 js
       function toggle(){
