@@ -68,6 +68,44 @@ const contentData = {
             nickname:'닉네임',
             date:'2023-01-01'
             
+        },
+        {
+            id:7,
+            title:"useState",
+            content:"[title]hooks[content]hooks는 react의 state machine에 연결하는 기본적인 방법\nㅋㅋㅋㅋㅋㅋ\nㅋㅋㅋㅋㅋㅋㅋㅎㅎ" ,
+            nickname:'닉네임',
+            date:'2023-01-01'
+            
+        },
+        {
+            id:8,
+            title:"정리 예정2",
+            content:"" ,
+            nickname:'닉네임',
+            date:'2023-01-01'
+        },
+        {
+            id:9,
+            title:"정리 예정2",
+            content:"" ,
+            nickname:'닉네임',
+            date:'2023-01-01'
+        },
+        {
+            id:10,
+            title:"useState",
+            content:"10번" ,
+            nickname:'닉네임',
+            date:'2023-01-01'
+            
+        },
+        {
+            id:11,
+            title:"useState",
+            content:"11번" ,
+            nickname:'닉네임',
+            date:'2023-01-01'
+            
         }
     ],
     totalCount:35
@@ -81,7 +119,7 @@ $(document).ready(function() {
 //loadItems();
 
 // 맨위에 contentData 임시데이터를 사용했습니다. =============================================
-drawHtml(contentData);
+// drawHtml(contentData); // 맨 처음에 가져오기
 
 // 스크롤 이벤트 감지
 // $(window).scroll(function() {
@@ -92,7 +130,7 @@ drawHtml(contentData);
 });
 
 // 초기 페이지 로딩시 몇 개의 글을 보여줄 것인지 설정
-var itemsPerPage = 10;
+var itemsPerPage = 3;
 var currentPage = 1;
 var isLoading = false;
 
@@ -108,7 +146,7 @@ $('#loading').show();
 // 예를 들면, AJAX 요청을 사용하여 데이터를 가져올 수 있습니다.
 $.ajax({
     // 해당 url에 원하시는 서버단 주소 붙여넣으세요 =============================================
-    //url: './visitor.json',
+    url: './visitor',
     data: {
         page: currentPage, per_page: itemsPerPage 
     },
@@ -127,32 +165,33 @@ $.ajax({
 }
 
 function drawHtml(result) {
-// 가상 데이터를 생성하는 예제
-// 데이터만큼 반복시켜줘서 html 그려준다 =============================================
-var html = '';
-var data = result.list
+    // 가상 데이터를 생성하는 예제
+    // 데이터만큼 반복시켜줘서 html 그려준다 =============================================
+    var html = '';
+    var data = result.list
 
-for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < itemsPerPage; i++) {
 
-    html += '<div class="writing">';
-    html += '    <div class="writing_tx">'+data[i].content+'</div>';
-    html += '    <div class="writing_info">';
-    html += '        <span class="nickname">'+data[i].nickname+'</span>';
-    html += '        <span class="date">'+data[i].date+'</span>';
-    html += '    </div>';
-    html += '</div>';
-}
+        html += '<div class="writing">';
+        html += '    <div class="writing_tx">'+data[i].content+'</div>';
+        html += '    <div class="writing_info">';
+        html += '        <span class="nickname">'+data[i].nickname+'</span>';
+        html += '        <span class="date">'+data[i].date+'</span>';
+        html += '    </div>';
+        html += '</div>';
+    }
+
 
 // 모든 게시글을 읽으면 더보기 hide =============================================
-console.log(currentPage * itemsPerPage,result.totalCount);
-if(result.totalCount <= currentPage * itemsPerPage){
-    $('#more').hide();
-}
+    console.log(currentPage * itemsPerPage,result.totalCount);
+    if(result.totalCount <= currentPage * itemsPerPage){
+        $('#more').hide();
+    }
 
 // 데이터를 가져온 후 처리하는 로직을 추가합니다.
-$('#content').append(html);
-$('#loading').hide(); // 로딩 표시 숨기기
-isLoading = false; // 로딩 완료
-currentPage++; // 다음 페이지로 이동
+    $('#content').append(html);
+    $('#loading').hide(); // 로딩 표시 숨기기
+    isLoading = false; // 로딩 완료
+    currentPage++; // 다음 페이지로 이동
 
 }
