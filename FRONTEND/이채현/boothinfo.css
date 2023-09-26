@@ -123,15 +123,15 @@ form {
     padding: 15px;
 }
 
-.corner {
+.booth_info_wrap > div {
     width: 100%;
 }
 
-.booth_info_wrap > div > div {
+/* .booth_info_wrap > div > div {
     display: inline-block;
     width: auto;
     text-align: left;
-}
+} */
 
 .booth_name {
     font-weight: 700;
@@ -147,34 +147,50 @@ form {
 }
 
 .booth_info2 {
-    height: calc(100% - 32px);
+    /* height: calc(100% - 32px); */
+    height: auto;
 }
 
 .booth_info2 div{
     font-size: 11px;
     line-height: 150%;
-    margin: 15px 0;
+    margin-top: 15px;
     font-weight: 500;
+}
+
+.booth_info3 {
+    /* bottom: 0; */
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 .booth_info3 div {
     font-size: 11px;
     color: #A0A0A0;
     font-weight: 500;
+
+    /* display: inline-flex; */
+    justify-content: space-between;
 }
 
-.map {
+.booth_info3 > .time {
+    /* color:#F194B4; */
+    line-height: 130%;
+    /* float: right; */
+}
+
+/* .map {
     float: left;
 }
 
 .map > a {
     text-decoration: none;
     color: #A0A0A0;
-}
+} */
 
-.time {
+/* .time {
     float: right;
-}
+} */
 
 /* 필터 */
 .popup_wrap { 

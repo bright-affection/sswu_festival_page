@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="{% static 'css/visitor.css' %}" />
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{% static 'js/visitor.js' %}"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ajax -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script defer src="{% static 'js/visitor.js' %}"></script>
+    
+    <link rel="stylesheet" href="../static/css/visitor.css" />
 </head>
 <body>
     <!-- 헤더는 나중에 js로 연결하기 -->
@@ -68,13 +70,14 @@
             </div>
             {% endfor %}
 
-            <ul id="post_list">
-                <!-- 여기에 동적으로 추가될 게시물들이 표시됩니다. -->
-            </ul>
+            <!-- <ul id="post_list">
+                여기에 동적으로 추가될 게시물들이 표시됩니다.
+            </ul> -->
 
             <!-- 더보기 버튼 -->
             <div id="more">
-                <button id="moreBtn">+ 더보기</button>
+                <!-- <button id="moreBtn">+ 더보기</button> -->
+                <button onclick="drawHtml(contentData)">+ 더보기</button>
             </div>
         </div>
     </div>
@@ -85,59 +88,6 @@
 </html>
 
 <script type="text/javascript">
-    // 게시물 데이터 예시 (실제 데이터베이스에서 가져온 것으로 가정)
-    const posts = [
-        "첫 번째 게시물",
-        "두 번째 게시물",
-        "세 번째 게시물",
-        "네 번째 게시물",
-        "다섯 번째 게시물",
-        // 추가 게시물 데이터를 이곳에 추가할 수 있습니다.
-    ];
-    
-    function getPostsList() {
-        $.ajax({
-            url: "/db.sqlite3",  //어디서 받아올지...
-            success:function(data){
-                let obj=JSON.parse(data);      //data를 받아와서 JSON형태로 변환
-                let array=["<ol>"]; 
-                obj["member_list"].forEach(
-                        member =>  array.push("<li>"+member.id+"</li>")    
-                        //JSON에 있는 member.id의 value를 li태그에 넣어서 array에 넣어줌
-                );
-                array.push("</ol>");                                   
-
-                $("#result").html(array.join(""));  
-                //array의 요소들을 다 합쳐서 하나로 만든후 id="result"인 태그에 html로 출력
-            }
-        });
-    }
-
-    //더보기
-    const postList = document.getElementById("post_list");
-    const moreBtn = document.getElementById("moreBtn");
-
-    let currentIndex = 0; // 현재 표시된 게시물의 인덱스
-
-    function loadMorePosts() {
-        const postsPerPage = 2; // 한 번에 표시할 게시물 수
-        for (let i = 0; i < postsPerPage; i++) {
-            if (currentIndex < posts.length) {
-                const listItem = document.createElement("li");
-                listItem.textContent = posts[currentIndex];
-                postList.appendChild(listItem);
-                currentIndex++;
-            } else {
-                moreBtn.disabled = true; // 더 이상 게시물이 없을 경우 버튼 비활성화
-                break;
-            }
-        }
-    }
-
-    moreBtn.addEventListener("click", loadMorePosts);
-    // 초기 페이지 로드 시 처음 일부 게시물을 로드합니다.
-    loadMorePosts();
-
     function toggle(){
         var blur=document.getElementById('blur');
         blur.classList.toggle('active')
