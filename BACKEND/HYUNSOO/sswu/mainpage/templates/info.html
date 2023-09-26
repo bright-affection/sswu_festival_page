@@ -45,9 +45,12 @@
         <div class="fst">
             <img src="/static/img/staricon.svg" alt="다이아몬드" class="notice_icon">
             <h1>공지사항</h1>
+            <!-- 로그인 했을 때만 글쓰기 버튼이 보임 -->
+            {% if user.is_authenticated %}
             <a href="{% url 'mainpage:info_write' %}">
                 <h2>글쓰기</h2>
             </a>
+            {% endif %}
         </div>
 
         <!-- 공지사항들 -->
