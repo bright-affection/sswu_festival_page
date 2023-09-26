@@ -155,6 +155,10 @@ form {
     line-height: 150%;
     margin: 15px 0;
     font-weight: 500;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .booth_info3 div {
