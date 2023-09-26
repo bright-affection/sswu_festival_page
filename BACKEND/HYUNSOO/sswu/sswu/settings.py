@@ -16,6 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'ec2-43-202-63-237.ap-northeast-2.compute.amazonaws.com',
+    'www.sswu-prism.com',
 ]
 
 
