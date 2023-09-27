@@ -250,15 +250,15 @@ a {
 }
 /* mem3 클래스에 대한 스타일 */
 .mem3 {
-  /* width: 55px; */
+  width: 110px;
 
   text-align: center; /* 텍스트 가운데 정렬 */
 }
 .mem2 {
   width: 130px;
 
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 1px;
+  margin-left: 1px;
 }
 footer {
   position: absolute;
