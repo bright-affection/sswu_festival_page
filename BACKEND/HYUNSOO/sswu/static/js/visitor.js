@@ -56,7 +56,7 @@ $(document).ready(function() {
         // 데이터를 가져온 후 처리하는 로직을 추가합니다.
         // 예를 들면, AJAX 요청을 사용하여 데이터를 가져올 수 있습니다.
         $.ajax({
-            url: '/visitor/visitor.json',
+            url: '/visitor/visitor_json',
             data: {
                 page: currentPage, items_per_page: itemsPerPage 
             },
@@ -103,5 +103,3 @@ $(document).ready(function() {
         currentPage++; // 다음 페이지로 이동
     
     }
-    
-    
