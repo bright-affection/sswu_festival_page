@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +24,15 @@
       </div>
     </label>
       <ul class="menu">
-          <li><a href="#">타임테이블</a></li>
-          <li><a href="#">축제 지도 확인하기</a></li>
-          <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
-          <li><a href="#">굿즈 구매 예약</a></li>
-          <li><a href="#">공지사항</a></li>
-          <li><a href="#">방명록</a></li>
-          <li><a href="#">만든이들</a></li>
-          <a href="#"><div class="box">관리자 모드</div></a>
+        <li><a href="http://sswu-prism.com/main/timetable/">타임테이블</a></li>
+        <li><a href="http://sswu-prism.com/main/map/">축제 지도 확인하기</a></li>
+        <li><a href="http://sswu-prism.com/booth/">플리마켓 / 제휴부스 / 총학부스</a></li>
+        <li><a href="http://sswu-prism.com/order/goods_list/">굿즈 구매 예약</a></li>
+        <li><a href="{% url 'mainpage:info' %}">공지사항</a></li>
+        <li><a href="http://sswu-prism.com/visitor/">방명록</a></li>
+        <li><a href="{% url 'mainpage:makers' %}">만든이들</a></li>
+        <a href="{% url 'mainpage:administrator' %}">
+            <div class="box">관리자 모드</div></a>
       </ul>
     </header>
     <div class="container_main" id="blur">
@@ -107,6 +107,12 @@
     function toggle(){
         var blur=document.getElementById('blur');
         blur.classList.toggle('active')
+    }
+    function Home() {
+        window.location.href = "{% url 'mainpage:mainpage' %}";
+    }
+    function goBack() {
+        window.history.back();
     }
     </script>
 </body>

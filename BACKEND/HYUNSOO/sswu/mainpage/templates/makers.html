@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>makers</title>
-    <link rel="stylesheet" href="makers.css" />
+    <link rel="stylesheet" href="{% static 'css/makers.css' %}" />
   </head>
   <body>
     <div class="con">
@@ -12,32 +13,36 @@
       <a
         ><img
           class="back"
-          src="..\img\backicon.svg"
+          src="{% static 'css/goods_list.css' %}"
           alt="뒤로가기"
           class="list_icon"
+          onclick="goBack()"
       /></a>
       <img
         class="prism"
-        src="..\img\prismPink.svg"
+        src="{% static 'img/prismPink.svg' %}"
         alt="로고"
         class="list_icon2"
         id="logo"
+        onclick="Home()"
       />
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn">
         <div class="menu-button" onclick="toggle()">
-          <img src="..\img\hamburger.svg" alt="로고" class="Group 1_pink" />
+          <img src="{% static 'img/hamburger.svg' %}" alt="로고" class="Group 1_pink" />
         </div>
       </label>
       <ul class="menu">
-        <li><a href="#">타임테이블</a></li>
-        <li><a href="#">축제 지도 확인하기</a></li>
-        <li><a href="#">플리마켓 / 제휴부스 / 총학부스</a></li>
-        <li><a href="#">굿즈 구매 예약</a></li>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">방명록</a></li>
-        <li><a href="#">만든이들</a></li>
-        <a href="#"><div class="box">관리자 모드</div></a>
+        <li><a href="http://sswu-prism.com/main/timetable/">타임테이블</a></li>
+        <li><a href="http://sswu-prism.com/main/map/">축제 지도 확인하기</a></li>
+        <li><a href="http://sswu-prism.com/booth/">플리마켓 / 제휴부스 / 총학부스</a></li>
+        <li><a href="http://sswu-prism.com/order/goods_list/">굿즈 구매 예약</a></li>
+        <li><a href="{% url 'mainpage:info' %}">공지사항</a></li>
+        <li><a href="http://sswu-prism.com/visitor/">방명록</a></li>
+        <li><a href="{% url 'mainpage:makers' %}">만든이들</a></li>
+        <a href="{% url 'mainpage:administrator' %}">
+            <div class="box">관리자 모드</div>
+        </a>
       </ul>
     </header>
     <div class="container" id="blur">
@@ -52,9 +57,9 @@
       <div class="profile">
         <span class="position">PM & DESIGN</span>
         <div class="profile_info">
-          <img src="..\img\jiyeon.png" class="profile_img" />
+          <img src="{% static 'img/jiyeon.png' %}" class="profile_img" />
           <span class="name">송지연</span>
-          <span class="major">서비스*디자인공학과 22</span>
+          <span class="major">서비스디자인공학과 22</span>
           <span class="mission">서비스 총 기획 및 디자인</span>
         </div>
       </div>
@@ -64,7 +69,7 @@
         <!-- 첫번째 줄 -->
         <!-- FE1 -->
         <div class="profile_info">
-          <img src="..\img\sojeong.png" class="profile_img" />
+          <img src="{% static 'img/sojeong.png' %}" class="profile_img" />
           <span class="name">김소정</span>
           <span class="major">AI융합학부 21</span>
           <span class="mission">프론트엔드 총괄</span>
@@ -72,14 +77,14 @@
         <div class="row">
           <!-- FE2 -->
           <div class="profile_info">
-            <img src="..\img\suho.png" class="profile_img" />
+            <img src="{% static 'img/suho.png' %}" class="profile_img" />
             <span class="name">문수호</span>
             <span class="major">AI융합학부 22</span>
             <span class="mission">메인페이지 / 메뉴 / 관리자 페이지</span>
           </div>
           <!-- FE3 -->
           <div class="profile_info">
-            <img src="..\img\yein.png" class="profile_img" />
+            <img src="{% static 'img/yein.png' %}" class="profile_img" />
             <span class="name">박예인</span>
             <span class="major">AI융합학부 21</span>
             <span class="mission">굿즈 예약, 만든 사람들 페이지</span>
@@ -89,14 +94,14 @@
         <div class="row">
           <!-- FE4 -->
           <div class="profile_info">
-            <img src="..\img\somin.png" class="profile_img" />
+            <img src="{% static 'img/somin.png' %}" class="profile_img" />
             <span class="name">이소민</span>
             <span class="major">AI융합학부 21</span>
             <span class="mission">공지사항 페이지</span>
           </div>
           <!-- FE5 -->
           <div class="profile_info">
-            <img src="..\img\chaehyun.png" class="profile_img" />
+            <img src="{% static 'img/chaehyun.png'%}" class="profile_img" />
             <span class="name">이채현</span>
             <span class="major">컴퓨터공학과 21</span>
             <span class="mission"
@@ -113,14 +118,14 @@
         <div class="row">
           <!-- BE1 -->
           <div class="profile_info">
-            <img src="..\img\rye.png" class="profile_img" />
+            <img src="{% static 'img/rye.png' %}" class="profile_img" />
             <span class="name">이예령</span>
             <span class="major">컴퓨터공학과 22</span>
             <span class="mission">백엔드 총괄</span>
           </div>
           <!-- BE2 -->
           <div class="profile_info">
-            <img src="..\img\hyunsoo.png" class="profile_img" />
+            <img src="{% static 'img/hyunsoo.png' %}" class="profile_img" />
             <span class="name">김현수</span>
             <span class="major">컴퓨터공학과 22</span>
             <span class="mission">굿즈 예약구매 백엔드</span>
@@ -130,7 +135,7 @@
         <div class="row">
           <!-- BE1 -->
           <div class="profile_info">
-            <img src="..\img\sujin.png" class="profile_img" />
+            <img src="{% static 'img/sujin.png' %}" class="profile_img" />
             <span class="name">전수진</span>
             <span class="major">AI융합학부 21</span>
             <span class="mission">방명록, 부스 정보, 지도 페이지 백엔드</span>
@@ -138,7 +143,7 @@
 
           <!-- BE2 -->
           <div class="profile_info">
-            <img src="..\img\gain.png" class="profile_img" />
+            <img src="{% static 'img/gain.png' %}" class="profile_img" />
             <span class="name">이가인</span>
             <span class="major">컴퓨터공학과 19</span>
             <span class="mission">메인페이지, 인포 페이지 백엔드</span>
@@ -323,7 +328,7 @@
     </div>
       <footer>
         <div class="foot">
-          <img src="..\img\foot.svg" />
+          <img src="{% static 'img/foot.svg' %}" />
           <p class="copy">
             Copyright 2023. LIKELION at SUNGSHIN All rights reserved.
           </p>
@@ -333,6 +338,13 @@
       function toggle() {
         var blur = document.getElementById("blur");
         blur.classList.toggle("active");
+      }
+
+      function Home() {
+        window.location.href = "{% url 'mainpage:mainpage' %}";
+      }
+      function goBack() {
+        window.history.back();
       }
     </script>
   </body>

@@ -96,7 +96,7 @@ body {
     margin: 15px 0;
 }
 
-.booth div {
+.booth > div {
     display: inline-block;
 }
 
@@ -159,6 +159,12 @@ body {
     overflow: hidden;
 }
 
+.booth_info3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .booth_info3 div {
     font-size: 11px;
     color: #A0A0A0;
@@ -172,10 +178,6 @@ body {
 .map > a {
     text-decoration: none;
     color: #A0A0A0;
-}
-
-.time {
-    float: right;
 }
 
 /* 필터 */
