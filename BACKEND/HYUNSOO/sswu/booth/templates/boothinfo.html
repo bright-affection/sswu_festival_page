@@ -65,12 +65,12 @@
                 </div>
                 <div class="booth_info_wrap">
                     <div class="booth_info1 corner">
-                        <div class="booth_name">{{booth.name}}</div>
+                        <div class="booth_name">{{booth.name|truncatechars:11}}</div>
                         <div class="booth_site">{{booth.locate}}</div>
                     </div>
                     <div class="booth_info2">
                         <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
-                        <div>{{booth.content}}</div>
+                        <div>{{booth.content|truncatechars:50}}</div>
                     </div>
                     <div class="booth_info3 corner">
                         {% with booth_date_list=booth.date|split:" " %}
