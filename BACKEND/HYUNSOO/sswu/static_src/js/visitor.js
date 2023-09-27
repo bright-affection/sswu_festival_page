@@ -108,7 +108,7 @@ $('#loading').show();
 // 예를 들면, AJAX 요청을 사용하여 데이터를 가져올 수 있습니다.
 $.ajax({
     // 해당 url에 원하시는 서버단 주소 붙여넣으세요 =============================================
-    url: '/visitor.json',
+    url: '/visitor_json',
     data: {
         page: currentPage, per_page: itemsPerPage 
     },
