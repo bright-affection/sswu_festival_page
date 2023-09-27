@@ -339,6 +339,16 @@
         var blur = document.getElementById("blur");
         blur.classList.toggle("active");
       }
+
+      function Home() {
+        window.location.href = "{% url 'mainpage:mainpage' %}";
+      }
+      function goBack() {
+        window.history.back();
+      }
+      function detail() {
+        window.location.href = "{% url 'order:home' %}";
+      }
     </script>
   </body>
 </html>
