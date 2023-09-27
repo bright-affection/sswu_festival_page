@@ -18,28 +18,41 @@
 <body>
     <!-- 상단바 -->
     <header class="header">
-        <a href='{% url "mainpage:mainpage" %}'>
-            <img class="back" src="/static/img/backicon.svg" alt="뒤로가기" class="list_icon" onclick="goBack()"></a>
-        <img class="prism" src="/static/img/prismPink.svg" alt="로고" class="list_icon2" id="logo" onclick="Home()">
+        <a
+          ><img
+            class="back"
+            src="{% static 'css/goods_list.css' %}"
+            alt="뒤로가기"
+            class="list_icon"
+            onclick="goBack()"
+        /></a>
+        <img
+          class="prism"
+          src="{% static 'img/prismPink.svg' %}"
+          alt="로고"
+          class="list_icon2"
+          id="logo"
+          onclick="Home()"
+        />
         <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class='menu-icon' for="menu-btn">
-            <div class='menu-button' onclick="toggle()">
-                <img src="/static/img/hamburger.svg" alt="로고" class="Group 1_pink">
-            </div>
+        <label class="menu-icon" for="menu-btn">
+          <div class="menu-button" onclick="toggle()">
+            <img src="{% static 'img/hamburger.svg' %}" alt="로고" class="Group 1_pink" />
+          </div>
         </label>
         <ul class="menu">
-            <li><a href="http://sswu-prism.com/main/timetable/">타임테이블</a></li>
-            <li><a href="http://sswu-prism.com/main/map/">축제 지도 확인하기</a></li>
-            <li><a href="http://sswu-prism.com/booth/">플리마켓 / 제휴부스 / 총학부스</a></li>
-            <li><a href="http://sswu-prism.com/order/goods_list/">굿즈 구매 예약</a></li>
-            <li><a href="{% url 'mainpage:info' %}">공지사항</a></li>
-            <li><a href="http://sswu-prism.com/visitor/">방명록</a></li>
-            <li><a href="{% url 'mainpage:makers' %}">만든이들</a></li>
-            <a href="{% url 'mainpage:administrator' %}">
-                <div class="box">관리자 모드</div>
-            </a>
+          <li><a href="http://sswu-prism.com/main/timetable/">타임테이블</a></li>
+          <li><a href="http://sswu-prism.com/main/map/">축제 지도 확인하기</a></li>
+          <li><a href="http://sswu-prism.com/booth/">플리마켓 / 제휴부스 / 총학부스</a></li>
+          <li><a href="http://sswu-prism.com/order/goods_list/">굿즈 구매 예약</a></li>
+          <li><a href="{% url 'mainpage:info' %}">공지사항</a></li>
+          <li><a href="http://sswu-prism.com/visitor/">방명록</a></li>
+          <li><a href="{% url 'mainpage:makers' %}">만든이들</a></li>
+          <a href="{% url 'mainpage:administrator' %}">
+              <div class="box">관리자 모드</div>
+          </a>
         </ul>
-    </header>
+      </header>
     <div class="container" id="blur">
         <!-- 공지사항,글쓰기 -->
         <div class="fst">
