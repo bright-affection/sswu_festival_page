@@ -107,7 +107,7 @@ body {
 }
 .mission {
   color: #333333;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 9px;
   padding-top: 7px;
   padding-left: 15px;
@@ -237,7 +237,7 @@ a {
   color: #313131;
 }
 .fes_major {
-  font-size: 3px;
+  font-size: 7px;
   color: #f06786;
   margin-top: 7px;
 }

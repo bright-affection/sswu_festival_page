@@ -336,7 +336,7 @@ a {
   height: 37px;
   border-radius: 20.5px;
   background-color: white;
-  border: 0.5px solid #f194b4; /* border 속성을 사용하여 두께와 색상을 설정 */
+  border: 0.8px solid #f194b4; /* border 속성을 사용하여 두께와 색상을 설정 */
   color: #f194b4;
   font-size: 12px;
   font-weight: bold;
@@ -349,7 +349,7 @@ a {
   border-radius: 20.5px;
   background-color: #f06786;
   color: white;
-  border: 0.5px solid #f06786;
+  border: 0.8px solid #f06786;
   font-size: 12px;
   font-weight: 500;
 }
