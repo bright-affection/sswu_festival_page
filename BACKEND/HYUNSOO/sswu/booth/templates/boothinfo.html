@@ -69,7 +69,7 @@
                         <div class="booth_site">{{booth.locate}}</div>
                     </div>
                     <div class="booth_info2">
-                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어남 -->
+                        <!-- 글자수 제한 둬야 할 듯. 내용 많으면 튀어나옴 -->
                         <div>{{booth.content|truncatechars:50}}</div>
                     </div>
                     <div class="booth_info3 corner">
@@ -252,7 +252,7 @@
             var current_place =  booth_sites[i].textContent;
             resetPlace();
             place_title.innerText = current_place;
-            var booth_num = current_place.substr(1) * 1;
+            var booth_num = current_place.substr(2) * 1;
 
             switch (current_place.charAt(0)) {
                 case "A":
@@ -279,7 +279,7 @@
                 case "C":
                     place_title_ex.innerText = '총학생회 부스';
                     place_containers[2].style.display = "block";
-                    place_maps[4].style.display = "block";
+                    place_maps[3].style.display = "block";
                     box = place_containers[2].getElementsByTagName('div')[booth_num];
                     box.style.backgroundColor = "#F06786";
                     break;
