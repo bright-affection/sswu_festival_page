@@ -103,9 +103,3 @@ $(document).ready(function() {
         currentPage++; // 다음 페이지로 이동
     
     }
-<<<<<<< HEAD
-    
-=======
-    
-    
->>>>>>> 515174c1b07dff11e177af9e92a32e2c809745d7
