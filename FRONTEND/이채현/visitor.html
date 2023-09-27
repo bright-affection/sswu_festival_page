@@ -93,7 +93,9 @@
             <!-- 더보기 버튼 -->
             <div id="more">
                 <!-- <span>+ 더보기</span> -->
-                <button onclick="drawHtml(contentData)">+ 더보기</button>
+                <!-- <button onclick="loadItems()">+ 더보기</button> -->
+                <!-- 해당 버튼도 loadItems()가 맞으나, 통신을 할곳이 없어, drawHtml로 대체 -->
+                <a onclick="loadItems()">+ 더보기</a>
             </div>
         </div>
     </div>
