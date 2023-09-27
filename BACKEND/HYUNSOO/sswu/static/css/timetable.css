@@ -55,9 +55,12 @@ header {
 
 /* 날짜 버튼 */
 .buttons {
-    width: 100%;
+    /* width: 100%; */
     font-size: 11px;
     font-weight: 600;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .date_btn {
@@ -66,14 +69,14 @@ header {
     border-radius: 6px;
     vertical-align: middle;
     
-    width: calc(50% - 28px);
+    width: calc(50% - 30px);
     padding: 10px;
     display: inline-block;
 }
 
-#fourth {
+/* #fourth {
     margin-right: 10px;
-}
+} */
 
 .non-clicked {
     color: #F194B4;
@@ -135,7 +138,6 @@ table tr {
     display:table;
     position: absolute;
     background-color: #fff;
-    /* font-size: 0.5rem; */
     font-size: 11px;
     font-weight: 600;
     
@@ -185,8 +187,8 @@ table tr {
 }
 
 #day4-1 {
-    height: calc(8.33333333% - 6px);
-    top: calc(58.33333333% + 2px);
+    height: calc(8.33333333% - 10px);
+    top: calc(58.33333333%);
     left: 80%;
     border: 1px solid #9F89E1;
     box-shadow: 0px 0px 5px #9F89E1;
@@ -194,8 +196,8 @@ table tr {
 }
 
 .show {
-    height: calc(16.66666666% - 6px);
-    top: calc(66.6666666% + 2px);
+    height: calc(16.66666666% - 9px);
+    top: calc(66.6666666% + 3px);
     left: 80%;
     border: 1px solid #D972E1;
     box-shadow: 0px 0px 5px #D972E1;
@@ -210,15 +212,15 @@ table tr {
 }
 
 #day4-3 {
-    height: calc(8.33333333% - 6px);
-    top: calc(83.33333333% + 2px);
+    height: calc(8.33333333% - 10px);
+    top: calc(83.33333333% - 1px);
     left: 80%;
     border: 1px solid #F681C7;
     box-shadow: 0px 0px 5px #F681C7;
 }
 
 #day4-4 {
-    height: calc(8.33333333% - 6px);
+    height: calc(8.33333333% - 10px);
     top: calc(91.66666666% + 2px);
     left: 80%;
     border: 1px solid #FC7B7B;
