@@ -107,7 +107,7 @@ body {
 }
 .mission {
   color: #333333;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 9px;
   padding-top: 7px;
   padding-left: 15px;
@@ -255,7 +255,7 @@ a {
   text-align: center; /* 텍스트 가운데 정렬 */
 }
 .mem2 {
-  width: 110px;
+  width: 130px;
 
   margin-right: 10px;
   margin-left: 10px;
