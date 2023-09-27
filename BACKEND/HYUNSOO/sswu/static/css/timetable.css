@@ -74,10 +74,6 @@ header {
     display: inline-block;
 }
 
-/* #fourth {
-    margin-right: 10px;
-} */
-
 .non-clicked {
     color: #F194B4;
     border: 1px solid #F194B4;
@@ -97,7 +93,7 @@ header {
 }
 
 table {
-    margin: 10% 0;
+    margin: 30px 0;
     table-layout: fixed;
     color: #777777;
     font-size: 9px;
@@ -106,8 +102,7 @@ table {
 }
 
 table tr {
-    height: 5vh;
-    /* text-align: center; */
+    height: 35px;
 }
 
 .time {
@@ -146,13 +141,12 @@ table tr {
 
 .schedule span {
     display:table-cell;
-    /* vertical-align:middle; */
     text-align: center;
-    line-height: 150%;
+    line-height: 120%;
 }
 
 .long {
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .short span {
@@ -160,8 +154,8 @@ table tr {
 }
 
 #day1 {
-    height: calc(100% - 126px);
-    top: calc(0% + 2px);
+    height: calc(420px - 86px);
+    top: 2px;
     left: 20%;
     border: 1px solid #F06786;
     box-shadow: 0px 0px 5px #F06786;
@@ -169,8 +163,8 @@ table tr {
 }
 
 #day2 {
-    height: calc(75% - 126px);
-    top: calc(0% + 2px);
+    height: calc(315px - 86px);
+    top: 2px;
     left: 40%;
     border: 1px solid #71A6D4;
     box-shadow: 0px 0px 5px #71A6D4;
@@ -178,8 +172,8 @@ table tr {
 }
 
 #day3 {
-    height: calc(75% - 126px);
-    top: calc(0% + 2px);
+    height: calc(315px - 86px);
+    top: 2px;
     left: 60%;
     border: 1px solid #FFB82F;
     box-shadow: 0px 0px 5px #FFB82F;
@@ -187,8 +181,8 @@ table tr {
 }
 
 #day4-1 {
-    height: calc(8.33333333% - 10px);
-    top: calc(58.33333333%);
+    height: calc(35px - 4px);
+    top: 247px;
     left: 80%;
     border: 1px solid #9F89E1;
     box-shadow: 0px 0px 5px #9F89E1;
@@ -196,8 +190,8 @@ table tr {
 }
 
 .show {
-    height: calc(16.66666666% - 9px);
-    top: calc(66.6666666% + 3px);
+    height: calc(70px - 4px);
+    top: 282px;
     left: 80%;
     border: 1px solid #D972E1;
     box-shadow: 0px 0px 5px #D972E1;
@@ -212,16 +206,16 @@ table tr {
 }
 
 #day4-3 {
-    height: calc(8.33333333% - 10px);
-    top: calc(83.33333333% - 1px);
+    height: calc(35px - 4px);
+    top: 352px;
     left: 80%;
     border: 1px solid #F681C7;
     box-shadow: 0px 0px 5px #F681C7;
 }
 
 #day4-4 {
-    height: calc(8.33333333% - 10px);
-    top: calc(91.66666666% + 2px);
+    height: calc(35px - 4px);
+    top: 387px;
     left: 80%;
     border: 1px solid #FC7B7B;
     box-shadow: 0px 0px 5px #FC7B7B;
