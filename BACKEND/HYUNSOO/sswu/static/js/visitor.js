@@ -76,7 +76,7 @@ $(document).ready(function() {
         // 가상 데이터를 생성하는 예제
         // 데이터만큼 반복시켜줘서 html 그려준다 =============================================
         var html = '';
-        var data = result.list
+        var data = result
     
         for (var i = 0; i < data.length; i++) {
     
@@ -95,7 +95,7 @@ $(document).ready(function() {
             $('#more').hide();
         }
         */
-       
+
         // 데이터를 가져온 후 처리하는 로직을 추가합니다.
         $('#content').append(html);
         $('#loading').hide(); // 로딩 표시 숨기기
