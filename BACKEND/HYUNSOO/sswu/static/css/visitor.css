@@ -94,6 +94,7 @@ button {
 /* 더보기 버튼 */
 #more {
   text-align: center;
+  padding: 20px;
 }
 
 #more > * {

@@ -95,7 +95,11 @@
                 <div class="slider-inner">
                   {% for image in info.images.all %}
                   <div class="slider-item">
-                    <img src="{{ image.image.url }}" alt="info_image" />
+                    <img
+                      src="{{ image.image.url }}"
+                      alt="info_image"
+                      class="slider_img"
+                    />
                   </div>
                   {% endfor %}
                 </div>
