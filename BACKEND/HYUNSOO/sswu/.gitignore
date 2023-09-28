@@ -9,3 +9,4 @@
 /myvenv/
 __pyache__/
 secrets.json
+db.sqlite3
